@@ -1,0 +1,29 @@
+{
+  "name": "get_transaction_status",
+  "description": "Look up a simulated transaction status by mock transaction id. No real banking systems.",
+  "parameters": {
+    "type": "object",
+    "required": ["transaction_id"],
+    "properties": {
+      "transaction_id": {
+        "type": "string",
+        "description": "Mock transaction identifier, e.g. TXN-1001"
+      }
+    },
+    "additionalProperties": false
+  },
+  "returns": {
+    "type": "object",
+    "required": ["transaction_id", "status", "amount", "currency", "updated_at"],
+    "properties": {
+      "transaction_id": { "type": "string" },
+      "status": {
+        "type": "string",
+        "enum": ["pending", "completed", "failed", "not_found"]
+      },
+      "amount": { "type": ["number", "null"] },
+      "currency": { "type": ["string", "null"] },
+      "updated_at": { "type": ["string", "null"] }
+    }
+  }
+}

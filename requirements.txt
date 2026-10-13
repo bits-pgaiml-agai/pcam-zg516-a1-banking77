@@ -1,0 +1,13 @@
+torch
+transformers
+datasets
+accelerate
+sentencepiece
+protobuf
+pydantic
+jsonschema
+pandas
+numpy
+tqdm
+jinja2
+ipywidgets
