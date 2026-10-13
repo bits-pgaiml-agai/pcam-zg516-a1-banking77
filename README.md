@@ -43,7 +43,7 @@ pcam-zg516-a1-banking77/
 ## Quick start (local or Colab)
 
 ```bash
-git clone https://github.com/venkat-tunuguntla/pcam-zg516-a1-banking77.git
+git clone https://github.com/bits-pgaiml-mle/pcam-zg516-a1-banking77.git
 cd pcam-zg516-a1-banking77
 pip install -r requirements.txt
 ```
