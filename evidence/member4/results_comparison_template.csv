@@ -1,0 +1,6 @@
+system,split,n,schema_valid,intent_correct,safety_pass,tool_correct,notes,owner,status
+E1_baseline,development_E1_sample,3,0,0,see_E1_manual_review,0,Greedy; all schema rejects,Anil/Venkat,filled
+E2_best_prompt,development_evaluation,40,,,,,Fill after RUN_TEAM_EXPERIMENTS,Bhavani,TBD
+E3_best_decoding,development_evaluation,40,,,,,Fill after decoding study,Bhavani,TBD
+E4_E5_validated_tool,development_evaluation,40,,,,,Fill after schema+tool runs,Nisha,TBD
+final_locked,official_test_pilot,40,,,,,Only after prompt locked on development,Group,TBD

@@ -5,7 +5,7 @@
 | Anil Kumar Reddy K | Data + baseline Colab (E1) + notebook backbone — **delivered** |
 | Takkars Bhavani | Prompt engineering (E2) + decoding study (E3) |
 | Nisha Palanisamy | Structured JSON (E4) + tool calling (E5) + templates |
-| Venkata Srinivasa Rao Tunuguntla | Architecture/adaptation + eval/failures (E6) + integrate demo (E7) + report merge |
+| Venkata Srinivasa Rao Tunuguntla | Architecture/adaptation + eval/failures (E6) + E7 checklist/demo + report §§4,5,9,11–13 — **delivered (review)** |
 
 ## Shared contracts (frozen to Member 1)
 
