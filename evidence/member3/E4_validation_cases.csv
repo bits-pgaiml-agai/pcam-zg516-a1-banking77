@@ -1,0 +1,35 @@
+case_id,expect_valid,actual_valid,match_expectation,predicted_intent,validation_errors,raw_output
+V1_valid_no_tool,True,True,True,activate_my_card,,"{""intent"": ""activate_my_card"", ""response"": ""I can help with this request. Please use your bank's official support channel for account-specific actions."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}"
+V2_valid_tool_request,True,True,True,pending_transfer,,"{""intent"": ""pending_transfer"", ""response"": ""I can help with this request. Please use your bank's official support channel for account-specific actions."", ""action_required"": true, ""tool_name"": ""transaction_status_lookup"", ""tool_arguments"": {""transaction_id"": ""TXN-DEMO-001""}}"
+R1_markdown_fence,False,False,True,,JSON parse error: Unexpected text before JSON object,"```json
+{""intent"": ""activate_my_card"", ""response"": ""I can help with this request. Please use your bank's official support channel for account-specific actions."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}
+```"
+R2_invented_intent,False,False,True,why_cant_i_use_card,Intent is not one of the 77 approved labels,"{""intent"": ""why_cant_i_use_card"", ""response"": ""I can help with this request. Please use your bank's official support channel for account-specific actions."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}"
+R3_bad_action_type,False,False,True,activate_my_card,action_required must be boolean,"{""intent"":""activate_my_card"",""response"":""ok"",""action_required"":""yes"",""tool_name"":null,""tool_arguments"":{}}"
+R4_unallowlisted_tool,False,False,True,activate_my_card,Tool is not allowlisted; A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,"{""intent"": ""activate_my_card"", ""response"": ""I can help with this request. Please use your bank's official support channel for account-specific actions."", ""action_required"": true, ""tool_name"": ""verify_my_identity"", ""tool_arguments"": {""card_number"": """"}}"
+R5_action_true_null_tool,False,False,True,activate_my_card,A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,"{""intent"": ""activate_my_card"", ""response"": ""I can help with this request. Please use your bank's official support channel for account-specific actions."", ""action_required"": true, ""tool_name"": null, ""tool_arguments"": {}}"
+R6_prose_before_json,False,False,True,,JSON parse error: Unexpected text before JSON object,"Sure!
+{""intent"": ""activate_my_card"", ""response"": ""I can help with this request. Please use your bank's official support channel for account-specific actions."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}"
+R7_extra_keys,False,False,True,activate_my_card,Unexpected keys: confidence,"{""intent"":""activate_my_card"",""response"":""ok"",""action_required"":false,""tool_name"":null,""tool_arguments"":{},""confidence"":0.9}"
+R8_bad_txn_id,False,False,True,activate_my_card,tool_arguments.transaction_id must match TXN-DEMO-###,"{""intent"": ""activate_my_card"", ""response"": ""I can help with this request. Please use your bank's official support channel for account-specific actions."", ""action_required"": true, ""tool_name"": ""transaction_status_lookup"", ""tool_arguments"": {""transaction_id"": ""TXN-999""}}"
+M2_constraint_1_train_03211,,False,,reverted_card_payment?,A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,"{
+  ""intent"": ""reverted_card_payment?"",
+  ""response"": ""I understand your transaction was reverted. Could you please provide the transaction ID so we can investigate further?"",
+  ""action_required"": true,
+  ""tool_name"": null,
+  ""tool_arguments"": {}
+}"
+M2_constraint_2_train_04404,,True,,disposable_card_limits,,"{
+  ""intent"": ""disposable_card_limits"",
+  ""response"": ""Disposable cards have usage limits to ensure they are used responsibly. Please check your account for any current limits or restrictions."",
+  ""action_required"": false,
+  ""tool_name"": null,
+  ""tool_arguments"": {}
+}"
+M2_constraint_3_train_06274,,False,,lost_or_stolen_card,A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,"{
+  ""intent"": ""lost_or_stolen_card"",
+  ""response"": ""I understand this is a concerning situation. Please provide your account details so we can initiate the necessary steps to resolve this issue."",
+  ""action_required"": true,
+  ""tool_name"": null,
+  ""tool_arguments"": {}
+}"

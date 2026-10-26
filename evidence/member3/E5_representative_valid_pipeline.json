@@ -1,0 +1,26 @@
+{
+  "case_id": "E5_representative_valid_pipeline",
+  "customer_text": "Please check the status of transaction TXN-DEMO-001.",
+  "stage1_source": "crafted_schema_valid_tool_request",
+  "stage1_raw": "{\"intent\": \"pending_transfer\", \"response\": \"I can look up that demo transaction status for you.\", \"action_required\": true, \"tool_name\": \"transaction_status_lookup\", \"tool_arguments\": {\"transaction_id\": \"TXN-DEMO-001\"}}",
+  "stage1_parsed": {
+    "intent": "pending_transfer",
+    "response": "I can look up that demo transaction status for you.",
+    "action_required": true,
+    "tool_name": "transaction_status_lookup",
+    "tool_arguments": {
+      "transaction_id": "TXN-DEMO-001"
+    }
+  },
+  "validation_errors": [],
+  "tool_result": {
+    "ok": true,
+    "transaction_id": "TXN-DEMO-001",
+    "status": "pending",
+    "last_updated": "2026-01-15 10:30 UTC",
+    "simulation": true
+  },
+  "final_response": "Demonstration: The status of your transaction TXN-DEMO-001 is currently pending. It was last updated on UTC time on 15 January 2026, 10:30 AM. This is a demonstration result and the actual status may vary.",
+  "latency_seconds": 11.49,
+  "note": "Shows allowlisted tool invocation after successful validation; pairs with live LLM attempt in E5_integrated_tool_demo.json where invalid JSON correctly blocked the tool."
+}

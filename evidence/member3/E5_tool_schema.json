@@ -1,0 +1,51 @@
+{
+  "name": "transaction_status_lookup",
+  "description": "Look up a synthetic demonstration transaction status. No real banking systems.",
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "transaction_id"
+    ],
+    "properties": {
+      "transaction_id": {
+        "type": "string",
+        "pattern": "^TXN-DEMO-[0-9]{3}$",
+        "description": "Synthetic demo transaction id, e.g. TXN-DEMO-001"
+      }
+    },
+    "additionalProperties": false
+  },
+  "output_schema": {
+    "type": "object",
+    "required": [
+      "ok",
+      "simulation"
+    ],
+    "properties": {
+      "ok": {
+        "type": "boolean"
+      },
+      "transaction_id": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "completed",
+          "reversed"
+        ]
+      },
+      "last_updated": {
+        "type": "string"
+      },
+      "error": {
+        "type": "string"
+      },
+      "simulation": {
+        "type": "boolean"
+      }
+    },
+    "additionalProperties": false
+  }
+}

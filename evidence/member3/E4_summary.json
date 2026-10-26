@@ -1,0 +1,13 @@
+{
+  "n_designed": 10,
+  "expectation_matches": 10,
+  "n_live_m2_checked": 3,
+  "schema_path": "schemas/response.schema.json",
+  "required_keys": [
+    "intent",
+    "response",
+    "action_required",
+    "tool_name",
+    "tool_arguments"
+  ]
+}

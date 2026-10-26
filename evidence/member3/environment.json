@@ -1,0 +1,6 @@
+{
+  "runtime": "member3_e4_e5",
+  "ollama_model": "qwen2.5:3b",
+  "intent_count": 77,
+  "tool": "transaction_status_lookup"
+}

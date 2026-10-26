@@ -1,0 +1,7 @@
+case_id,tool_name,arguments,result
+ok_001,transaction_status_lookup,"{""transaction_id"": ""TXN-DEMO-001""}","{""ok"": true, ""transaction_id"": ""TXN-DEMO-001"", ""status"": ""pending"", ""last_updated"": ""2026-01-15 10:30 UTC"", ""simulation"": true}"
+ok_002,transaction_status_lookup,"{""transaction_id"": ""TXN-DEMO-002""}","{""ok"": true, ""transaction_id"": ""TXN-DEMO-002"", ""status"": ""completed"", ""last_updated"": ""2026-01-15 09:05 UTC"", ""simulation"": true}"
+not_found,transaction_status_lookup,"{""transaction_id"": ""TXN-DEMO-999""}","{""ok"": false, ""transaction_id"": ""TXN-DEMO-999"", ""error"": ""Demo record not found"", ""simulation"": true}"
+bad_format,transaction_status_lookup,"{""transaction_id"": ""TXN-1001""}","{""ok"": false, ""error"": ""Invalid demo transaction ID format"", ""simulation"": true}"
+not_allowlisted,verify_my_identity,"{""card_number"": ""4111""}","{""ok"": false, ""error"": ""Tool is not allowlisted"", ""simulation"": true}"
+extra_arg,transaction_status_lookup,"{""transaction_id"": ""TXN-DEMO-001"", ""amount"": 10}","{""ok"": false, ""error"": ""Expected only transaction_id"", ""simulation"": true}"

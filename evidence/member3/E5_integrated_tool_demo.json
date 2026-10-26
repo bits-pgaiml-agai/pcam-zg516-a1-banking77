@@ -1,0 +1,23 @@
+{
+  "customer_text": "Please check the status of transaction TXN-DEMO-001.",
+  "runtime": "ollama",
+  "model": "qwen2.5:3b",
+  "stage1_raw": "{\n  \"intent\": \"transaction_status_lookup\",\n  \"response\": \"I will check the status of transaction TXN-DEMO-001 for you. Please wait while I fetch the details.\",\n  \"action_required\": true,\n  \"tool_name\": \"transaction_status_lookup\",\n  \"tool_arguments\": {\n    \"transaction_id\": \"TXN-DEMO-001\"\n  }\n}",
+  "stage1_parsed": {
+    "intent": "transaction_status_lookup",
+    "response": "I will check the status of transaction TXN-DEMO-001 for you. Please wait while I fetch the details.",
+    "action_required": true,
+    "tool_name": "transaction_status_lookup",
+    "tool_arguments": {
+      "transaction_id": "TXN-DEMO-001"
+    }
+  },
+  "validation_errors": [
+    "Intent is not one of the 77 approved labels"
+  ],
+  "tool_result": null,
+  "final_response": "I could not safely interpret that request. Please use your bank's official support channel.",
+  "latency_seconds": 28.478,
+  "official_hf_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "note": "Local Ollama fallback; re-run on Colab HF pin if required for checkpoint alignment."
+}
