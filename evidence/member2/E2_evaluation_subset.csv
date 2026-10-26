@@ -1,0 +1,11 @@
+source_id,text,intent,source_split,label,raw_text,text_key
+train_03211,What I topped up was reverted by the app.,top_up_reverted,train,61,What I topped up was reverted by the app.,what i topped up was reverted by the app.
+train_04404,Why can't I use a disposable card?,disposable_card_limits,train,29,Why can't I use a disposable card?,why can't i use a disposable card?
+train_06274,The ATM didnt return my card!,card_swallowed,train,18,The ATM didnt return my card!,the atm didnt return my card!
+train_09114,How much does it cost to top up a US-issued card?,top_up_by_card_charge,train,57,How much does it cost to top up a US-issued card?,how much does it cost to top up a us-issued card?
+train_01175,How do I auto top-up?,automatic_top_up,train,4,How do I auto top-up?,how do i auto top-up?
+train_05981,I've tried several times to make a payment and every time my card is declined? Could my card be locked? I don't know what to do.,declined_card_payment,train,25,I've tried several times to make a payment and every time my card is declined? Could my card be locked? I don't know what to do.,i've tried several times to make a payment and every time my card is declined? could my card be locked? i don't know what to do.
+train_05010,My card didn't work at the ATM in Notting Hill. Is my card working?,declined_cash_withdrawal,train,26,My card didn't work at the ATM in Notting Hill.  Is my card working?,my card didn't work at the atm in notting hill. is my card working?
+train_07719,Why do we need to verify top-up?,verify_top_up,train,71,Why do we need to verify top-up?,why do we need to verify top-up?
+train_02468,I wanted to take out $100 but I only got $20.,wrong_amount_of_cash_received,train,75,I wanted to take out $100 but I only got $20.,i wanted to take out $100 but i only got $20.
+train_03887,why and how soon do I have to have proof of identity to you?,why_verify_identity,train,74,why and how soon do I have to have proof of identity to you?,why and how soon do i have to have proof of identity to you?

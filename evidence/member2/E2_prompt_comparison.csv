@@ -1,0 +1,5 @@
+variant,rows,gold_class_coverage,intent_accuracy,intent_correct_validated,intent_macro_f1_represented_labels,json_valid_rate,mean_latency_seconds
+role_context,10,10,0.3,0.2,0.2,0.7,15.2857
+few_shot,10,10,0.4,0.3,0.26666666666666666,0.6,13.401
+constraint_based,10,10,0.3,0.3,0.1875,0.6,13.717299999999998
+zero_shot,10,10,0.3,0.2,0.1875,0.5,14.2925

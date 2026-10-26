@@ -1,0 +1,31 @@
+{
+  "prompt_variant": "constraint_based",
+  "rows": [
+    "train_09114",
+    "train_03887",
+    "train_05010"
+  ],
+  "by_setting": [
+    {
+      "decoding": "greedy",
+      "rows": 3,
+      "json_valid_rate": 0.6666666666666666,
+      "intent_correct_rate": 0.3333333333333333,
+      "mean_latency_seconds": 13.760333333333334
+    },
+    {
+      "decoding": "temperature_0.7_top_k_50",
+      "rows": 3,
+      "json_valid_rate": 0.6666666666666666,
+      "intent_correct_rate": 0.3333333333333333,
+      "mean_latency_seconds": 12.228666666666667
+    },
+    {
+      "decoding": "temperature_0.7_top_p_0.9",
+      "rows": 3,
+      "json_valid_rate": 0.3333333333333333,
+      "intent_correct_rate": 0.3333333333333333,
+      "mean_latency_seconds": 11.865333333333334
+    }
+  ]
+}

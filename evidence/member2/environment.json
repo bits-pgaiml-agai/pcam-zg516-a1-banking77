@@ -1,0 +1,9 @@
+{
+  "runtime": "ollama",
+  "ollama_model": "qwen2.5:3b",
+  "official_hf_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "note": "Local Ollama fallback used because HF weight download was unavailable/slow. Re-run scripts/run_member2_e2_e3.py on Colab T4 for the pinned HF checkpoint before final submission if required.",
+  "seed": 42,
+  "e2_n": 10,
+  "e3_n": 3
+}

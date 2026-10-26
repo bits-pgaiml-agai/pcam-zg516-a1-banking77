@@ -1,0 +1,57 @@
+{
+  "best_variant_by_json_then_intent": "role_context",
+  "comparison": [
+    {
+      "variant": "zero_shot",
+      "rows": 10,
+      "gold_class_coverage": 10,
+      "intent_accuracy": 0.3,
+      "intent_correct_validated": 0.2,
+      "intent_macro_f1_represented_labels": 0.1875,
+      "json_valid_rate": 0.5,
+      "mean_latency_seconds": 14.2925
+    },
+    {
+      "variant": "few_shot",
+      "rows": 10,
+      "gold_class_coverage": 10,
+      "intent_accuracy": 0.4,
+      "intent_correct_validated": 0.3,
+      "intent_macro_f1_represented_labels": 0.26666666666666666,
+      "json_valid_rate": 0.6,
+      "mean_latency_seconds": 13.401
+    },
+    {
+      "variant": "role_context",
+      "rows": 10,
+      "gold_class_coverage": 10,
+      "intent_accuracy": 0.3,
+      "intent_correct_validated": 0.2,
+      "intent_macro_f1_represented_labels": 0.2,
+      "json_valid_rate": 0.7,
+      "mean_latency_seconds": 15.2857
+    },
+    {
+      "variant": "constraint_based",
+      "rows": 10,
+      "gold_class_coverage": 10,
+      "intent_accuracy": 0.3,
+      "intent_correct_validated": 0.3,
+      "intent_macro_f1_represented_labels": 0.1875,
+      "json_valid_rate": 0.6,
+      "mean_latency_seconds": 13.717299999999998
+    }
+  ],
+  "subset_source_ids": [
+    "train_03211",
+    "train_04404",
+    "train_06274",
+    "train_09114",
+    "train_01175",
+    "train_05981",
+    "train_05010",
+    "train_07719",
+    "train_02468",
+    "train_03887"
+  ]
+}

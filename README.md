@@ -14,8 +14,9 @@ See [TEAM.md](TEAM.md). Group 15.
 | Area | Status |
 |------|--------|
 | Member 1 (Anil): data + E1 baseline + notebook backbone | In repo |
+| Member 2 (Bhavani): E2 prompts + E3 decoding | In repo (review; see evidence/member2) |
 | Member 4 (Venkat): architecture, adaptation, E6/E7, eval rubric | In repo (review) |
-| E2–E5 group experiments | Scaffold in notebook; enable flags to run |
+| E4–E5 | Scaffold in notebook; Nisha |
 
 Member 1 handoff: [docs/member1/HANDOFF.txt](docs/member1/HANDOFF.txt)  
 Member 4 handoff: [docs/member4/HANDOFF.txt](docs/member4/HANDOFF.txt)  
@@ -23,6 +24,8 @@ E1 evidence: [evidence/member1/](evidence/member1/)
 E6/E7 + rubric: [evidence/member4/](evidence/member4/)  
 Report §§2, 3, 6: [reports/BANKING77_Member1_Report_Sections_2_3_6.docx](reports/BANKING77_Member1_Report_Sections_2_3_6.docx)  
 Report §§4, 5, 9, 11–13: [reports/BANKING77_Member4_Report_Sections_4_5_9_11_12_13.md](reports/BANKING77_Member4_Report_Sections_4_5_9_11_12_13.md)  
+Report §§7–8: [reports/BANKING77_Member2_Report_Sections_7_8.md](reports/BANKING77_Member2_Report_Sections_7_8.md)  
+E2/E3 evidence: [evidence/member2/](evidence/member2/)  
 Demo script: [demo/E7_demo_script.md](demo/E7_demo_script.md)
 
 ## Repository layout
@@ -56,8 +59,8 @@ pcam-zg516-a1-banking77/
 | ID | Experiment | Owner lead |
 |----|------------|------------|
 | E1 | Baseline simple prompt | Anil (done) |
-| E2 | ≥4 prompt variants | Bhavani |
-| E3 | Greedy + temperature + top-k/top-p | Bhavani |
+| E2 | ≥4 prompt variants | Bhavani (done — evidence/member2) |
+| E3 | Greedy + temperature + top-k/top-p | Bhavani (done — evidence/member2) |
 | E4 | Structured JSON + validation | Nisha |
 | E5 | ≥1 tool/function | Nisha |
 | E6 | ≥3 failure cases | Venkat (observed F1–F3 + designed F4–F6) |
