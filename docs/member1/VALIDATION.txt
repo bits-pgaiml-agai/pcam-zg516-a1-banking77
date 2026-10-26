@@ -1,0 +1,16 @@
+Member 1 validation record
+
+Passed: notebook format and code syntax; execution of every default Python cell;
+77-example pool and two 40-row subsets; four in-prompt examples from training;
+normalized text disjointness; exact subset reconstruction from pinned source
+CSVs and seed 42; schema acceptance and rejection cases; revalidation of all
+three actual baseline outputs; evidence SHA-256 hashes.
+
+Execution: CPU, float32, Python 3.12.14. Default generation produced three raw
+outputs in 37.269, 40.904 and 42.126 seconds, respectively. All three were
+rejected by the strict output contract. Failure observations are documented.
+
+The notebook installation cell was not executed locally; dependencies were
+preinstalled. Colab browser execution and optional team generation experiments
+were not exercised. See environment.json for exact executed package versions.
+Report DOCX was rendered and visually inspected before delivery.

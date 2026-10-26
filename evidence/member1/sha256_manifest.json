@@ -1,0 +1,15 @@
+{
+  "E1_observed_failure_analysis.csv": "9164a45e681631845d8ee704e41d344274f7e4764816ebd6405743d9dee5d7a8",
+  "in_prompt_examples.csv": "3b3d0e24652eb60c9d88afc290bf02583417b8e2b4e4b6ebb13830c561a3bbd7",
+  "E1_baseline_outputs.jsonl": "6b292f0bf898f72b4fbdd79262f8562d3b2dbe27017cb85c3e6782646ba9eeee",
+  "E1_manual_review.csv": "65f24309d6eddda0b936072edfda14efaeaed68b381b001311a83bc56ef3ff0c",
+  "E1_summary.json": "6d86fa69df582aaf35eec3d79246790976b4c0767e516c8bfc6b464ac9ee8ce1",
+  "class_counts.csv": "cb56e51e1409b0d4dc5915029aa997fe9299c95d52c4935945fa7f1b920fc6be",
+  "baseline_inputs.csv": "b3b11f2d573ccdd4fad66b179959f914e4403275863c0af9f38cd17247e1eb5e",
+  "intent_names.json": "2a0729c0d558057bbd2a1e6b690e09c37be565d6278f18603df8b3d602fa4bc7",
+  "data_audit.json": "d4e7cd27becae12ef9719ca2f464f8bb8bea199e4b491863dd30afa5541e9115",
+  "environment.json": "09884766ca7bcea654ac3f356480271457ff6f4e50ac3a2be5476b79ce36849f",
+  "development_evaluation.csv": "b002ae7f378664d28cdb19c40f5d756dd52a7670c58c78b7a9a97487863d20d2",
+  "few_shot_pool.csv": "a1171744edba62c3000b4ab84ed81243ff36025aa04de81351c17fef50a54a37",
+  "official_test_pilot.csv": "c0dbd63097ce561eca0a93e9873914cbb809c2038b8af0118ca237030521799d"
+}

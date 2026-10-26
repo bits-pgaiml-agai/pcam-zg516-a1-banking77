@@ -1,0 +1,41 @@
+source_id,text,intent,source_split,label,raw_text,text_key
+test_00420,What is the best way to exchange currency?,exchange_via_app,test,33,What is the best way to exchange currency?,what is the best way to exchange currency?
+test_01822,Why is my debit card being declined when I have money?,declined_card_payment,test,25,Why is my debit card being declined when I have money?,why is my debit card being declined when i have money?
+test_02493,I need to get an actual card so that I can use it for in person transactions. How would I do this?,order_physical_card,test,43,I need to get an actual card so that I can use it for in person transactions. How would I do this?,i need to get an actual card so that i can use it for in person transactions. how would i do this?
+test_02479,Do you accept checks?,top_up_by_cash_or_cheque,test,58,Do you accept checks?,do you accept checks?
+test_00125,This rate is too low. Are you sure your using the right exchange rate.,card_payment_wrong_exchange_rate,test,17,This rate is too low. Are you sure your using the right exchange rate.,this rate is too low. are you sure your using the right exchange rate.
+test_02180,How come I'm not allowed to transfer funds right now? I just keep getting an error message.,beneficiary_not_allowed,test,7,How come I'm not allowed to transfer funds right now? I just keep getting an error message.,how come i'm not allowed to transfer funds right now? i just keep getting an error message.
+test_03021,What things do I need to verify my identity?,verify_my_identity,test,69,What things do I need to verify my identity?,what things do i need to verify my identity?
+test_02751,Help! My wallet was stolen and someone is taking money out. I need this money! What can I do?,cash_withdrawal_not_recognised,test,20,Help!  My wallet was stolen and someone is taking money out.  I need this money!  What can I do?,help! my wallet was stolen and someone is taking money out. i need this money! what can i do?
+test_02630,How do disposable cards work?,get_disposable_virtual_card,test,37,How do disposable cards work?,how do disposable cards work?
+test_01194,Do I need to verify my identity each time I wish to use my account?,why_verify_identity,test,74,Do I need to verify my identity each time I wish to use my account?,do i need to verify my identity each time i wish to use my account?
+test_02142,I need to change my PIN. Can I do that at a cash machine?,change_pin,test,21,I need to change my PIN. Can I do that at a cash machine?,i need to change my pin. can i do that at a cash machine?
+test_00725,What are the restrictions to top-offs?,top_up_limits,test,60,What are the restrictions to top-offs?,what are the restrictions to top-offs?
+test_01581,I attempted to get cash but was declined.,declined_cash_withdrawal,test,26,I attempted to get cash but was declined.,i attempted to get cash but was declined.
+test_01935,The ATM ate my card.,card_swallowed,test,18,The ATM ate my card.,the atm ate my card.
+test_03064,What locations are you in?,country_support,test,24,What locations are you in?,what locations are you in?
+test_02709,Why doesn't it show that I did a balance transfer?,balance_not_updated_after_bank_transfer,test,5,Why doesn't it show that I did a balance transfer?,why doesn't it show that i did a balance transfer?
+test_02366,how come the verification with the top up,verify_top_up,test,71,how come the verification with the top up,how come the verification with the top up
+test_01715,What's the refund process?,request_refund,test,52,What's the refund process?,what's the refund process?
+test_02574,"When I got cash, my exchange rate was wrong.",wrong_exchange_rate_for_cash_withdrawal,test,76,"When I got cash, my exchange rate was wrong.","when i got cash, my exchange rate was wrong."
+test_01884,What steps do I need to take to close my account?,terminate_account,test,55,What steps do I need to take to close my account?,what steps do i need to take to close my account?
+test_00948,How do I order a virtual card?,getting_virtual_card,test,40,How do I order a virtual card?,how do i order a virtual card?
+test_01859,When will the transfer go through?,pending_transfer,test,48,When will the transfer go through?,when will the transfer go through?
+test_01020,What happened to my top-up?,top_up_reverted,test,61,What happened to my top-up?,what happened to my top-up?
+test_01731,"If the transfer details have already but reviewed and confirmed that they are correct, what other reason would cause my transfer to be declined?",declined_transfer,test,27,"If the transfer details have already but reviewed and confirmed that they are correct, what other reason would cause my transfer to be declined?","if the transfer details have already but reviewed and confirmed that they are correct, what other reason would cause my transfer to be declined?"
+test_02871,What is the process for activating my card?,activate_my_card,test,0,What is the process for activating my card?,what is the process for activating my card?
+test_01635,I had a payment that I made and it's been some amount of time and would like to know when it's suppose to go though.,pending_card_payment,test,45,I had a payment that I made and it's been some amount of time and would like to know when it's suppose to go though.,i had a payment that i made and it's been some amount of time and would like to know when it's suppose to go though.
+test_00577,How can I make my contactless work for the metro?,contactless_not_working,test,23,How can I make my contactless work for the metro?,how can i make my contactless work for the metro?
+test_02079,When will money be available in my account?,transfer_timing,test,67,When will money be available in my account?,when will money be available in my account?
+test_00104,What foreign exchange rate will you use?,exchange_rate,test,32,What foreign exchange rate will you use?,what foreign exchange rate will you use?
+test_02985,How can I top up with Google Pay?,apple_pay_or_google_pay,test,2,How can I top up with Google Pay?,how can i top up with google pay?
+test_00763,Why did I not get my cash back after I withdrew?,wrong_amount_of_cash_received,test,75,Why did I not get my cash back after I withdrew?,why did i not get my cash back after i withdrew?
+test_01644,"If I was mugged and lost everything, how do I access my account and app?",lost_or_stolen_phone,test,42,"If I was mugged and lost everything, how do I access my account and app?","if i was mugged and lost everything, how do i access my account and app?"
+test_02810,I just topped off my card will I be charged for it?,top_up_by_card_charge,test,57,I just topped off my card will I be charged for it?,i just topped off my card will i be charged for it?
+test_00518,What is the youngest someone can be to open an account?,age_limit,test,1,What is the youngest someone can be to open an account?,what is the youngest someone can be to open an account?
+test_02271,I receive my salary in GBP. Do I need to configure this somehwere?,receiving_money,test,50,I receive my salary in GBP. Do I need to configure this somehwere?,i receive my salary in gbp. do i need to configure this somehwere?
+test_01371,How many card payments can I use on a disposable card?,disposable_card_limits,test,29,How many card payments can I use on a disposable card?,how many card payments can i use on a disposable card?
+test_01508,I didn't make this direct debit transaction,direct_debit_payment_not_recognised,test,28,I didn't make this direct debit transaction,i didn't make this direct debit transaction
+test_02415,What is the procedure for getting another card?,getting_spare_card,test,39,What is the procedure for getting another card?,what is the procedure for getting another card?
+test_01779,"i was supposed to get a refund but my balance hasn't changed, why not?",Refund_not_showing_up,test,51,"i was supposed to get a refund but my balance hasn't changed, why not?","i was supposed to get a refund but my balance hasn't changed, why not?"
+test_00341,"If I will be traveling, is there a way to auto top-up my card on certain days?",automatic_top_up,test,4,"If I will be traveling, is there a way to auto top-up my card on certain days?","if i will be traveling, is there a way to auto top-up my card on certain days?"

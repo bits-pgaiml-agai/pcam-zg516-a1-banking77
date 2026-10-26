@@ -36,11 +36,9 @@ outputs/
 wandb/
 mlruns/
 
-data/raw/*
-!data/raw/.gitkeep
-data/eval/*
-!data/eval/.gitkeep
-!data/eval/README.md
+# Regenerated Colab run folders at repo root (tracked evidence lives under evidence/)
+/banking77_member1_outputs/
+/banking77_member1_outputs.zip
 
 *.log
 .cache/

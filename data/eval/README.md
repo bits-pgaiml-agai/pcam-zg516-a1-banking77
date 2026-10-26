@@ -1,5 +1,15 @@
-# Fixed evaluation subset
+# Fixed evaluation and example subsets (Member 1)
 
-Place the shared 30-example eval sample here (CSV/JSON with stable IDs).
+Seed: **42**. All prompt/decoding comparisons must use these rows.
 
-All prompt/decoding comparisons must use the **same** rows so tables are comparable.
+| File | Rows | Purpose |
+|------|------|---------|
+| `few_shot_pool.csv` | 77 | One working-training example per intent |
+| `in_prompt_examples.csv` | 4 | Fixed few-shot examples used in prompts |
+| `development_evaluation.csv` | 40 | Development pilot (same 40 intents) |
+| `official_test_pilot.csv` | 40 | Reserved test pilot (same 40 intents) |
+| `baseline_inputs.csv` | 3 | E1 baseline sample from development |
+| `intent_names.json` | 77 | Canonical label order |
+| `class_counts.csv` | — | Per-intent counts after cleaning |
+
+Do not tune prompts on the official test pilot. Full audit: `evidence/member1/data_audit.json`.

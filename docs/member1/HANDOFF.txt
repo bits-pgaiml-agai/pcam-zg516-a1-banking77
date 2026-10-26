@@ -1,0 +1,88 @@
+BANKING77 MEMBER 1 HANDOFF
+Owner: Anil Kumar Reddy K
+Track: Data + Baseline + Notebook backbone
+
+WHAT IS INCLUDED
+The completed notebook, report drafts for sections 2, 3 and 6, data preparation
+records, a 77-example few-shot pool, 40-row development and official-test pilot
+subsets, three actual baseline model generations, and reproducibility records.
+The evidence folder contains raw outputs, not hand-written substitutes.
+
+HOW TO RUN IN GOOGLE COLAB
+1. Open https://colab.research.google.com/ and choose Upload notebook.
+2. Upload BANKING77_GenAI_Assistant.ipynb.
+3. Choose Runtime > Change runtime type > T4 GPU, then Save.
+4. Choose Runtime > Run all. The first cell installs pinned Python dependencies.
+   If Colab asks for a runtime restart after installation, restart and run all.
+5. The notebook downloads the public dataset CSVs at a fixed commit and the
+   Qwen2.5-1.5B-Instruct model at a fixed revision. No bank credentials are used.
+6. Open the Files sidebar. Generated evidence is in banking77_member1_outputs/.
+   Download banking77_member1_outputs.zip created by the final cell.
+
+DEFAULT RUN
+Member 1 mode runs data preparation, the three E1 generations, output validation,
+and a direct synthetic tool invocation. Team generation experiments are disabled
+by default so the notebook provides a small, reviewable handoff.
+CPU execution works but can be much slower than a Colab GPU. Initial model
+download is about 3.1 GB; inference memory depends on dtype and device.
+
+DATA AND SAMPLING
+The source has 10,003 training rows and 3,080 official test rows with 77 intents.
+After normalized duplicate and cross-split overlap removal, 9,992 training rows
+remain. A stratified split produces 8,992 working training and 1,000 validation
+rows. The 77-row pool contains one training example per intent. Only four pool
+examples enter a few-shot prompt; the entire pool is not pasted into the prompt.
+The 40-row development pilot and 40-row final-test pilot each cover the same 40
+intents with one example per intent. They cannot support claims about all 77
+classes. The E1 baseline uses three of the development examples.
+
+Prompt variants and decoding comparisons use development data. The official
+test data is used only for optional final inference after design choices are
+fixed. Reading test text keys for duplicate auditing does not use test labels
+or test model results to tune the prompts. The pilot class list is seeded.
+
+TEAM HANDOFF
+The existing build_messages(), generate_text(), validate_output(),
+evaluate_prompt() and synthetic tool APIs are retained.
+Set RUN_TEAM_EXPERIMENTS = True to run E2 prompt and E3 decoding comparisons,
+the E4 generated-output demonstration and the E5 integrated model/tool demo.
+Set RUN_FINAL_EVAL = True only after selecting the final prompt on development
+data. FINAL_EVAL_FULL = True uses all 3,080 official test examples; otherwise
+the 40-row pilot is used. Full evaluation can be lengthy on a small runtime.
+The supplied improved comparison uses constraint_based; if the group selects
+another variant on development data, update that final comparison explicitly.
+
+Report accuracy, represented-label macro F1, schema validity, and manually
+reviewed response safety/relevance separately. The notebook defines exactly
+which labels contribute to macro F1. Do not report safety as proven by valid
+JSON. The E1 manual review is qualitative and contains only three examples.
+
+The overall group assignment still needs its E2-E7 experimental evidence,
+failure analysis, presentation/demo and member-confirmed contribution statement.
+The Member 1 report drafts can be merged into the group's 10-15 page report.
+
+REPRODUCIBILITY
+Seed: 42. Dataset/model Git revisions are embedded in the notebook. Source CSV
+hashes, all subset source IDs, exact prompts, raw generations, latency and runtime
+versions are saved. Greedy decoding is used for E1. GPU/CPU and library changes
+can still change output, even with identical seeds.
+
+The notebook was verified by executing its default Python cells in order in
+process on CPU. A Jupyter kernel could not start in the verification environment,
+so Colab browser execution itself has not been tested. The installation cell was
+not executed during this check because those dependencies were preinstalled;
+environment.json records the actual package versions. Optional team generation
+branches are supplied as executable code but were not evaluated in this run.
+
+Read data_audit.json, environment.json, E1_baseline_outputs.jsonl and
+E1_summary.json before copying any experimental statement into the group report.
+Keep ATTRIBUTION.txt with the package when sharing its public-dataset examples.
+
+CONTRIBUTION STATEMENT FOR MEMBER CONFIRMATION
+I, Anil Kumar Reddy K, am responsible for the BANKING77 dataset analysis and
+preparation, reproducible subset selection, Hugging Face causal-LM baseline,
+three E1 output records, Colab notebook backbone, and report sections 2, 3 and 6.
+I will review the generated artifacts, confirm the observations and explain
+these components during the group demonstration.
+Member confirmation/signature: ____________________  Date: _______________
+This statement is prepared for review and has not been signed or confirmed.

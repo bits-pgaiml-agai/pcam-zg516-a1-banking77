@@ -1,0 +1,26 @@
+source_id,input,gold_intent,actual_raw_output,validation_errors,observed_failure_and_review
+train_03211,What I topped up was reverted by the app.,top_up_reverted,"```json
+{
+  ""intent"": ""top_up_reverted"",
+  ""response"": ""We're sorry to hear that your top-up was reverted. Please check if there were any issues during the process and try again."",
+  ""action_required"": true,
+  ""tool_name"": null,
+  ""tool_arguments"": {}
+}
+```",JSON parse error: Unexpected text before JSON object,"Visible label matches top_up_reverted, but strict parsing rejects Markdown fences. action_required=true has no tool. Suggesting a retry is not grounded in transaction status; direct the customer to official support."
+train_04404,Why can't I use a disposable card?,disposable_card_limits,"{
+  ""intent"": ""why_can_t_i_use_a_disposable_card"",
+  ""response"": ""I'm sorry to hear that you're experiencing issues with your disposable card. Could you please provide more details about what's happening so we can assist you better?"",
+  ""action_required"": false,
+  ""tool_name"": null,
+  ""tool_arguments"": {}
+}",Intent is not one of the 77 approved labels,"Response asks for clarification, but why_can_t_i_use_a_disposable_card is not an approved intent; the gold intent is disposable_card_limits."
+train_06274,The ATM didnt return my card!,card_swallowed,"{
+  ""intent"": ""lost_or_stolen_card"",
+  ""response"": ""I'm sorry to hear that your ATM card wasn't returned. Please provide me with your card number so I can assist you further."",
+  ""action_required"": true,
+  ""tool_name"": ""verify_my_identity"",
+  ""tool_arguments"": {
+    ""card_number"": """"
+  }
+}",Tool is not allowlisted; A requested action must name the allowlisted tool,"Wrong intent and unapproved tool verify_my_identity. Response requests a card number, violating the privacy instruction. Gold intent is card_swallowed. Reject and use an approved support channel."

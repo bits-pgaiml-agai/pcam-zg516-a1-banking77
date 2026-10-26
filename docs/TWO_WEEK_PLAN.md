@@ -1,22 +1,22 @@
 # Two-week execution plan
 
-## Day 0 (all)
+## Day 0 (all) — done for contracts
 
-- Register BANKING77 with instructor
-- Freeze model name, JSON schema, eval IDs, single tool
-- Clone repo; each member works on a feature branch
+- BANKING77 registered / selected
+- Model, JSON schema, eval IDs, single tool frozen to Member 1 artifacts
+- Shared repo: `bits-pgaiml-agai/pcam-zg516-a1-banking77`
 
 ## Week 1
 
-- Anil: dataset prep + E1 baseline
-- Bhavani: E2 prompts + start E3
-- Nisha: E4 schema validation + E5 tool wiring
+- Anil: dataset prep + E1 baseline — **delivered** (`notebooks/`, `evidence/member1/`)
+- Bhavani: E2 prompts + E3 decoding (`RUN_TEAM_EXPERIMENTS=True`)
+- Nisha: E4 schema validation + E5 tool wiring on Anil's contracts
 - Venkat: architecture/adaptation draft + eval rubric
 
 ## Week 2
 
 - Days 8–9: integrate E7 end-to-end notebook
 - Days 10–11: eval tables + failure analysis
-- Day 12: report merge
+- Day 12: report merge (include Member 1 §§2, 3, 6)
 - Day 13: demo dry run
 - Day 14: buffer + submit

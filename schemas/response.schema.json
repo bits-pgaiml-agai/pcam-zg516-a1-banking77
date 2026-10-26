@@ -2,35 +2,27 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "BankingAssistantResponse",
   "type": "object",
-  "required": ["intent", "confidence", "response", "needs_tool", "action"],
+  "required": ["intent", "response", "action_required", "tool_name", "tool_arguments"],
   "properties": {
     "intent": {
       "type": "string",
-      "description": "Predicted BANKING77 intent label"
-    },
-    "confidence": {
-      "type": "number",
-      "minimum": 0,
-      "maximum": 1
+      "description": "Exactly one BANKING77 intent label from the approved 77-label list"
     },
     "response": {
       "type": "string",
-      "description": "Safe customer-facing reply"
+      "minLength": 1,
+      "description": "Short customer-facing reply; no invented account facts"
     },
-    "needs_tool": {
+    "action_required": {
       "type": "boolean"
     },
-    "action": {
-      "type": ["object", "null"],
-      "properties": {
-        "tool_name": { "type": "string" },
-        "arguments": { "type": "object" }
-      },
-      "required": ["tool_name", "arguments"]
+    "tool_name": {
+      "type": ["string", "null"],
+      "description": "Allowlisted tool name, or null when no tool is needed"
     },
-    "warnings": {
-      "type": "array",
-      "items": { "type": "string" }
+    "tool_arguments": {
+      "type": "object",
+      "description": "Tool arguments object; empty object when no tool is needed"
     }
   },
   "additionalProperties": false

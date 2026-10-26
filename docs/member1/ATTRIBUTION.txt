@@ -1,0 +1,23 @@
+BANKING77 DATASET ATTRIBUTION
+Dataset: BANKING77 by PolyAI
+Authors: Inigo Casanueva, Tadas Temcinas, Daniela Gerz, Matthew Henderson,
+and Ivan Vulic.
+Paper: Efficient Intent Detection with Dual Sentence Encoders (2020).
+Paper URL: https://arxiv.org/abs/2003.04807
+Publisher repository: https://github.com/PolyAI-LDN/task-specific-datasets
+Dataset card and label mapping: https://huggingface.co/datasets/PolyAI/banking77
+License stated in the dataset card: Creative Commons Attribution 4.0
+International, https://creativecommons.org/licenses/by/4.0/
+Dataset source revision: 57ec275d8078af65b7731c2a98be812d844a6d6b
+Changes: Unicode/whitespace normalization, training duplicate/conflict/overlap
+filtering, train/validation split, and deterministic sample selection. Original
+source CSVs, when included, remain unchanged. Derived rows retain source IDs.
+This project does not imply endorsement by PolyAI or the paper authors.
+
+MODEL
+Qwen/Qwen2.5-1.5B-Instruct by the Qwen team.
+Model card: https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct
+Revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+Weights are not redistributed in this package. Download from the model card
+and comply with its model license. Generated baseline outputs are retained as
+experimental evidence and must be reviewed before reuse.

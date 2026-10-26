@@ -1,0 +1,5 @@
+source_id,text,intent,source_split,label,raw_text,text_key
+train_04573,Will any ATM's decline my card?,atm_support,train,3,Will any ATM's decline my card?,will any atm's decline my card?
+train_00670,Why does my statement show an extra fee?,extra_charge_on_statement,train,34,Why does my statement show an extra fee?,why does my statement show an extra fee?
+train_09560,Is ordering a new card from China available?,card_about_to_expire,train,9,Is ordering a new card from China available?,is ordering a new card from china available?
+train_05709,"I requested a refund from a merchant several days ago, but don't see anything showing up in my account yet. Can you check on your end to see if the money has reached you guys?",Refund_not_showing_up,train,51,"I requested a refund from a merchant several days ago, but don't see anything showing up in my account yet.  Can you check on your end to see if the money has reached you guys?","i requested a refund from a merchant several days ago, but don't see anything showing up in my account yet. can you check on your end to see if the money has reached you guys?"

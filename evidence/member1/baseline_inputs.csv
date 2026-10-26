@@ -1,0 +1,4 @@
+source_id,text,intent,source_split,label,raw_text,text_key
+train_03211,What I topped up was reverted by the app.,top_up_reverted,train,61,What I topped up was reverted by the app.,what i topped up was reverted by the app.
+train_04404,Why can't I use a disposable card?,disposable_card_limits,train,29,Why can't I use a disposable card?,why can't i use a disposable card?
+train_06274,The ATM didnt return my card!,card_swallowed,train,18,The ATM didnt return my card!,the atm didnt return my card!

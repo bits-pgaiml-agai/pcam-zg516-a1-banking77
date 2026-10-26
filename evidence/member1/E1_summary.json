@@ -1,0 +1,7 @@
+{
+  "n": 3,
+  "intent_correct": 0,
+  "schema_valid": 0,
+  "evaluation_split": "training-derived development",
+  "general_accuracy_claim": false
+}
