@@ -1,13 +1,13 @@
-# BANKING77 Member 2 Report Sections
+# BANKING77 Report Sections
 
 **Author:** Takkars Bhavani (Group 15) · executed with team support  
 **Scope:** Assignment report §§7–8 (prompt engineering + decoding)  
-**Evidence:** `evidence/member2/`
+**Evidence:** `evidence/prompts_decoding/`
 
 ## Runtime note
 
-Primary group contract remains Hugging Face `Qwen/Qwen2.5-1.5B-Instruct` (Member 1).  
-This Member 2 evidence run used **local Ollama `qwen2.5:3b`** because the pinned HF weights could not be downloaded reliably on the workstation. The prompt/decoding protocol matches the shared notebook. Re-run `scripts/run_member2_e2_e3.py` on **Colab T4** with the pinned HF model before final submission if the instructor requires identical checkpoint to E1.
+Primary group contract remains Hugging Face `Qwen/Qwen2.5-1.5B-Instruct` (Baseline).  
+This Prompt/decoding evidence run used **local Ollama `qwen2.5:3b`** because the pinned HF weights could not be downloaded reliably on the workstation. The prompt/decoding protocol matches the shared notebook. Re-run `scripts/run_e2_e3.py` on **Colab T4** with the pinned HF model before final submission if the instructor requires identical checkpoint to E1.
 
 ---
 
@@ -24,7 +24,7 @@ This Member 2 evidence run used **local Ollama `qwen2.5:3b`** because the pinned
 | Decoding for E2 | Greedy / temperature 0 (stable comparison) |
 | Metrics | Schema validity, validated intent correctness, intent accuracy, macro-F1 on represented labels |
 
-Baseline E1 (Member 1) used a simpler `baseline` prompt and scored **0/3** schema-valid on its three examples — a separate observational baseline, not part of this four-variant table.
+Baseline E1 (Baseline) used a simpler `baseline` prompt and scored **0/3** schema-valid on its three examples — a separate observational baseline, not part of this four-variant table.
 
 ### 7.2 Results (n=10 development subset)
 
@@ -79,7 +79,7 @@ Files: `E3_decoding.csv`, `E3_decoding_summary.csv`, `E3_summary.json`.
 
 ---
 
-## Contribution statement (Member 2)
+## Contribution statement
 
 I, Takkars Bhavani, am responsible for prompt-engineering experiments (E2: ≥4 variants with comparison table), decoding study (E3: greedy vs temperature + top-k/top-p), the prompt experiment log, and report sections 7–8. I will explain these experiments in the group demonstration.
 

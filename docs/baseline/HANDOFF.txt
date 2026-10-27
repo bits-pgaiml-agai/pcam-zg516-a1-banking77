@@ -1,5 +1,4 @@
-BANKING77 MEMBER 1 HANDOFF
-Owner: Anil Kumar Reddy K
+BANKING77 Baseline HANDOFF
 Track: Data + Baseline + Notebook backbone
 
 WHAT IS INCLUDED
@@ -16,11 +15,11 @@ HOW TO RUN IN GOOGLE COLAB
    If Colab asks for a runtime restart after installation, restart and run all.
 5. The notebook downloads the public dataset CSVs at a fixed commit and the
    Qwen2.5-1.5B-Instruct model at a fixed revision. No bank credentials are used.
-6. Open the Files sidebar. Generated evidence is in banking77_member1_outputs/.
-   Download banking77_member1_outputs.zip created by the final cell.
+6. Open the Files sidebar. Generated evidence is in banking77_baseline_outputs/.
+   Download banking77_baseline_outputs.zip created by the final cell.
 
 DEFAULT RUN
-Member 1 mode runs data preparation, the three E1 generations, output validation,
+Baseline mode runs data preparation, the three E1 generations, output validation,
 and a direct synthetic tool invocation. Team generation experiments are disabled
 by default so the notebook provides a small, reviewable handoff.
 CPU execution works but can be much slower than a Colab GPU. Initial model
@@ -59,7 +58,7 @@ JSON. The E1 manual review is qualitative and contains only three examples.
 
 The overall group assignment still needs its E2-E7 experimental evidence,
 failure analysis, presentation/demo and member-confirmed contribution statement.
-The Member 1 report drafts can be merged into the group's 10-15 page report.
+The Baseline report drafts can be merged into the group's 10-15 page report.
 
 REPRODUCIBILITY
 Seed: 42. Dataset/model Git revisions are embedded in the notebook. Source CSV

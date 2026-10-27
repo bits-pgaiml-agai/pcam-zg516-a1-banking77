@@ -1,10 +1,10 @@
-# BANKING77 Member 4 Report Sections
+# BANKING77 Report Sections
 
 **Author:** Venkata Srinivasa Rao Tunuguntla  
 **Group:** 15 · PCAM\* ZG516 Applied Generative AI  
-**Scope:** Report sections 4, 5, 9, 11, 12, 13 (assignment numbering). Merge with Member 1 §§2, 3, 6 and later E2–E5 evidence from Bhavani/Nisha.
+**Scope:** Report sections 4, 5, 9, 11, 12, 13 (assignment numbering). Merge with Baseline §§2, 3, 6 and later E2–E5 evidence from Bhavani/Nisha.
 
-Evidence referenced: `evidence/member1/` (E1 baseline) and `evidence/member4/` (eval rubric, E6 table, E7 checklist).
+Evidence referenced: `evidence/baseline/` (E1 baseline) and `evidence/evaluation/` (eval rubric, E6 table, E7 checklist).
 
 ---
 
@@ -34,7 +34,7 @@ At least three generative-model families from CS1 are relevant to this applicati
 | **Autoregressive decode** | Prefill processes the prompt; decode emits JSON fields token by token until EOS or `max_new_tokens` |
 | **Decoding controls** | Greedy (E1 default) for stable baselines; temperature / top-k / top-p (E3) to study variability vs validity |
 
-**Implemented model:** `Qwen/Qwen2.5-1.5B-Instruct` (pinned revision), Hugging Face `AutoModelForCausalLM`, no training from scratch and no weight updates in the Member 1 baseline.
+**Implemented model:** `Qwen/Qwen2.5-1.5B-Instruct` (pinned revision), Hugging Face `AutoModelForCausalLM`, no training from scratch and no weight updates in the Baseline baseline.
 
 ### 4.3 Why not “just a classifier”?
 
@@ -110,7 +110,7 @@ Macro-F1 over **represented** labels only may be reported for larger pilots; a 3
 
 ### 11.2 Baseline (E1) observed results
 
-Source: `evidence/member1/E1_summary.json` and `E1_baseline_outputs.jsonl` (CPU float32 verification run).
+Source: `evidence/baseline/E1_summary.json` and `E1_baseline_outputs.jsonl` (CPU float32 verification run).
 
 | Metric | Value |
 |--------|-------|
@@ -137,7 +137,7 @@ These establish a weak but honest baseline. Improved systems (E2+) must beat sch
 
 ### 12.1 E6 — observed failure cases (≥3)
 
-Full table: `evidence/member4/E6_failure_analysis.csv`. Summary:
+Full table: `evidence/evaluation/E6_failure_analysis.csv`. Summary:
 
 | ID | Input (short) | Gold | Failure category | Observed issue | Mitigation |
 |----|---------------|------|------------------|----------------|------------|
@@ -154,7 +154,7 @@ Additional **designed** cases for the integrated demo (validator/tool path), log
 - Do not invent fees, eligibility, or transaction status; tool results are synthetic and must be labelled as demo.  
 - Ambiguous or high-impact requests → escalate to the bank’s official channel.  
 - Valid JSON ≠ truthful or safe reply; keep manual review in the scoring pack.  
-- Dataset is CC BY 4.0 BANKING77; retain attribution (`docs/member1/ATTRIBUTION.txt`).
+- Dataset is CC BY 4.0 BANKING77; retain attribution (`docs/baseline/ATTRIBUTION.txt`).
 
 ---
 
@@ -170,7 +170,7 @@ Additional **designed** cases for the integrated demo (validator/tool path), log
 
 ---
 
-## Contribution statement (Member 4)
+## Contribution statement
 
 I, Venkata Srinivasa Rao Tunuguntla, am responsible for generative-model/LLM architecture analysis, application architecture, adaptation decision (prompting vs RAG vs PEFT), evaluation rubric, E6 failure analysis, responsible-use/limitations write-up, E7 integration checklist and demo script, and merging these sections into the group report. I will explain this workflow in the group demonstration.
 

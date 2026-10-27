@@ -1,6 +1,6 @@
-# Application architecture (Member 4)
+# Application architecture (Evaluation)
 
-See also report §5 in `reports/BANKING77_Member4_Report_Sections_4_5_9_11_12_13.md`.
+See also report §5 in `reports/BANKING77_Report_Sections_4_5_9_11_12_13_Architecture_Eval.md`.
 
 ## Design goals
 

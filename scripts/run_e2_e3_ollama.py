@@ -1,4 +1,4 @@
-"""Member 2 E2/E3 via local Ollama (fallback when HF weights unavailable)."""
+"""E2/E3 via local Ollama (fallback when HF weights unavailable)."""
 
 from __future__ import annotations
 
@@ -17,14 +17,14 @@ from sklearn.metrics import accuracy_score, f1_score
 
 ROOT = Path(__file__).resolve().parents[1]
 EVAL_DIR = ROOT / "data" / "eval"
-OUT_DIR = ROOT / "evidence" / "member2"
+OUT_DIR = ROOT / "evidence" / "prompts_decoding"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 SEED = 42
-OLLAMA_MODEL = os.environ.get("MEMBER2_OLLAMA_MODEL", "qwen2.5:3b")
+OLLAMA_MODEL = os.environ.get("E2_OLLAMA_MODEL", "qwen2.5:3b")
 OLLAMA_URL = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434") + "/api/chat"
-E2_N = int(os.environ.get("MEMBER2_E2_N", "10"))
-E3_N = int(os.environ.get("MEMBER2_E3_N", "3"))
+E2_N = int(os.environ.get("E2_N", "10"))
+E3_N = int(os.environ.get("E3_N", "3"))
 MAX_TOKENS = 180
 
 random.seed(SEED)
@@ -32,7 +32,7 @@ np.random.seed(SEED)
 
 # Reuse prompt/validator builders from the HF runner module path by duplicating essentials.
 sys.path.insert(0, str(ROOT / "scripts"))
-from run_member2_e2_e3 import (  # noqa: E402
+from run_e2_e3 import (  # noqa: E402
     PROMPT_VARIANTS,
     build_messages,
     validate_output,
@@ -124,7 +124,7 @@ def main():
         "runtime": "ollama",
         "ollama_model": OLLAMA_MODEL,
         "official_hf_model": "Qwen/Qwen2.5-1.5B-Instruct",
-        "note": "Local Ollama fallback used because HF weight download was unavailable/slow. Re-run scripts/run_member2_e2_e3.py on Colab T4 for the pinned HF checkpoint before final submission if required.",
+        "note": "Local Ollama fallback used because HF weight download was unavailable/slow. Re-run scripts/run_e2_e3.py on Colab T4 for the pinned HF checkpoint before final submission if required.",
         "seed": SEED,
         "e2_n": len(compare_df),
         "e3_n": E3_N,

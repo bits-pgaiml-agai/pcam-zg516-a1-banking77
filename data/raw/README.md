@@ -7,4 +7,4 @@ Publisher CSVs from PolyAI `task-specific-datasets` revision
 - `test.csv` — 3,080 rows  
 
 The notebook can also download the same revision from GitHub. Keep  
-`docs/member1/ATTRIBUTION.txt` with any redistribution of examples.
+`docs/baseline/ATTRIBUTION.txt` with any redistribution of examples.

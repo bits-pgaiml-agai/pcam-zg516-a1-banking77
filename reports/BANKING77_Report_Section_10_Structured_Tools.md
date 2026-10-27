@@ -1,8 +1,8 @@
-# BANKING77 Member 3 Report Section
+# BANKING77 Report Sections
 
 **Author:** Nisha Palanisamy (Group 15)  
 **Scope:** Assignment report §10 — Structured output and tool/function calling  
-**Evidence:** `evidence/member3/`
+**Evidence:** `evidence/structured_tools/`
 
 ---
 
@@ -39,13 +39,13 @@ Designed cases: **10/10** matched expectations (`E4_summary.json`).
 | R7 Extra keys | reject | reject |
 | R8 Bad transaction id pattern | reject | reject |
 
-Three live Member 2 `constraint_based` generations were also re-checked for continuity (`E4_validation_cases.csv`).
+Three live Prompt/decoding `constraint_based` generations were also re-checked for continuity (`E4_validation_cases.csv`).
 
 ### 10.3 Programmatic prompting
 
 Reusable Jinja2 template: `prompts/assistant_template.jinja2`  
 Python helper: `src/prompt_template.py` → `render_assistant_messages(...)`  
-Sample render: `evidence/member3/E4_programmatic_prompt_sample.json`  
+Sample render: `evidence/structured_tools/E4_programmatic_prompt_sample.json`  
 Parameters: `customer_text`, `intent_names`, `variant`, `include_tool`, optional `few_shot_block`.
 
 ### 10.4 Tool / function calling (E5)
@@ -78,7 +78,7 @@ Tool backend is pure Python. LLM-assisted stage used local Ollama `qwen2.5:3b` w
 
 ---
 
-## Contribution statement (Member 3)
+## Contribution statement
 
 I, Nisha Palanisamy, am responsible for structured JSON schema and validation (E4), programmatic prompt templating, tool/function schema and synthetic invocation (E5), and report section 10. I will explain these components during the group demonstration.
 

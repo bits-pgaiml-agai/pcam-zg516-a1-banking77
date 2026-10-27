@@ -50,6 +50,6 @@
     "n": 3,
     "schema_valid": 0,
     "intent_correct": 0,
-    "source": "evidence/member1/E1_summary.json"
+    "source": "evidence/baseline/E1_summary.json"
   }
 }

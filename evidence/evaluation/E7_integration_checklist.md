@@ -5,7 +5,7 @@
 
 ## End-to-end path (must demo)
 
-1. Load pinned BANKING77 + build subsets (Member 1 cells).  
+1. Load pinned BANKING77 + build subsets (Baseline cells).  
 2. Build messages with chosen prompt variant (`constraint_based` recommended after E2).  
 3. Generate with chosen decoding (greedy recommended for JSON after E3).  
 4. `validate_output` — reject Markdown, unknown intents, bad tools.  
@@ -17,7 +17,7 @@
 
 | Flag | When |
 |------|------|
-| `RUN_TEAM_EXPERIMENTS=False` | Member 1 default (E1 only) |
+| `RUN_TEAM_EXPERIMENTS=False` | Baseline default (E1 only) |
 | `RUN_TEAM_EXPERIMENTS=True` | E2–E5 generation for group |
 | `RUN_FINAL_EVAL=True` | Only after prompt locked on development data |
 

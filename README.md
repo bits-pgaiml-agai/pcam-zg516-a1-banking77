@@ -11,39 +11,38 @@ See [TEAM.md](TEAM.md). Group 15.
 
 ## Status
 
-| Area | Status |
-|------|--------|
-| Member 1 (Anil): data + E1 baseline + notebook backbone | In repo |
-| Member 2 (Bhavani): E2 prompts + E3 decoding | In repo (review; see evidence/member2) |
-| Member 3 (Nisha): E4 schema + E5 tools + templates | In repo (review; see evidence/member3) |
-| Member 4 (Venkat): architecture, adaptation, E6/E7, eval rubric | In repo (review) |
+| Workstream | Status |
+|------------|--------|
+| Data prep + E1 baseline + notebook | Done — `evidence/baseline/` |
+| E2 prompts + E3 decoding | Done — `evidence/prompts_decoding/` |
+| E4 schema + E5 tools + templates | Done — `evidence/structured_tools/` |
+| Architecture, adaptation, E6/E7 eval | Done — `evidence/evaluation/` |
 
-Member 1 handoff: [docs/member1/HANDOFF.txt](docs/member1/HANDOFF.txt)  
-Member 4 handoff: [docs/member4/HANDOFF.txt](docs/member4/HANDOFF.txt)  
-E1 evidence: [evidence/member1/](evidence/member1/)  
-E6/E7 + rubric: [evidence/member4/](evidence/member4/)  
-Report §§2, 3, 6: [reports/BANKING77_Member1_Report_Sections_2_3_6.docx](reports/BANKING77_Member1_Report_Sections_2_3_6.docx)  
-Report §§4, 5, 9, 11–13: [reports/BANKING77_Member4_Report_Sections_4_5_9_11_12_13.md](reports/BANKING77_Member4_Report_Sections_4_5_9_11_12_13.md)  
-Report §§7–8: [reports/BANKING77_Member2_Report_Sections_7_8.md](reports/BANKING77_Member2_Report_Sections_7_8.md)  
-Report §10: [reports/BANKING77_Member3_Report_Sections_10.md](reports/BANKING77_Member3_Report_Sections_10.md)  
-E2/E3 evidence: [evidence/member2/](evidence/member2/)  
-E4/E5 evidence: [evidence/member3/](evidence/member3/)  
-Demo script: [demo/E7_demo_script.md](demo/E7_demo_script.md)
+## Key paths
+
+- Baseline notes: [docs/baseline/HANDOFF.txt](docs/baseline/HANDOFF.txt)  
+- Evaluation notes: [docs/evaluation/HANDOFF.txt](docs/evaluation/HANDOFF.txt)  
+- Report §§2, 3, 6: [reports/BANKING77_Report_Sections_2_3_6_Problem_Dataset_Baseline.docx](reports/BANKING77_Report_Sections_2_3_6_Problem_Dataset_Baseline.docx)  
+- Report §§4, 5, 9, 11–13: [reports/BANKING77_Report_Sections_4_5_9_11_12_13_Architecture_Eval.md](reports/BANKING77_Report_Sections_4_5_9_11_12_13_Architecture_Eval.md)  
+- Report §§7–8: [reports/BANKING77_Report_Sections_7_8_Prompts_Decoding.md](reports/BANKING77_Report_Sections_7_8_Prompts_Decoding.md)  
+- Report §10: [reports/BANKING77_Report_Section_10_Structured_Tools.md](reports/BANKING77_Report_Section_10_Structured_Tools.md)  
+- Demo script: [demo/E7_demo_script.md](demo/E7_demo_script.md)
 
 ## Repository layout
 
 ```text
 pcam-zg516-a1-banking77/
 ├── notebooks/BANKING77_GenAI_Assistant.ipynb
-├── data/
-│   ├── raw/                 # pinned PolyAI train/test CSVs
-│   └── eval/                # fixed pool + 40-row pilots
-├── schemas/                 # response + tool contracts
-├── src/tools.py             # mock transaction_status_lookup
-├── evidence/member1/        # E1 outputs, audit, environment
-├── docs/member1/            # attribution, validation, handoff
-├── reports/                 # report section drafts
-├── prompts/                 # future prompt logs
+├── data/raw/                  # pinned PolyAI train/test CSVs
+├── data/eval/                 # fixed pool + pilots
+├── schemas/                   # response + tool contracts
+├── src/                       # tools + prompt templating
+├── evidence/baseline/         # E1
+├── evidence/prompts_decoding/ # E2–E3
+├── evidence/structured_tools/ # E4–E5
+├── evidence/evaluation/       # E6–E7 + rubric
+├── reports/
+├── docs/
 ├── requirements.txt
 ├── TEAM.md
 └── README.md
@@ -58,15 +57,15 @@ pcam-zg516-a1-banking77/
 
 ## Required experiments
 
-| ID | Experiment | Owner lead |
-|----|------------|------------|
-| E1 | Baseline simple prompt | Anil (done) |
-| E2 | ≥4 prompt variants | Bhavani (done — evidence/member2) |
-| E3 | Greedy + temperature + top-k/top-p | Bhavani (done — evidence/member2) |
-| E4 | Structured JSON + validation | Nisha (done — evidence/member3) |
-| E5 | ≥1 tool/function | Nisha (done — evidence/member3) |
-| E6 | ≥3 failure cases | Venkat (observed F1–F3 + designed F4–F6) |
-| E7 | Integrated final workflow | Venkat checklist/demo; full numbers after E2–E5 |
+| ID | Experiment | Evidence |
+|----|------------|----------|
+| E1 | Baseline simple prompt | `evidence/baseline/` |
+| E2 | ≥4 prompt variants | `evidence/prompts_decoding/` |
+| E3 | Greedy + temperature + top-k/top-p | `evidence/prompts_decoding/` |
+| E4 | Structured JSON + validation | `evidence/structured_tools/` |
+| E5 | ≥1 tool/function | `evidence/structured_tools/` |
+| E6 | ≥3 failure cases | `evidence/evaluation/` |
+| E7 | Integrated final workflow | `evidence/evaluation/` + `demo/` |
 
 ## Quick start
 

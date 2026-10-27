@@ -1,4 +1,4 @@
-# Fixed evaluation and example subsets (Member 1)
+# Fixed evaluation and example subsets (Baseline)
 
 Seed: **42**. All prompt/decoding comparisons must use these rows.
 
@@ -12,4 +12,4 @@ Seed: **42**. All prompt/decoding comparisons must use these rows.
 | `intent_names.json` | 77 | Canonical label order |
 | `class_counts.csv` | — | Per-intent counts after cleaning |
 
-Do not tune prompts on the official test pilot. Full audit: `evidence/member1/data_audit.json`.
+Do not tune prompts on the official test pilot. Full audit: `evidence/baseline/data_audit.json`.

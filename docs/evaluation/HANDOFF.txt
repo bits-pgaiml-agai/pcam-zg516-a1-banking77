@@ -1,23 +1,22 @@
-MEMBER 4 HANDOFF
-Owner: Venkata Srinivasa Rao Tunuguntla
+Evaluation HANDOFF
 Track: Architecture + adaptation + evaluation/failures (E6) + E7 integration + report sections 4,5,9,11-13
 
 WHAT IS INCLUDED
-- reports/BANKING77_Member4_Report_Sections_4_5_9_11_12_13.md
-- evidence/member4/eval_rubric.json
-- evidence/member4/E6_failure_analysis.csv (F1-F3 observed from E1; F4-F6 designed controls)
-- evidence/member4/E7_integration_checklist.md
+- reports/BANKING77_Report_Sections_4_5_9_11_12_13_Architecture_Eval.md
+- evidence/evaluation/eval_rubric.json
+- evidence/evaluation/E6_failure_analysis.csv (F1-F3 observed from E1; F4-F6 designed controls)
+- evidence/evaluation/E7_integration_checklist.md
 - demo/E7_demo_script.md
-- docs/member4/ARCHITECTURE.md
+- docs/evaluation/ARCHITECTURE.md
 
 DEPENDENCIES
-- Member 1 evidence under evidence/member1/ (used for F1-F3)
+- Baseline evidence under evidence/baseline/ (used for F1-F3)
 - E2/E3 tables from Bhavani and E4/E5 runs from Nisha to complete quantitative "improved vs baseline" rows
 - One Colab GPU dry-run recommended before the graded demo
 
 HOW TO REVIEW
 1. Read the report markdown sections 4,5,9,11-13.
-2. Open E6_failure_analysis.csv and confirm F1-F3 match Member 1 outputs.
+2. Open E6_failure_analysis.csv and confirm F1-F3 match Baseline outputs.
 3. Walk E7_integration_checklist.md against the notebook flags.
 4. Skim the 8-10 minute demo script for speaking parts.
 

@@ -1,4 +1,4 @@
-"""Member 2 runner: E2 prompt comparison + E3 decoding study."""
+"""E2/E3 runner: E2 prompt comparison + E3 decoding study."""
 
 from __future__ import annotations
 
@@ -18,15 +18,15 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, set_seed
 
 ROOT = Path(__file__).resolve().parents[1]
 EVAL_DIR = ROOT / "data" / "eval"
-OUT_DIR = ROOT / "evidence" / "member2"
+OUT_DIR = ROOT / "evidence" / "prompts_decoding"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 SEED = 42
 MODEL_ID = "Qwen/Qwen2.5-1.5B-Instruct"
 MODEL_REVISION = "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
 MAX_NEW_TOKENS = 160
-E2_N = int(os.environ.get("MEMBER2_E2_N", "10"))
-E3_N = int(os.environ.get("MEMBER2_E3_N", "3"))
+E2_N = int(os.environ.get("E2_N", "10"))
+E3_N = int(os.environ.get("E3_N", "3"))
 
 random.seed(SEED)
 np.random.seed(SEED)

@@ -37,8 +37,12 @@ wandb/
 mlruns/
 
 # Regenerated Colab run folders at repo root (tracked evidence lives under evidence/)
-/banking77_member1_outputs/
-/banking77_member1_outputs.zip
+/banking77_baseline_outputs/
+/banking77_baseline_outputs.zip
+/banking77_prompts_decoding_outputs/
+/banking77_prompts_decoding_outputs.zip
+/banking77_structured_tools_outputs/
+/banking77_structured_tools_outputs.zip
 
 *.log
 .cache/

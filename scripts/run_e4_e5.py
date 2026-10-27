@@ -1,4 +1,4 @@
-"""Member 3 runner: E4 structured-output validation + E5 tool calling."""
+"""E4/E5 runner: E4 structured-output validation + E5 tool calling."""
 
 from __future__ import annotations
 
@@ -11,15 +11,15 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "evidence" / "member3"
+OUT = ROOT / "evidence" / "structured_tools"
 OUT.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "src"))
 
-from run_member2_e2_e3 import build_messages, validate_output, intent_names  # noqa: E402
+from run_e2_e3 import build_messages, validate_output, intent_names  # noqa: E402
 from tools import TOOL_NAME, dispatch_tool, transaction_status_lookup  # noqa: E402
 
-OLLAMA_MODEL = os.environ.get("MEMBER3_OLLAMA_MODEL", "qwen2.5:3b")
+OLLAMA_MODEL = os.environ.get("E4_OLLAMA_MODEL", "qwen2.5:3b")
 OLLAMA_URL = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434") + "/api/chat"
 
 
@@ -117,8 +117,8 @@ def run_e4():
         },
     ]
 
-    # Re-validate a few real Member 2 generations for continuity.
-    m2 = ROOT / "evidence" / "member2" / "E2_constraint_based.jsonl"
+    # Re-validate a few real Prompt/decoding generations for continuity.
+    m2 = ROOT / "evidence" / "prompts_decoding" / "E2_constraint_based.jsonl"
     if m2.exists():
         for i, line in enumerate(m2.read_text(encoding="utf-8").splitlines()[:3]):
             obj = json.loads(line)
@@ -245,7 +245,7 @@ def run_e5_llm_integrated():
 
 def main():
     env = {
-        "runtime": "member3_e4_e5",
+        "runtime": "e4_e5",
         "ollama_model": OLLAMA_MODEL,
         "intent_count": len(intent_names),
         "tool": TOOL_NAME,

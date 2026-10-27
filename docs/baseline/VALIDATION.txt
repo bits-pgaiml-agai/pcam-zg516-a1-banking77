@@ -1,4 +1,4 @@
-Member 1 validation record
+Baseline validation record
 
 Passed: notebook format and code syntax; execution of every default Python cell;
 77-example pool and two 40-row subsets; four in-prompt examples from training;
