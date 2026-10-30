@@ -22,10 +22,8 @@ See [TEAM.md](TEAM.md). Group 15.
 
 - Baseline notes: [docs/baseline/HANDOFF.txt](docs/baseline/HANDOFF.txt)  
 - Evaluation notes: [docs/evaluation/HANDOFF.txt](docs/evaluation/HANDOFF.txt)  
-- Report §§2, 3, 6: [reports/BANKING77_Report_Sections_2_3_6_Problem_Dataset_Baseline.docx](reports/BANKING77_Report_Sections_2_3_6_Problem_Dataset_Baseline.docx)  
-- Report §§4, 5, 9, 11–13: [reports/BANKING77_Report_Sections_4_5_9_11_12_13_Architecture_Eval.md](reports/BANKING77_Report_Sections_4_5_9_11_12_13_Architecture_Eval.md)  
-- Report §§7–8: [reports/BANKING77_Report_Sections_7_8_Prompts_Decoding.md](reports/BANKING77_Report_Sections_7_8_Prompts_Decoding.md)  
-- Report §10: [reports/BANKING77_Report_Section_10_Structured_Tools.md](reports/BANKING77_Report_Section_10_Structured_Tools.md)  
+- **Merged technical report:** [reports/BANKING77_Group15_Technical_Report.docx](reports/BANKING77_Group15_Technical_Report.docx)  
+- Source sections: [reports/BANKING77_Report_Sections_2_3_6_Problem_Dataset_Baseline.docx](reports/BANKING77_Report_Sections_2_3_6_Problem_Dataset_Baseline.docx), [§§4–5,9,11–13](reports/BANKING77_Report_Sections_4_5_9_11_12_13_Architecture_Eval.md), [§§7–8](reports/BANKING77_Report_Sections_7_8_Prompts_Decoding.md), [§10](reports/BANKING77_Report_Section_10_Structured_Tools.md)  
 - Demo script: [demo/E7_demo_script.md](demo/E7_demo_script.md)  
 - Local Ollama 1.5b-instruct vs 3b comparison (notes only): [docs/MODEL_COMPARISON_OLLAMA.md](docs/MODEL_COMPARISON_OLLAMA.md)
 
