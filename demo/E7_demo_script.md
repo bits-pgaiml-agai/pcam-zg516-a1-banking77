@@ -3,15 +3,14 @@
 **Project:** BANKING77 banking assistant (Group 15)  
 **Runtime:** Colab T4 · notebook `BANKING77_GenAI_Assistant.ipynb`
 
-| Min | Segment | Content |
-|-----|---------|---------|
-| 0:00–0:45 | Intro | Problem: intent + safe reply + optional mock tool; not a real bank |
-| 0:45–2:00 | Baseline | Dataset prep, seed 42, pilots, model pin, E1 0/3 schema |
-| 2:00–3:30 | Prompts/decoding | E2 prompt table + E3 greedy vs sample |
-| 3:30–5:00 | Structured tools | Schema validation + `transaction_status_lookup` demo |
-| 5:00–7:30 | Evaluation | Architecture; prompting vs RAG vs PEFT; E6 failures; four metrics |
-| 7:30–9:00 | Integration | E7 walkthrough: prompt → generate → validate → tool/fallback |
-| 9:00–10:00 | Close | Limits, responsible use, Q&A |
+| Min | Segment | Speaker | Content |
+|-----|---------|---------|---------|
+| 0:00–0:45 | Intro | Any | Problem: intent + safe reply + optional mock tool; not a real bank |
+| 0:45–2:00 | Baseline | Anil | Dataset prep, seed 42, pilots, model pin, E1 0/3 schema |
+| 2:00–4:00 | Prompts/decoding | Venkat | E2 prompt table + E3 greedy vs sample |
+| 4:00–5:30 | Structured tools | Nisha | Schema validation + `transaction_status_lookup` demo |
+| 5:30–8:00 | Evaluation + E7 | Venkat | Architecture; prompting vs RAG vs PEFT; E6; metrics; integration |
+| 8:00–10:00 | Close | All | Limits, responsible use, Q&A |
 
 ## Live clicks
 

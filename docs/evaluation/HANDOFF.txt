@@ -11,7 +11,7 @@ WHAT IS INCLUDED
 
 DEPENDENCIES
 - Baseline evidence under evidence/baseline/ (used for F1-F3)
-- E2/E3 tables from Bhavani and E4/E5 runs from Nisha to complete quantitative "improved vs baseline" rows
+- E2/E3 tables (Venkat) and E4/E5 runs from Nisha to complete quantitative "improved vs baseline" rows
 - One Colab GPU dry-run recommended before the graded demo
 
 HOW TO REVIEW

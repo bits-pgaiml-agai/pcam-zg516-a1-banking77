@@ -9,9 +9,8 @@
 ## Week 1
 
 - Anil: dataset prep + E1 baseline — **delivered** (`notebooks/`, `evidence/baseline/`)
-- Bhavani: E2 prompts + E3 decoding (`RUN_TEAM_EXPERIMENTS=True`)
 - Nisha: E4 schema validation + E5 tool wiring on Anil's contracts
-- Venkat: architecture/adaptation draft + eval rubric
+- Venkat: E2 prompts + E3 decoding (`RUN_TEAM_EXPERIMENTS=True`); architecture/adaptation draft + eval rubric
 
 ## Week 2
 

@@ -2,7 +2,7 @@
 
 **Author:** Venkata Srinivasa Rao Tunuguntla  
 **Group:** 15 · PCAM\* ZG516 Applied Generative AI  
-**Scope:** Report sections 4, 5, 9, 11, 12, 13 (assignment numbering). Merge with Baseline §§2, 3, 6 and later E2–E5 evidence from Bhavani/Nisha.
+**Scope:** Report sections 4, 5, 9, 11, 12, 13 (assignment numbering). Merge with Baseline §§2, 3, 6, E2–E3 (also owned here), and E4–E5 evidence from Nisha.
 
 Evidence referenced: `evidence/baseline/` (E1 baseline) and `evidence/evaluation/` (eval rubric, E6 table, E7 checklist).
 
@@ -174,6 +174,6 @@ Additional **designed** cases for the integrated demo (validator/tool path), log
 
 ## Contribution statement
 
-I, Venkata Srinivasa Rao Tunuguntla, am responsible for generative-model/LLM architecture analysis, application architecture, adaptation decision (prompting vs RAG vs PEFT), evaluation rubric, E6 failure analysis, responsible-use/limitations write-up, E7 integration checklist and demo script, and merging these sections into the group report. I will explain this workflow in the group demonstration.
+I, Venkata Srinivasa Rao Tunuguntla, am responsible for generative-model/LLM architecture analysis, application architecture, adaptation decision (prompting vs RAG vs PEFT), evaluation rubric, E6 failure analysis, responsible-use/limitations write-up, E7 integration checklist and demo script, E2 prompt-engineering and E3 decoding experiments (reassigned within Group 15), and merging these sections into the group report. I will explain this workflow in the group demonstration.
 
 Member confirmation/signature: ____________________  Date: _______________

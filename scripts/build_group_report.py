@@ -121,11 +121,10 @@ def build():
         ["Name", "Workstream / contribution focus"],
         [
             ["Anil Kumar Reddy K", "Data prep, E1 baseline, notebook backbone (report §§2, 3, 6)"],
-            ["Takkars Bhavani", "E2 prompt engineering, E3 decoding (report §§7–8)"],
             ["Nisha Palanisamy", "E4 structured output, E5 tools, templates (report §10)"],
             [
                 "Venkata Srinivasa Rao Tunuguntla",
-                "Architecture, adaptation, E6/E7 evaluation, report merge (§§4, 5, 9, 11–14)",
+                "E2/E3 prompts & decoding (§§7–8); architecture, adaptation, E6/E7, report merge (§§4, 5, 9, 11–14)",
             ],
         ],
     )
@@ -626,22 +625,17 @@ def build():
     add_para(doc, "Member confirmation/signature: ____________________    Date: _______________")
     add_para(
         doc,
-        "Takkars Bhavani: responsible for E2 prompt-engineering experiments, E3 decoding "
-        "study, prompt experiment log, and report §§7–8.",
-    )
-    add_para(doc, "Member confirmation/signature: ____________________    Date: _______________")
-    add_para(
-        doc,
         "Nisha Palanisamy: responsible for E4 structured JSON schema/validation, programmatic "
         "prompt templates, E5 tool schema/invocation, and report §10.",
     )
     add_para(doc, "Member confirmation/signature: ____________________    Date: _______________")
     add_para(
         doc,
-        "Venkata Srinivasa Rao Tunuguntla: responsible for generative-model/LLM architecture "
-        "analysis, application architecture, prompting vs RAG vs PEFT, evaluation rubric, E6 "
-        "failure analysis, responsible-use/limitations, E7 integration/demo, conclusion, and "
-        "merging the group report (§§4, 5, 9, 11–14).",
+        "Venkata Srinivasa Rao Tunuguntla: responsible for E2 prompt-engineering experiments "
+        "and E3 decoding study (report §§7–8); generative-model/LLM architecture analysis; "
+        "application architecture; prompting vs RAG vs PEFT; evaluation rubric; E6 failure "
+        "analysis; responsible-use/limitations; E7 integration/demo; conclusion; and merging "
+        "the group report (§§4, 5, 9, 11–14).",
     )
     add_para(doc, "Member confirmation/signature: ____________________    Date: _______________")
 

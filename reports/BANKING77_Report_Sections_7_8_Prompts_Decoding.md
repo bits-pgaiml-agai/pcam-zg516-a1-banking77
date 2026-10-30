@@ -1,6 +1,6 @@
 # BANKING77 Report Sections
 
-**Author:** Takkars Bhavani (Group 15) · executed with team support  
+**Author:** Venkata Srinivasa Rao Tunuguntla (Group 15)  
 **Scope:** Assignment report §§7–8 (prompt engineering + decoding)  
 **Evidence:** `evidence/prompts_decoding/`
 
@@ -84,6 +84,6 @@ Files: `E3_decoding.csv`, `E3_decoding_summary.csv`, `E3_summary.json`.
 
 ## Contribution statement
 
-I, Takkars Bhavani, am responsible for prompt-engineering experiments (E2: ≥4 variants with comparison table), decoding study (E3: greedy vs temperature + top-k/top-p), the prompt experiment log, and report sections 7–8. I will explain these experiments in the group demonstration.
+I, Venkata Srinivasa Rao Tunuguntla, am responsible for prompt-engineering experiments (E2: ≥4 variants with comparison table), decoding study (E3: greedy vs temperature + top-k/top-p), the prompt experiment log, and report sections 7–8 (in addition to architecture/evaluation sections listed elsewhere). I will explain these experiments in the group demonstration.
 
 Member confirmation/signature: ____________________  Date: _______________

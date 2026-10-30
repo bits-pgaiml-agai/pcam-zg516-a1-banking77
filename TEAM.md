@@ -5,9 +5,8 @@ Contribution tracking for the final statement (not used as folder/report labels)
 | Name | Workstream |
 |------|------------|
 | Anil Kumar Reddy K | Data prep, E1 baseline, notebook backbone |
-| Takkars Bhavani | E2 prompt engineering, E3 decoding study |
 | Nisha Palanisamy | E4 structured output, E5 tool calling, prompt templates |
-| Venkata Srinivasa Rao Tunuguntla | Architecture/adaptation, E6/E7 evaluation, report merge support |
+| Venkata Srinivasa Rao Tunuguntla | E2 prompt engineering, E3 decoding study; architecture/adaptation; E6/E7 evaluation; report merge |
 
 ## Shared contracts
 
