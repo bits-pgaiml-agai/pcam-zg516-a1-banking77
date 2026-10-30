@@ -63,9 +63,10 @@ Open:
 
 1. `evidence/prompts_decoding/E2_prompt_comparison.csv` or `E2_summary.json`  
    - Four variants, n=10; best **zero_shot** JSON **0.60**, intent **0.10**  
-2. `E3_decoding_summary.csv` / `E3_summary.json`  
+2. Optional: `prompts/ACTUAL_PROMPTS_E2.md` or one `prompts/sample_rendered_*.json` — show the exact Task line / few-shot block  
+3. `E3_decoding_summary.csv` / `E3_summary.json`  
    - Prefer **greedy** for structured JSON  
-3. Optional one line: `docs/MODEL_COMPARISON_OLLAMA.md` (3b stronger; we standardize on 1.5b-instruct)
+4. Optional one line: `docs/MODEL_COMPARISON_OLLAMA.md` (3b stronger; we standardize on 1.5b-instruct)
 
 ### 4:15–5:45 — Nisha (E4 + E5)
 

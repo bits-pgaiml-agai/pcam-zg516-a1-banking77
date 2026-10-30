@@ -37,7 +37,7 @@ pcam-zg516-a1-banking77/
 │   └── eval/                  # Frozen subsets (seed 42)
 ├── schemas/                   # Response + tool JSON contracts
 ├── src/                       # tools.py, prompt_template.py
-├── prompts/                   # E2 variant notes + Jinja template
+├── prompts/                   # E2 variant notes, exact rendered prompts, Jinja template
 ├── scripts/                   # Batch runners (E2–E5, report builders)
 ├── evidence/
 │   ├── baseline/              # E1 results
@@ -152,6 +152,8 @@ Details and more commands: [docs/RUN_AND_VERIFY.md](docs/RUN_AND_VERIFY.md).
 ## Key documents
 
 - [docs/RUN_AND_VERIFY.md](docs/RUN_AND_VERIFY.md) — **run + verify**  
+- [prompts/ACTUAL_PROMPTS_E2.md](prompts/ACTUAL_PROMPTS_E2.md) — **exact E2 prompts** sent to the LLM (+ `sample_rendered_*.json`)  
+- [prompts/E2_prompt_variants.md](prompts/E2_prompt_variants.md) — short variant design table  
 - [reports/BANKING77_Group15_Technical_Report.docx](reports/BANKING77_Group15_Technical_Report.docx) — merged report  
 - [docs/MODEL_COMPARISON_OLLAMA.md](docs/MODEL_COMPARISON_OLLAMA.md) — 1.5b-instruct vs exploratory 3b  
 - [demo/HOW_TO_PRESENT_DEMO.md](demo/HOW_TO_PRESENT_DEMO.md) — how to present  

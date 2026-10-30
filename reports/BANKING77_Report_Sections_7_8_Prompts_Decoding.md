@@ -50,7 +50,8 @@ Baseline E1 (Baseline) used a simpler `baseline` prompt and scored **0/3** schem
 
 For this **`qwen2.5:1.5b-instruct`** evidence pack, lock **`zero_shot`** (best by JSON then intent). Keep constraint/few-shot wording available for Colab HF re-runs, where longer instructions may behave differently.
 
-Files: `E2_prompt_comparison.csv`, `E2_*.csv`, `E2_summary.json`.
+Files: `E2_prompt_comparison.csv`, `E2_*.csv`, `E2_summary.json`.  
+Exact prompts sent to the model: `prompts/ACTUAL_PROMPTS_E2.md` and `prompts/sample_rendered_*.json`.
 
 ---
 

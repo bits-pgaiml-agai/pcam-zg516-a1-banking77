@@ -667,6 +667,12 @@ def build():
             ["constraint_based", "Emphasize bare JSON, exact keys/types, exact label copy"],
         ],
     )
+    add_para(
+        doc,
+        "Exact system/user messages sent to the LLM are archived in "
+        "prompts/ACTUAL_PROMPTS_E2.md and prompts/sample_rendered_*.json "
+        "(full 77-label list included in each rendered sample).",
+    )
     add_heading(doc, "B. Response schema (excerpt)", 2)
     add_para(
         doc,

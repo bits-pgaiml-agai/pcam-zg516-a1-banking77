@@ -31,7 +31,9 @@ pcam-zg516-a1-banking77/
 │   └── prompt_template.py    # Programmatic prompt rendering
 │
 ├── prompts/
-│   ├── E2_prompt_variants.md
+│   ├── E2_prompt_variants.md          # short design table
+│   ├── ACTUAL_PROMPTS_E2.md           # exact system/user prompts per variant
+│   ├── sample_rendered_*.json         # full rendered chats (77 labels included)
 │   └── assistant_template.jinja2
 │
 ├── scripts/
@@ -167,6 +169,8 @@ Open the files below. You should see the stated checks without re-running.
 | `evidence/prompts_decoding/E2_summary.json` | Four variants; best by JSON then intent = `zero_shot` |
 | `evidence/prompts_decoding/E2_prompt_comparison.csv` | Table of rates |
 | `evidence/prompts_decoding/environment.json` | `ollama_model`: `qwen2.5:1.5b-instruct` |
+| `prompts/ACTUAL_PROMPTS_E2.md` | Exact Task lines + shared OUTPUT_RULES for each variant |
+| `prompts/sample_rendered_*.json` | Full messages that were sent (system + user, 77 labels) |
 
 **Primary local numbers (n=10):** zero_shot JSON valid **0.60**, validated intent **0.10**.
 
