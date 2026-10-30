@@ -1,71 +1,81 @@
 source_id,text,gold_intent,predicted_intent,json_valid,intent_correct,response,raw_output,validation_errors,latency_seconds,variant
-train_03211,What I topped up was reverted by the app.,top_up_reverted,top_up_reverted,False,False,I understand your transaction was reverted. Please provide the transaction ID so we can investigate further.,"{
+train_03211,What I topped up was reverted by the app.,top_up_reverted,top_up_reverted,True,True,"I'm sorry to hear that your top-up was reverted. Please check your account for any errors or issues that may have caused this. If you're still experiencing problems, please contact our customer service for further assistance.","{
   ""intent"": ""top_up_reverted"",
-  ""response"": ""I understand your transaction was reverted. Please provide the transaction ID so we can investigate further."",
-  ""action_required"": true,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,28.977,zero_shot
-train_04404,Why can't I use a disposable card?,disposable_card_limits,get_disposable_virtual_card,True,False,Disposable cards are available for certain transactions and may not be accepted everywhere. Please check with your issuing bank for more information.,"{
-  ""intent"": ""get_disposable_virtual_card"",
-  ""response"": ""Disposable cards are available for certain transactions and may not be accepted everywhere. Please check with your issuing bank for more information."",
+  ""response"": ""I'm sorry to hear that your top-up was reverted. Please check your account for any errors or issues that may have caused this. If you're still experiencing problems, please contact our customer service for further assistance."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",,12.443,zero_shot
-train_06274,The ATM didnt return my card!,card_swallowed,lost_or_stolen_card,False,False,I understand this is a concerning situation. Please provide your account details so we can initiate the necessary steps to locate your card.,"{
-  ""intent"": ""lost_or_stolen_card"",
-  ""response"": ""I understand this is a concerning situation. Please provide your account details so we can initiate the necessary steps to locate your card."",
-  ""action_required"": true,
+}",,16.029,zero_shot
+train_04404,Why can't I use a disposable card?,disposable_card_limits,card_not_working,True,False,"I'm sorry to hear that your disposable card isn't working. Could you please provide more details about the issue, such as the card number or the error message you're seeing? This will help us diagnose the problem more effectively.","{
+  ""intent"": ""card_not_working"",
+  ""response"": ""I'm sorry to hear that your disposable card isn't working. Could you please provide more details about the issue, such as the card number or the error message you're seeing? This will help us diagnose the problem more effectively."",
+  ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,12.034,zero_shot
-train_09114,How much does it cost to top up a US-issued card?,top_up_by_card_charge,top_up_by_card_charge,True,True,The cost to top up a US-issued card can vary. Please provide your card details for an accurate assessment.,"{
+}",,8.738,zero_shot
+train_06274,The ATM didnt return my card!,card_swallowed,card_not_working,True,False,"Thank you for contacting us. We apologize for the inconvenience. Please check if the card is still inside the ATM. If it is, please remove it and try again. If the issue persists, please contact our customer service team at [insert contact number or email]. We appreciate your patience and understanding.","{
+  ""intent"": ""card_not_working"",
+  ""response"": ""Thank you for contacting us. We apologize for the inconvenience. Please check if the card is still inside the ATM. If it is, please remove it and try again. If the issue persists, please contact our customer service team at [insert contact number or email]. We appreciate your patience and understanding."",
+  ""action_required"": false,
+  ""tool_name"": null,
+  ""tool_arguments"": {}
+}",,9.439,zero_shot
+train_09114,How much does it cost to top up a US-issued card?,top_up_by_card_charge,__INVALID__,False,False,,"```json
+{
   ""intent"": ""top_up_by_card_charge"",
-  ""response"": ""The cost to top up a US-issued card can vary. Please provide your card details for an accurate assessment."",
+  ""response"": ""The cost to top up a US-issued card is $0. Please proceed with the top-up transaction."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",,11.715,zero_shot
-train_01175,How do I auto top-up?,automatic_top_up,__INVALID__,False,False,"To set up automatic top-ups, you can contact our customer service to set it up. Alternatively, you can visit a branch or use our online banking platform to configure automatic top-ups.","{
+}
+```",JSON parse error: Unexpected text before JSON object,6.907,zero_shot
+train_01175,How do I auto top-up?,automatic_top_up,__INVALID__,False,False,"To auto top-up, please follow these steps:
+1. Go to your account dashboard.
+2. Look for the 'Top Up' or 'Auto Top Up' option.
+3. Select the amount you want to top up.
+4. Confirm the transaction.
+
+If you encounter any issues, please contact our customer service for assistance.","{
   ""intent"": ""auto_top_up"",
-  ""response"": ""To set up automatic top-ups, you can contact our customer service to set it up. Alternatively, you can visit a branch or use our online banking platform to configure automatic top-ups."",
+  ""response"": ""To auto top-up, please follow these steps:\n1. Go to your account dashboard.\n2. Look for the 'Top Up' or 'Auto Top Up' option.\n3. Select the amount you want to top up.\n4. Confirm the transaction.\n\nIf you encounter any issues, please contact our customer service for assistance."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",Intent is not one of the 77 approved labels,11.677,zero_shot
-train_05981,I've tried several times to make a payment and every time my card is declined? Could my card be locked? I don't know what to do.,declined_card_payment,pending_transfer,False,False,I understand your concern. It sounds like your card might be locked. Please provide your card details so we can check and unlock it.,"{
-  ""intent"": ""pending_transfer"",
-  ""response"": ""I understand your concern. It sounds like your card might be locked. Please provide your card details so we can check and unlock it."",
+}",Intent is not one of the 77 approved labels,11.758,zero_shot
+train_05981,I've tried several times to make a payment and every time my card is declined? Could my card be locked? I don't know what to do.,declined_card_payment,card_payment_wrong_exchange_rate,False,False,It seems like your card is being declined due to a wrong exchange rate. Please try again or contact our customer service for further assistance.,"{
+  ""intent"": ""card_payment_wrong_exchange_rate"",
+  ""response"": ""It seems like your card is being declined due to a wrong exchange rate. Please try again or contact our customer service for further assistance."",
   ""action_required"": true,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,13.384,zero_shot
-train_05010,My card didn't work at the ATM in Notting Hill. Is my card working?,declined_cash_withdrawal,atm_support,False,False,I can check the status of your card for you. Please provide your card number and I'll verify if it's working.,"{
-  ""intent"": ""atm_support"",
-  ""response"": ""I can check the status of your card for you. Please provide your card number and I'll verify if it's working."",
-  ""action_required"": true,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,12.947,zero_shot
-train_07719,Why do we need to verify top-up?,verify_top_up,verify_top_up,True,True,Verification is needed to ensure the legitimacy of the top-up transaction and to protect your account from unauthorized transactions.,"{
-  ""intent"": ""verify_top_up"",
-  ""response"": ""Verification is needed to ensure the legitimacy of the top-up transaction and to protect your account from unauthorized transactions."",
+}",A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,6.081,zero_shot
+train_05010,My card didn't work at the ATM in Notting Hill. Is my card working?,declined_cash_withdrawal,card_not_working,True,False,I'm sorry to hear that your card didn't work at the ATM in Notting Hill. Please try using your card again at another ATM or contact our customer service for further assistance.,"{
+  ""intent"": ""card_not_working"",
+  ""response"": ""I'm sorry to hear that your card didn't work at the ATM in Notting Hill. Please try using your card again at another ATM or contact our customer service for further assistance."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",,11.441,zero_shot
-train_02468,I wanted to take out $100 but I only got $20.,wrong_amount_of_cash_received,cash_withdrawal_not_recognised,True,False,"I'm sorry, there seems to be an issue with the cash withdrawal. Please provide the exact details of the transaction for further investigation.","{
+}",,5.509,zero_shot
+train_07719,Why do we need to verify top-up?,verify_top_up,verify_source_of_funds,True,False,"To ensure the legitimacy of the funds being added to your account, we need to verify the source of the funds. This helps protect your account and maintain the security of your financial information.","{
+  ""intent"": ""verify_source_of_funds"",
+  ""response"": ""To ensure the legitimacy of the funds being added to your account, we need to verify the source of the funds. This helps protect your account and maintain the security of your financial information."",
+  ""action_required"": false,
+  ""tool_name"": null,
+  ""tool_arguments"": {}
+}",,5.805,zero_shot
+train_02468,I wanted to take out $100 but I only got $20.,wrong_amount_of_cash_received,cash_withdrawal_not_recognised,True,False,I'm sorry to hear that you encountered an issue with your cash withdrawal. Please provide your transaction ID so we can investigate further.,"{
   ""intent"": ""cash_withdrawal_not_recognised"",
-  ""response"": ""I'm sorry, there seems to be an issue with the cash withdrawal. Please provide the exact details of the transaction for further investigation."",
+  ""response"": ""I'm sorry to hear that you encountered an issue with your cash withdrawal. Please provide your transaction ID so we can investigate further."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",,15.127,zero_shot
-train_03887,why and how soon do I have to have proof of identity to you?,why_verify_identity,verify_my_identity,True,False,"To verify your identity, you will need to provide proof of identity such as a government-issued ID. This process can usually be completed within a few days.","{
+}",,4.927,zero_shot
+train_03887,why and how soon do I have to have proof of identity to you?,why_verify_identity,__INVALID__,False,False,,"```json
+{
   ""intent"": ""verify_my_identity"",
-  ""response"": ""To verify your identity, you will need to provide proof of identity such as a government-issued ID. This process can usually be completed within a few days."",
-  ""action_required"": false,
-  ""tool_name"": null,
+  ""response"": ""To verify your identity, we require proof of your identity. This can include documents such as a government-issued ID, a utility bill, or a bank statement. Please provide the necessary proof as soon as possible to avoid any delays in the verification process."",
+  ""action_required"": true,
+  ""tool_name"": ""verify_my_identity"",
   ""tool_arguments"": {}
-}",,13.18,zero_shot
+}
+```",JSON parse error: Unexpected text before JSON object,7.552,zero_shot

@@ -6,7 +6,7 @@
 ## End-to-end path (must demo)
 
 1. Load pinned BANKING77 + build subsets (Baseline cells).  
-2. Build messages with chosen prompt variant (`constraint_based` recommended after E2).  
+2. Build messages with chosen prompt variant (`zero_shot` recommended after local `qwen2.5:1.5b-instruct` E2; revisit after Colab HF re-run).  
 3. Generate with chosen decoding (greedy recommended for JSON after E3).  
 4. `validate_output` — reject Markdown, unknown intents, bad tools.  
 5. If valid and `action_required`: `dispatch_tool("transaction_status_lookup", …)`.  
@@ -29,11 +29,12 @@
 - [ ] Show **refusal** on credential bait (F6).  
 - [ ] State four metrics separately (intent, schema, safety, tool).  
 
-## Blocked on teammates (fill before final recording)
+## Local evidence status (`qwen2.5:1.5b-instruct`)
 
-- [ ] E2 comparison table (Bhavani)  
-- [ ] E3 decoding table (Bhavani)  
-- [ ] E4 validated samples volume on 40-row pilot (Nisha)  
-- [ ] E5 integrated LLM→tool cell with `RUN_TEAM_EXPERIMENTS=True` (Nisha)
+- [x] E2 comparison table (`evidence/prompts_decoding/E2_summary.json`) — best: `zero_shot`  
+- [x] E3 decoding table (`E3_summary.json`) — greedy preferred  
+- [x] E4 designed validation 10/10 (`E4_summary.json`)  
+- [x] E5 direct tool + integrated LLM path (validator blocked unsafe/invalid tool call)  
+- [ ] Optional: expand E2 to full 40-row development pilot on Colab HF pin  
 
-Architecture and controls for E7 are ready; quantitative “improved vs baseline” slides wait on the items above.
+Architecture and controls for E7 are ready; use committed evidence if live GPU is unavailable.

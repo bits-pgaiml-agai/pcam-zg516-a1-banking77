@@ -1,5 +1,5 @@
 variant,rows,gold_class_coverage,intent_accuracy,intent_correct_validated,intent_macro_f1_represented_labels,json_valid_rate,mean_latency_seconds
-role_context,10,10,0.3,0.2,0.2,0.7,15.2857
-few_shot,10,10,0.4,0.3,0.26666666666666666,0.6,13.401
-constraint_based,10,10,0.3,0.3,0.1875,0.6,13.717299999999998
-zero_shot,10,10,0.3,0.2,0.1875,0.5,14.2925
+zero_shot,10,10,0.1,0.1,0.07142857142857142,0.6,8.274499999999998
+few_shot,10,10,0.1,0.1,0.07692307692307693,0.3,6.581
+role_context,10,10,0.1,0.1,0.07692307692307693,0.3,8.410499999999999
+constraint_based,10,10,0.0,0.0,0.0,0.1,9.711400000000001

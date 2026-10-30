@@ -12,24 +12,30 @@ R6_prose_before_json,False,False,True,,JSON parse error: Unexpected text before 
 {""intent"": ""activate_my_card"", ""response"": ""I can help with this request. Please use your bank's official support channel for account-specific actions."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}"
 R7_extra_keys,False,False,True,activate_my_card,Unexpected keys: confidence,"{""intent"":""activate_my_card"",""response"":""ok"",""action_required"":false,""tool_name"":null,""tool_arguments"":{},""confidence"":0.9}"
 R8_bad_txn_id,False,False,True,activate_my_card,tool_arguments.transaction_id must match TXN-DEMO-###,"{""intent"": ""activate_my_card"", ""response"": ""I can help with this request. Please use your bank's official support channel for account-specific actions."", ""action_required"": true, ""tool_name"": ""transaction_status_lookup"", ""tool_arguments"": {""transaction_id"": ""TXN-999""}}"
-M2_constraint_1_train_03211,,False,,reverted_card_payment?,A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,"{
-  ""intent"": ""reverted_card_payment?"",
-  ""response"": ""I understand your transaction was reverted. Could you please provide the transaction ID so we can investigate further?"",
+M2_constraint_1_train_03211,,False,,,JSON parse error: Unexpected text before JSON object,"```json
+{
+  ""intent"": ""top_up_reverted"",
+  ""response"": ""I'm sorry to hear that your top-up was reverted. Please check your account for any errors or issues and try again. If the problem persists, please contact our customer service for further assistance."",
   ""action_required"": true,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}"
-M2_constraint_2_train_04404,,True,,disposable_card_limits,,"{
-  ""intent"": ""disposable_card_limits"",
-  ""response"": ""Disposable cards have usage limits to ensure they are used responsibly. Please check your account for any current limits or restrictions."",
+}
+```"
+M2_constraint_2_train_04404,,False,,,JSON parse error: Unexpected text before JSON object,"```json
+{
+  ""intent"": ""why_verify_identity"",
+  ""response"": ""The disposable card is not yet activated. Please follow the activation instructions provided with the card."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}"
-M2_constraint_3_train_06274,,False,,lost_or_stolen_card,A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,"{
-  ""intent"": ""lost_or_stolen_card"",
-  ""response"": ""I understand this is a concerning situation. Please provide your account details so we can initiate the necessary steps to resolve this issue."",
-  ""action_required"": true,
+}
+```"
+M2_constraint_3_train_06274,,False,,,JSON parse error: Unexpected text before JSON object,"```json
+{
+  ""intent"": ""card_not_working"",
+  ""response"": ""Thank you for contacting us. We are currently unable to verify your identity. Please provide additional information to proceed."",
+  ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}"
+}
+```"

@@ -1,66 +1,78 @@
-source_id,customer_text,gold_intent,decoding,predicted_intent,json_valid,intent_correct,response,raw_output,validation_errors,latency_seconds
-train_09114,How much does it cost to top up a US-issued card?,top_up_by_card_charge,greedy,top_up_by_card_charge,True,True,The cost to top up a US-issued card can vary. Please provide your card details so I can check the specific charge for your account.,"{
+source_id,customer_text,gold_intent,decoding,predicted_intent,json_valid,intent_correct,response,raw_output,validation_errors,latency_seconds,prompt_variant
+train_09114,How much does it cost to top up a US-issued card?,top_up_by_card_charge,greedy,__INVALID__,False,False,,"```json
+{
   ""intent"": ""top_up_by_card_charge"",
-  ""response"": ""The cost to top up a US-issued card can vary. Please provide your card details so I can check the specific charge for your account."",
+  ""response"": ""The cost to top up a US-issued card is $0. Please proceed with the top-up transaction."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",,11.763
-train_09114,How much does it cost to top up a US-issued card?,top_up_by_card_charge,temperature_0.7_top_k_50,top_up_by_card_charge,True,True,"The cost to top up a US-issued card can vary. For a typical card, it might range from $2 to $5. Please provide your card details to proceed.","{
-  ""intent"": ""top_up_by_card_charge"",
-  ""response"": ""The cost to top up a US-issued card can vary. For a typical card, it might range from $2 to $5. Please provide your card details to proceed."",
+}
+```",JSON parse error: Unexpected text before JSON object,4.75,zero_shot
+train_09114,How much does it cost to top up a US-issued card?,top_up_by_card_charge,temperature_0.7_top_k_50,__INVALID__,False,False,,"```json
+{
+  ""intent"": ""check_card_top_up_cost"",
+  ""response"": ""The cost to top up a US-issued card varies depending on the amount you are adding to your account. Please check your account balance and top up amount to determine the exact cost."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",,13.273
-train_09114,How much does it cost to top up a US-issued card?,top_up_by_card_charge,temperature_0.7_top_p_0.9,top_up_by_card_charge,True,True,"The cost to top up a US-issued card can vary. Typically, there is a small fee for each top-up transaction. Please provide your card details to confirm the specific fee for your account.","{
-  ""intent"": ""top_up_by_card_charge"",
-  ""response"": ""The cost to top up a US-issued card can vary. Typically, there is a small fee for each top-up transaction. Please provide your card details to confirm the specific fee for your account."",
+}
+```",JSON parse error: Unexpected text before JSON object,6.234,zero_shot
+train_09114,How much does it cost to top up a US-issued card?,top_up_by_card_charge,temperature_0.7_top_p_0.9,__INVALID__,False,False,,"```json
+{
+  ""intent"": ""verify_source_of_funds"",
+  ""response"": ""The cost to top up a US-issued card is a flat fee of $1. Please ensure you have the correct amount of funds available in your account."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",,13.449
-train_03887,why and how soon do I have to have proof of identity to you?,why_verify_identity,greedy,verify_my_identity,True,False,"To verify your identity, you will need to provide proof of identity such as a government-issued ID. This can typically be done within a few days of submitting your request.","{
+}
+```",JSON parse error: Unexpected text before JSON object,5.398,zero_shot
+train_03887,why and how soon do I have to have proof of identity to you?,why_verify_identity,greedy,__INVALID__,False,False,,"```json
+{
   ""intent"": ""verify_my_identity"",
-  ""response"": ""To verify your identity, you will need to provide proof of identity such as a government-issued ID. This can typically be done within a few days of submitting your request."",
+  ""response"": ""To verify your identity, we require proof of your identity. This can include documents such as a government-issued ID, a utility bill, or a bank statement. Please provide the necessary proof as soon as possible to avoid any delays in the verification process."",
+  ""action_required"": true,
+  ""tool_name"": ""verify_my_identity"",
+  ""tool_arguments"": {}
+}
+```",JSON parse error: Unexpected text before JSON object,8.428,zero_shot
+train_03887,why and how soon do I have to have proof of identity to you?,why_verify_identity,temperature_0.7_top_k_50,__INVALID__,False,False,,"```json
+{
+  ""intent"": ""verify_my_identity"",
+  ""response"": ""We require proof of identity to proceed. Please provide the requested documentation as soon as possible."",
+  ""action_required"": true,
+  ""tool_name"": ""verify_my_identity"",
+  ""tool_arguments"": {}
+}
+```",JSON parse error: Unexpected text before JSON object,6.274,zero_shot
+train_03887,why and how soon do I have to have proof of identity to you?,why_verify_identity,temperature_0.7_top_p_0.9,__INVALID__,False,False,,"```json
+{
+  ""intent"": ""verify_my_identity"",
+  ""response"": ""You need to provide proof of identity to complete transactions and to comply with bank regulations. This can be done through various methods such as a government-issued ID, passport, or a photo ID."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",,14.024
-train_03887,why and how soon do I have to have proof of identity to you?,why_verify_identity,temperature_0.7_top_k_50,verify_my_identity,False,False,"To verify your identity, you will need to provide official documentation such as a passport or utility bill. This process should be completed within 7 days of receiving your request.","{
-  ""intent"": ""verify_my_identity"",
-  ""response"": ""To verify your identity, you will need to provide official documentation such as a passport or utility bill. This process should be completed within 7 days of receiving your request."",
-  ""action_required"": true,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,12.435
-train_03887,why and how soon do I have to have proof of identity to you?,why_verify_identity,temperature_0.7_top_p_0.9,verify_my_identity,False,False,"To verify your identity, you will need to provide proof of identity such as a government-issued ID or passport. This can typically be done within a few days after submitting your request.","{
-  ""intent"": ""verify_my_identity"",
-  ""response"": ""To verify your identity, you will need to provide proof of identity such as a government-issued ID or passport. This can typically be done within a few days after submitting your request."",
-  ""action_required"": true,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,12.659
-train_05010,My card didn't work at the ATM in Notting Hill. Is my card working?,declined_cash_withdrawal,greedy,atm_support,False,False,I can check the status of your card at the ATM. Please provide the demo transaction ID if you have one.,"{
-  ""intent"": ""atm_support"",
-  ""response"": ""I can check the status of your card at the ATM. Please provide the demo transaction ID if you have one."",
-  ""action_required"": true,
-  ""tool_name"": ""get_demo_transaction_status"",
-  ""tool_arguments"": {
-    ""transaction_id"": ""1234567890""
-  }
-}",Tool is not allowlisted; A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,15.494
-train_05010,My card didn't work at the ATM in Notting Hill. Is my card working?,declined_cash_withdrawal,temperature_0.7_top_k_50,atm_support,True,False,I can check if your card is working properly. Please provide your card number and I'll verify it.,"{
-  ""intent"": ""atm_support"",
-  ""response"": ""I can check if your card is working properly. Please provide your card number and I'll verify it."",
+}
+```",JSON parse error: Unexpected text before JSON object,8.029,zero_shot
+train_05010,My card didn't work at the ATM in Notting Hill. Is my card working?,declined_cash_withdrawal,greedy,card_not_working,True,False,I'm sorry to hear that your card didn't work at the ATM in Notting Hill. Please try using your card again at another ATM or contact our customer service for further assistance.,"{
+  ""intent"": ""card_not_working"",
+  ""response"": ""I'm sorry to hear that your card didn't work at the ATM in Notting Hill. Please try using your card again at another ATM or contact our customer service for further assistance."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",,10.978
-train_05010,My card didn't work at the ATM in Notting Hill. Is my card working?,declined_cash_withdrawal,temperature_0.7_top_p_0.9,atm_support,False,False,I will check if your card is working properly. Please provide your card number for verification.,"{
-  ""intent"": ""atm_support"",
-  ""response"": ""I will check if your card is working properly. Please provide your card number for verification."",
-  ""action_required"": true,
+}",,5.648,zero_shot
+train_05010,My card didn't work at the ATM in Notting Hill. Is my card working?,declined_cash_withdrawal,temperature_0.7_top_k_50,__INVALID__,False,False,,"```json
+{
+  ""intent"": ""card_not_working"",
+  ""response"": ""I'm sorry to hear that your card didn't work at the ATM in Notting Hill. We recommend you to contact our customer support for further assistance."",
+  ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,9.488
+}
+```",JSON parse error: Unexpected text before JSON object,5.112,zero_shot
+train_05010,My card didn't work at the ATM in Notting Hill. Is my card working?,declined_cash_withdrawal,temperature_0.7_top_p_0.9,card_not_working,True,False,I'm sorry to hear that your card didn't work at the ATM in Notting Hill. Please contact our customer service for further assistance.,"{
+  ""intent"": ""card_not_working"",
+  ""response"": ""I'm sorry to hear that your card didn't work at the ATM in Notting Hill. Please contact our customer service for further assistance."",
+  ""action_required"": false,
+  ""tool_name"": null,
+  ""tool_arguments"": {}
+}",,4.019,zero_shot

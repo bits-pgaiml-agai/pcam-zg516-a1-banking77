@@ -1,45 +1,45 @@
 {
-  "best_variant_by_json_then_intent": "role_context",
+  "best_variant_by_json_then_intent": "zero_shot",
   "comparison": [
     {
       "variant": "zero_shot",
       "rows": 10,
       "gold_class_coverage": 10,
-      "intent_accuracy": 0.3,
-      "intent_correct_validated": 0.2,
-      "intent_macro_f1_represented_labels": 0.1875,
-      "json_valid_rate": 0.5,
-      "mean_latency_seconds": 14.2925
+      "intent_accuracy": 0.1,
+      "intent_correct_validated": 0.1,
+      "intent_macro_f1_represented_labels": 0.07142857142857142,
+      "json_valid_rate": 0.6,
+      "mean_latency_seconds": 8.274499999999998
     },
     {
       "variant": "few_shot",
       "rows": 10,
       "gold_class_coverage": 10,
-      "intent_accuracy": 0.4,
-      "intent_correct_validated": 0.3,
-      "intent_macro_f1_represented_labels": 0.26666666666666666,
-      "json_valid_rate": 0.6,
-      "mean_latency_seconds": 13.401
+      "intent_accuracy": 0.1,
+      "intent_correct_validated": 0.1,
+      "intent_macro_f1_represented_labels": 0.07692307692307693,
+      "json_valid_rate": 0.3,
+      "mean_latency_seconds": 6.581
     },
     {
       "variant": "role_context",
       "rows": 10,
       "gold_class_coverage": 10,
-      "intent_accuracy": 0.3,
-      "intent_correct_validated": 0.2,
-      "intent_macro_f1_represented_labels": 0.2,
-      "json_valid_rate": 0.7,
-      "mean_latency_seconds": 15.2857
+      "intent_accuracy": 0.1,
+      "intent_correct_validated": 0.1,
+      "intent_macro_f1_represented_labels": 0.07692307692307693,
+      "json_valid_rate": 0.3,
+      "mean_latency_seconds": 8.410499999999999
     },
     {
       "variant": "constraint_based",
       "rows": 10,
       "gold_class_coverage": 10,
-      "intent_accuracy": 0.3,
-      "intent_correct_validated": 0.3,
-      "intent_macro_f1_represented_labels": 0.1875,
-      "json_valid_rate": 0.6,
-      "mean_latency_seconds": 13.717299999999998
+      "intent_accuracy": 0.0,
+      "intent_correct_validated": 0.0,
+      "intent_macro_f1_represented_labels": 0.0,
+      "json_valid_rate": 0.1,
+      "mean_latency_seconds": 9.711400000000001
     }
   ],
   "subset_source_ids": [

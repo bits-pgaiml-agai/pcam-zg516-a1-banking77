@@ -7,7 +7,9 @@
 ## Runtime note
 
 Primary group contract remains Hugging Face `Qwen/Qwen2.5-1.5B-Instruct` (Baseline).  
-This Prompt/decoding evidence run used **local Ollama `qwen2.5:3b`** because the pinned HF weights could not be downloaded reliably on the workstation. The prompt/decoding protocol matches the shared notebook. Re-run `scripts/run_e2_e3.py` on **Colab T4** with the pinned HF model before final submission if the instructor requires identical checkpoint to E1.
+This Prompt/decoding evidence run used **local Ollama `qwen2.5:1.5b-instruct`** (same family/size as the HF pin; Ollama tag `qwen2.5:1.5b` shares the same local digest). The prompt/decoding protocol matches the shared notebook. Re-run `scripts/run_e2_e3.py` on **Colab T4** with the pinned HF model before final submission if the instructor requires identical checkpoint to E1.
+
+An exploratory side-by-side with local `qwen2.5:3b` (higher schema/intent rates, different best prompt) is documented in [`docs/MODEL_COMPARISON_OLLAMA.md`](../docs/MODEL_COMPARISON_OLLAMA.md). **Primary figures in this report are 1.5b-instruct only.**
 
 ---
 
@@ -23,6 +25,7 @@ This Prompt/decoding evidence run used **local Ollama `qwen2.5:3b`** because the
 | Evaluation subset | 10 rows from `development_evaluation.csv`, seed 42 (same rows for all variants) |
 | Decoding for E2 | Greedy / temperature 0 (stable comparison) |
 | Metrics | Schema validity, validated intent correctness, intent accuracy, macro-F1 on represented labels |
+| Runtime | Ollama `qwen2.5:1.5b-instruct` |
 
 Baseline E1 (Baseline) used a simpler `baseline` prompt and scored **0/3** schema-valid on its three examples — a separate observational baseline, not part of this four-variant table.
 
@@ -30,22 +33,22 @@ Baseline E1 (Baseline) used a simpler `baseline` prompt and scored **0/3** schem
 
 | Variant | JSON valid rate | Intent correct (validated) | Intent accuracy (label string) | Mean latency (s) |
 |---------|-----------------|----------------------------|--------------------------------|------------------|
-| zero_shot | 0.50 | 0.20 | 0.30 | 14.3 |
-| few_shot | 0.60 | 0.30 | 0.40 | 13.4 |
-| role_context | **0.70** | 0.20 | 0.30 | 15.3 |
-| constraint_based | 0.60 | **0.30** | 0.30 | 13.7 |
+| **zero_shot** | **0.60** | **0.10** | **0.10** | 8.3 |
+| few_shot | 0.30 | 0.10 | 0.10 | 6.6 |
+| role_context | 0.30 | 0.10 | 0.10 | 8.4 |
+| constraint_based | 0.10 | 0.00 | 0.00 | 9.7 |
 
 **Observations**
 
-1. All improved prompts beat E1’s 0% schema acceptance on this broader sample.  
-2. **`role_context`** produced the highest schema validity (0.70).  
-3. **`few_shot`** and **`constraint_based`** tied for best validated intent correctness (0.30).  
+1. All improved prompts beat E1’s 0% schema acceptance on at least some rows; **zero_shot** was strongest on this 1.5B instruct local run (**0.60** JSON valid).  
+2. Validated intent correctness remained low (**0.10** best) — the 1.5B local model often invents labels or breaks the action/tool contract even when JSON parses.  
+3. Longer constraint / role prompts did **not** help this small local checkpoint; they reduced schema validity vs zero-shot.  
 4. Remaining failures are mostly Markdown fences, invented labels, or action/tool inconsistencies — same classes as E1 F1–F3.  
-5. n=10 covers 10 intents only; do not claim 77-class performance. Expand to the full 40-row pilot on Colab for the final report table if time allows.
+5. n=10 covers 10 intents only; do not claim 77-class performance.
 
 ### 7.3 Recommended improved prompt for later stages
 
-Prefer **`constraint_based`** (or **`few_shot` + constraint wording**) when locking the system for E4/E5/E7, because validated intent correctness matches the best rate and the instruction explicitly targets bare JSON. Keep **`role_context`** as a strong alternate when schema validity is the priority metric.
+For this **`qwen2.5:1.5b-instruct`** evidence pack, lock **`zero_shot`** (best by JSON then intent). Keep constraint/few-shot wording available for Colab HF re-runs, where longer instructions may behave differently.
 
 Files: `E2_prompt_comparison.csv`, `E2_*.csv`, `E2_summary.json`.
 
@@ -57,22 +60,22 @@ Files: `E2_prompt_comparison.csv`, `E2_*.csv`, `E2_summary.json`.
 
 | Item | Choice |
 |------|--------|
-| Prompt | `constraint_based` (fixed) |
+| Prompt | `zero_shot` (best E2 variant on this runtime) |
 | Settings | greedy (T=0); T=0.7 + top-k=50; T=0.7 + top-p=0.9 |
 | Rows | 3 utterances from the E2 subset (seed 43) |
 
-### 8.2 Results (n=3 × 3 settings, `constraint_based`)
+### 8.2 Results (n=3 × 3 settings, `zero_shot`)
 
 | Decoding | JSON valid rate | Intent correct rate | Mean latency (s) |
 |----------|-----------------|---------------------|------------------|
-| greedy (T=0) | **0.67** | 0.33 | 13.8 |
-| T=0.7 + top-k=50 | **0.67** | 0.33 | 12.2 |
-| T=0.7 + top-p=0.9 | 0.33 | 0.33 | 11.9 |
+| greedy (T=0) | **0.33** | 0.00 | 6.3 |
+| T=0.7 + top-k=50 | 0.00 | 0.00 | 5.9 |
+| T=0.7 + top-p=0.9 | **0.33** | 0.00 | 5.8 |
 
 **Observations**
 
-- Greedy and top-k sampling matched on schema validity for this tiny sample; **top-p** dropped validity to 0.33.  
-- Intent correctness stayed at 0.33 across settings (n=3 is observational only).  
+- On this tiny sample, **greedy** and **top-p** tied on schema validity (0.33); **top-k** produced no valid JSON.  
+- Intent correctness was **0** across settings (n=3 is observational only).  
 - For production-like JSON, keep **greedy** after locking the prompt; retain the sampling rows as the required decoding study.
 
 Files: `E3_decoding.csv`, `E3_decoding_summary.csv`, `E3_summary.json`.

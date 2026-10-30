@@ -19,7 +19,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from run_e2_e3 import build_messages, validate_output, intent_names  # noqa: E402
 from tools import TOOL_NAME, dispatch_tool, transaction_status_lookup  # noqa: E402
 
-OLLAMA_MODEL = os.environ.get("E4_OLLAMA_MODEL", "qwen2.5:3b")
+OLLAMA_MODEL = os.environ.get("E4_OLLAMA_MODEL", "qwen2.5:1.5b-instruct")
 OLLAMA_URL = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434") + "/api/chat"
 
 
@@ -199,8 +199,15 @@ def run_e5_direct():
 
 def run_e5_llm_integrated():
     customer = "Please check the status of transaction TXN-DEMO-001."
+    e2_summary_path = ROOT / "evidence" / "prompts_decoding" / "E2_summary.json"
+    prompt_variant = "constraint_based"
+    if e2_summary_path.exists():
+        prompt_variant = json.loads(e2_summary_path.read_text(encoding="utf-8")).get(
+            "best_variant_by_json_then_intent", prompt_variant
+        )
+    prompt_variant = os.environ.get("E5_PROMPT_VARIANT", prompt_variant)
     t0 = time.perf_counter()
-    raw = ollama_chat(build_messages(customer, variant="constraint_based", include_tool=True), temperature=0.0)
+    raw = ollama_chat(build_messages(customer, variant=prompt_variant, include_tool=True), temperature=0.0)
     item, errors = validate_output(raw)
     tool_result = None
     final_response = "I could not safely interpret that request. Please use your bank's official support channel."
@@ -229,6 +236,7 @@ def run_e5_llm_integrated():
         "customer_text": customer,
         "runtime": "ollama",
         "model": OLLAMA_MODEL,
+        "prompt_variant": prompt_variant,
         "stage1_raw": raw,
         "stage1_parsed": item,
         "validation_errors": errors,

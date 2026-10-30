@@ -65,16 +65,16 @@ Direct invocations (`E5_tool_invocations.csv`):
 | `verify_my_identity` | not allowlisted |
 | Extra arguments | rejected |
 
-**Integrated workflow**
+**Integrated workflow** (Ollama `qwen2.5:1.5b-instruct`, best E2 prompt `zero_shot`)
 
-1. Live LLM attempt (`E5_integrated_tool_demo.json`): invalid intent → validator blocked tool (safe failure).  
+1. Live LLM attempt (`E5_integrated_tool_demo.json`): model invented intent `transaction_status_lookup` (not a BANKING77 label) and set inconsistent action/tool fields → validator blocked tool (safe failure) → escalation reply.  
 2. Representative valid pipeline (`E5_representative_valid_pipeline.json`): schema-valid tool request → mock lookup → grounded demo reply (“pending”, simulation disclosed).
 
 Together these satisfy the assignment’s schema + representative tool invocation requirements and show that **invalid JSON cannot trigger tools**.
 
 ### 10.5 Runtime note
 
-Tool backend is pure Python. LLM-assisted stage used local Ollama `qwen2.5:3b` when HF weights were unavailable; official group model remains `Qwen/Qwen2.5-1.5B-Instruct` for Colab alignment.
+Tool backend is pure Python. LLM-assisted stage used local Ollama **`qwen2.5:1.5b-instruct`**; official group model remains `Qwen/Qwen2.5-1.5B-Instruct` for Colab alignment.
 
 ---
 

@@ -1,6 +1,6 @@
 {
   "runtime": "e4_e5",
-  "ollama_model": "qwen2.5:3b",
+  "ollama_model": "qwen2.5:1.5b-instruct",
   "intent_count": 77,
   "tool": "transaction_status_lookup"
 }

@@ -1,73 +1,89 @@
 source_id,text,gold_intent,predicted_intent,json_valid,intent_correct,response,raw_output,validation_errors,latency_seconds,variant
-train_03211,What I topped up was reverted by the app.,top_up_reverted,reverted_card_payment?,False,False,I understand your transaction was reverted. Could you please provide the transaction ID so we can investigate further?,"{
-  ""intent"": ""reverted_card_payment?"",
-  ""response"": ""I understand your transaction was reverted. Could you please provide the transaction ID so we can investigate further?"",
+train_03211,What I topped up was reverted by the app.,top_up_reverted,__INVALID__,False,False,,"```json
+{
+  ""intent"": ""top_up_reverted"",
+  ""response"": ""I'm sorry to hear that your top-up was reverted. Please check your account for any errors or issues and try again. If the problem persists, please contact our customer service for further assistance."",
   ""action_required"": true,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,27.71,constraint_based
-train_04404,Why can't I use a disposable card?,disposable_card_limits,disposable_card_limits,True,True,Disposable cards have usage limits to ensure they are used responsibly. Please check your account for any current limits or restrictions.,"{
-  ""intent"": ""disposable_card_limits"",
-  ""response"": ""Disposable cards have usage limits to ensure they are used responsibly. Please check your account for any current limits or restrictions."",
+}
+```",JSON parse error: Unexpected text before JSON object,15.933,constraint_based
+train_04404,Why can't I use a disposable card?,disposable_card_limits,__INVALID__,False,False,,"```json
+{
+  ""intent"": ""why_verify_identity"",
+  ""response"": ""The disposable card is not yet activated. Please follow the activation instructions provided with the card."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",,12.679,constraint_based
-train_06274,The ATM didnt return my card!,card_swallowed,lost_or_stolen_card,False,False,I understand this is a concerning situation. Please provide your account details so we can initiate the necessary steps to resolve this issue.,"{
-  ""intent"": ""lost_or_stolen_card"",
-  ""response"": ""I understand this is a concerning situation. Please provide your account details so we can initiate the necessary steps to resolve this issue."",
+}
+```",JSON parse error: Unexpected text before JSON object,5.981,constraint_based
+train_06274,The ATM didnt return my card!,card_swallowed,__INVALID__,False,False,,"```json
+{
+  ""intent"": ""card_not_working"",
+  ""response"": ""Thank you for contacting us. We are currently unable to verify your identity. Please provide additional information to proceed."",
+  ""action_required"": false,
+  ""tool_name"": null,
+  ""tool_arguments"": {}
+}
+```",JSON parse error: Unexpected text before JSON object,7.652,constraint_based
+train_09114,How much does it cost to top up a US-issued card?,top_up_by_card_charge,__INVALID__,False,False,,"```json
+{
+  ""intent"": ""balance_not_updated_after_cheque_or_cash_deposit"",
+  ""response"": ""The cost to top up a US-issued card is typically a flat fee of $5, which is applied to the card balance. This fee is not subject to additional charges or surcharges."",
+  ""action_required"": false,
+  ""tool_name"": null,
+  ""tool_arguments"": {}
+}
+```",JSON parse error: Unexpected text before JSON object,8.867,constraint_based
+train_01175,How do I auto top-up?,automatic_top_up,__INVALID__,False,False,,"```json
+{
+  ""intent"": ""automatically_top_up"",
+  ""response"": ""To automatically top up your account, please follow these steps:\n1. Log in to your account on the banking website or app.\n2. Navigate to the 'Top Up' or 'Transfer' section.\n3. Select the 'Automatically Top Up' option.\n4. Choose the amount you want to top up.\n5. Confirm the transaction.\n\nIf you encounter any issues, please contact our customer service for assistance."",
   ""action_required"": true,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,11.16,constraint_based
-train_09114,How much does it cost to top up a US-issued card?,top_up_by_card_charge,top_up_by_card_charge,True,True,The cost to top up a US-issued card can vary. Please provide your card details so I can check the specific charge for your account.,"{
-  ""intent"": ""top_up_by_card_charge"",
-  ""response"": ""The cost to top up a US-issued card can vary. Please provide your card details so I can check the specific charge for your account."",
-  ""action_required"": false,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",,10.969,constraint_based
-train_01175,How do I auto top-up?,automatic_top_up,__INVALID__,False,False,"To set up automatic top-ups, you can link your bank account or card to our system. Would you like to proceed with this setup?","{
-  ""intent"": ""top_up_by_card"",
-  ""response"": ""To set up automatic top-ups, you can link your bank account or card to our system. Would you like to proceed with this setup?"",
+}
+```",JSON parse error: Unexpected text before JSON object,13.808,constraint_based
+train_05981,I've tried several times to make a payment and every time my card is declined? Could my card be locked? I don't know what to do.,declined_card_payment,__INVALID__,False,False,,"```json
+{
+  ""intent"": ""verify_source_of_funds"",
+  ""response"": ""It seems your card might be locked. Please try the following steps to resolve the issue:\n1. Contact the bank customer service to verify your identity.\n2. Provide the bank with your account number and card details.\n3. If the issue persists, the bank may need to perform a card replacement or reissue.\n4. If you have any additional information that could help, please share it with the bank.\n\nIf you're unable to reach the bank, you can also try contacting the bank's customer service through the official website or app, or visit the nearest branch for assistance."",
   ""action_required"": true,
-  ""tool_name"": null,
+  ""tool_name"": ""verify_source_of_funds"",
   ""tool_arguments"": {}
-}",Intent is not one of the 77 approved labels; A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,10.857,constraint_based
-train_05981,I've tried several times to make a payment and every time my card is declined? Could my card be locked? I don't know what to do.,declined_card_payment,pending_card_payment,True,False,I understand your concern. Your card might be temporarily locked. Please try again later or contact customer support for assistance.,"{
-  ""intent"": ""pending_card_payment"",
-  ""response"": ""I understand your concern. Your card might be temporarily locked. Please try again later or contact customer support for assistance."",
+}
+```",JSON parse error: Unexpected text before JSON object,16.824,constraint_based
+train_05010,My card didn't work at the ATM in Notting Hill. Is my card working?,declined_cash_withdrawal,card_not_working,True,False,I'm sorry to hear that your card didn't work at the ATM in Notting Hill. Please try using your card again at another ATM or contact our customer service for further assistance.,"{
+  ""intent"": ""card_not_working"",
+  ""response"": ""I'm sorry to hear that your card didn't work at the ATM in Notting Hill. Please try using your card again at another ATM or contact our customer service for further assistance."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",,11.973,constraint_based
-train_05010,My card didn't work at the ATM in Notting Hill. Is my card working?,declined_cash_withdrawal,atm_support,False,False,I can check the status of your card at the ATM. Please provide the demo transaction ID if you have one.,"{
-  ""intent"": ""atm_support"",
-  ""response"": ""I can check the status of your card at the ATM. Please provide the demo transaction ID if you have one."",
-  ""action_required"": true,
-  ""tool_name"": ""get_demo_transaction_status"",
-  ""tool_arguments"": {
-    ""transaction_id"": ""1234567890""
-  }
-}",Tool is not allowlisted; A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,13.749,constraint_based
-train_07719,Why do we need to verify top-up?,verify_top_up,verify_top_up,True,True,Verification of top-ups is necessary to ensure the security and integrity of your account. It helps us verify the legitimacy of the transaction and prevent unauthorized access.,"{
-  ""intent"": ""verify_top_up"",
-  ""response"": ""Verification of top-ups is necessary to ensure the security and integrity of your account. It helps us verify the legitimacy of the transaction and prevent unauthorized access."",
+}",,7.0,constraint_based
+train_07719,Why do we need to verify top-up?,verify_top_up,__INVALID__,False,False,,"```json
+{
+  ""intent"": ""verify_source_of_funds"",
+  ""response"": ""To ensure the authenticity of the funds being added to your account, we need to verify the source of the funds. This helps prevent unauthorized transactions and maintain the security of your account."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",,12.211,constraint_based
-train_02468,I wanted to take out $100 but I only got $20.,wrong_amount_of_cash_received,cash_withdrawal_not_recognised,True,False,"I'm sorry, the withdrawal of $100 did not go through as expected. You received $20 instead. Please try again or contact customer support for further assistance.","{
+}
+```",JSON parse error: Unexpected text before JSON object,6.544,constraint_based
+train_02468,I wanted to take out $100 but I only got $20.,wrong_amount_of_cash_received,__INVALID__,False,False,,"```json
+{
   ""intent"": ""cash_withdrawal_not_recognised"",
-  ""response"": ""I'm sorry, the withdrawal of $100 did not go through as expected. You received $20 instead. Please try again or contact customer support for further assistance."",
+  ""response"": ""I'm sorry, it seems there was an issue with your cash withdrawal. Please try again or contact our customer service for further assistance."",
   ""action_required"": false,
   ""tool_name"": null,
   ""tool_arguments"": {}
-}",,13.54,constraint_based
-train_03887,why and how soon do I have to have proof of identity to you?,why_verify_identity,verify_my_identity,True,False,"To verify your identity, you will need to provide proof of identity such as a government-issued ID. This can typically be done within a few days of submitting your request.","{
+}
+```",JSON parse error: Unexpected text before JSON object,6.372,constraint_based
+train_03887,why and how soon do I have to have proof of identity to you?,why_verify_identity,__INVALID__,False,False,,"```json
+{
   ""intent"": ""verify_my_identity"",
-  ""response"": ""To verify your identity, you will need to provide proof of identity such as a government-issued ID. This can typically be done within a few days of submitting your request."",
-  ""action_required"": false,
-  ""tool_name"": null,
+  ""response"": ""You need to provide proof of identity to complete the verification process. This can be done through various methods such as a government-issued ID, passport, or a utility bill. The process will be completed within 24 hours."",
+  ""action_required"": true,
+  ""tool_name"": ""verify_source_of_funds"",
   ""tool_arguments"": {}
-}",,12.325,constraint_based
+}
+```",JSON parse error: Unexpected text before JSON object,8.133,constraint_based

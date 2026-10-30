@@ -1,5 +1,5 @@
 {
-  "prompt_variant": "constraint_based",
+  "prompt_variant": "zero_shot",
   "rows": [
     "train_09114",
     "train_03887",
@@ -9,23 +9,23 @@
     {
       "decoding": "greedy",
       "rows": 3,
-      "json_valid_rate": 0.6666666666666666,
-      "intent_correct_rate": 0.3333333333333333,
-      "mean_latency_seconds": 13.760333333333334
+      "json_valid_rate": 0.3333333333333333,
+      "intent_correct_rate": 0.0,
+      "mean_latency_seconds": 6.275333333333333
     },
     {
       "decoding": "temperature_0.7_top_k_50",
       "rows": 3,
-      "json_valid_rate": 0.6666666666666666,
-      "intent_correct_rate": 0.3333333333333333,
-      "mean_latency_seconds": 12.228666666666667
+      "json_valid_rate": 0.0,
+      "intent_correct_rate": 0.0,
+      "mean_latency_seconds": 5.873333333333334
     },
     {
       "decoding": "temperature_0.7_top_p_0.9",
       "rows": 3,
       "json_valid_rate": 0.3333333333333333,
-      "intent_correct_rate": 0.3333333333333333,
-      "mean_latency_seconds": 11.865333333333334
+      "intent_correct_rate": 0.0,
+      "mean_latency_seconds": 5.815333333333332
     }
   ]
 }

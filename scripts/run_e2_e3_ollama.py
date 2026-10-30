@@ -21,7 +21,7 @@ OUT_DIR = ROOT / "evidence" / "prompts_decoding"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 SEED = 42
-OLLAMA_MODEL = os.environ.get("E2_OLLAMA_MODEL", "qwen2.5:3b")
+OLLAMA_MODEL = os.environ.get("E2_OLLAMA_MODEL", "qwen2.5:1.5b-instruct")
 OLLAMA_URL = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434") + "/api/chat"
 E2_N = int(os.environ.get("E2_N", "10"))
 E3_N = int(os.environ.get("E3_N", "3"))
@@ -165,11 +165,12 @@ def main():
         ("temperature_0.7_top_k_50", {"temperature": 0.7, "top_k": 50}),
         ("temperature_0.7_top_p_0.9", {"temperature": 0.7, "top_p": 0.9}),
     ]
+    e3_prompt_variant = best_variant
     decode_records = []
     for row in decode_rows.itertuples():
         for setting_name, kwargs in decode_settings:
             t0 = time.perf_counter()
-            raw = ollama_chat(build_messages(row.text, variant="constraint_based"), **kwargs)
+            raw = ollama_chat(build_messages(row.text, variant=e3_prompt_variant), **kwargs)
             elapsed = time.perf_counter() - t0
             item, errors = validate_output(raw)
             decode_records.append(
@@ -185,6 +186,7 @@ def main():
                     "raw_output": raw,
                     "validation_errors": "; ".join(errors),
                     "latency_seconds": round(elapsed, 3),
+                    "prompt_variant": e3_prompt_variant,
                 }
             )
             print(
@@ -207,7 +209,7 @@ def main():
     (OUT_DIR / "E3_summary.json").write_text(
         json.dumps(
             {
-                "prompt_variant": "constraint_based",
+                "prompt_variant": e3_prompt_variant,
                 "rows": decode_rows["source_id"].tolist(),
                 "by_setting": e3_summary.to_dict(orient="records"),
             },

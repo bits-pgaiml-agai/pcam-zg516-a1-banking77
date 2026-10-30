@@ -1,71 +1,23 @@
 source_id,text,gold_intent,predicted_intent,json_valid,intent_correct,response,raw_output,validation_errors,latency_seconds,variant
-train_03211,What I topped up was reverted by the app.,top_up_reverted,top_up_reverted,False,False,I can assist with that. Please provide the transaction ID so I can look into it further.,"{
-  ""intent"": ""top_up_reverted"",
-  ""response"": ""I can assist with that. Please provide the transaction ID so I can look into it further."",
-  ""action_required"": true,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,29.711,few_shot
-train_04404,Why can't I use a disposable card?,disposable_card_limits,disposable_card_limits,True,True,"I can help with this request. For account-specific assistance, use your bank's official support channel.","{
-  ""intent"": ""disposable_card_limits"",
-  ""response"": ""I can help with this request. For account-specific assistance, use your bank's official support channel."",
-  ""action_required"": false,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",,9.474,few_shot
-train_06274,The ATM didnt return my card!,card_swallowed,lost_or_stolen_card,False,False,"I can assist with that. Please provide your account details so we can initiate the necessary steps to recover your card. If you prefer, we can use a mock tool to simulate the process. Would you like to proceed with the mock tool?","{
-  ""intent"": ""lost_or_stolen_card"",
-  ""response"": ""I can assist with that. Please provide your account details so we can initiate the necessary steps to recover your card. If you prefer, we can use a mock tool to simulate the process. Would you like to proceed with the mock tool?"",
-  ""action_required"": true,
-  ""tool_name"": ""get_mock_tool"",
-  ""tool_arguments"": {}
-}",Tool is not allowlisted; A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,15.308,few_shot
-train_09114,How much does it cost to top up a US-issued card?,top_up_by_card_charge,top_up_limits,True,False,"The cost to top up a US-issued card can vary. Typically, it's around $2-$5 per transaction. Would you like to proceed with a top-up?","{
-  ""intent"": ""top_up_limits"",
-  ""response"": ""The cost to top up a US-issued card can vary. Typically, it's around $2-$5 per transaction. Would you like to proceed with a top-up?"",
-  ""action_required"": false,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",,12.358,few_shot
-train_01175,How do I auto top-up?,automatic_top_up,automatic_top_up,True,True,"To set up automatic top-ups, you can usually do this through your online banking or mobile app. Would you like more information on how to do this?","{
-  ""intent"": ""automatic_top_up"",
-  ""response"": ""To set up automatic top-ups, you can usually do this through your online banking or mobile app. Would you like more information on how to do this?"",
-  ""action_required"": false,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",,10.876,few_shot
-train_05981,I've tried several times to make a payment and every time my card is declined? Could my card be locked? I don't know what to do.,declined_card_payment,card_payment_not_recognised,False,False,I can help with this request. Please provide the card number and transaction details so we can investigate further.,"{
-  ""intent"": ""card_payment_not_recognised"",
-  ""response"": ""I can help with this request. Please provide the card number and transaction details so we can investigate further."",
-  ""action_required"": true,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,11.092,few_shot
-train_05010,My card didn't work at the ATM in Notting Hill. Is my card working?,declined_cash_withdrawal,card_not_working,False,False,I can help with this request. Please provide the card number and the ATM location for further investigation.,"{
-  ""intent"": ""card_not_working"",
-  ""response"": ""I can help with this request. Please provide the card number and the ATM location for further investigation."",
-  ""action_required"": true,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,10.3,few_shot
-train_07719,Why do we need to verify top-up?,verify_top_up,top_up_limits,True,False,"Verifying top-ups helps ensure the security and integrity of your account. For account-specific assistance, use your bank's official support channel.","{
-  ""intent"": ""top_up_limits"",
-  ""response"": ""Verifying top-ups helps ensure the security and integrity of your account. For account-specific assistance, use your bank's official support channel."",
-  ""action_required"": false,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",,10.464,few_shot
-train_02468,I wanted to take out $100 but I only got $20.,wrong_amount_of_cash_received,wrong_amount_of_cash_received,True,True,"I can help with this request. For account-specific assistance, use your bank's official support channel.","{
-  ""intent"": ""wrong_amount_of_cash_received"",
-  ""response"": ""I can help with this request. For account-specific assistance, use your bank's official support channel."",
-  ""action_required"": false,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",,11.891,few_shot
-train_03887,why and how soon do I have to have proof of identity to you?,why_verify_identity,verify_my_identity,True,False,"I can help with this request. For account-specific assistance, use your bank's official support channel.","{
-  ""intent"": ""verify_my_identity"",
-  ""response"": ""I can help with this request. For account-specific assistance, use your bank's official support channel."",
-  ""action_required"": false,
-  ""tool_name"": null,
-  ""tool_arguments"": {}
-}",,12.536,few_shot
+train_03211,What I topped up was reverted by the app.,top_up_reverted,top_up_reverted,True,True,"I can help with this request. For account-specific assistance, use your bank's official support channel.","{""intent"": ""top_up_reverted"", ""response"": ""I can help with this request. For account-specific assistance, use your bank's official support channel."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}",,13.638,few_shot
+train_04404,Why can't I use a disposable card?,disposable_card_limits,__INVALID__,False,False,,"{""intent"": ""supported_cards_and_currencies"", ""response"": ""I can help with this request. For account-specific assistance, use your bank's official support channel."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}
+
+Action required: No action is needed. The customer should contact their bank for assistance.",JSON parse error: Unexpected text after JSON object,5.763,few_shot
+train_06274,The ATM didnt return my card!,card_swallowed,atm_support,True,False,"I can help with this request. For account-specific assistance, use your bank's official support channel.","{""intent"": ""atm_support"", ""response"": ""I can help with this request. For account-specific assistance, use your bank's official support channel."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}",,4.002,few_shot
+train_09114,How much does it cost to top up a US-issued card?,top_up_by_card_charge,__INVALID__,False,False,,"{""intent"": ""top_up_by_card_charge"", ""response"": ""I can help with this request. For account-specific assistance, use your bank's official support channel."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}
+
+Action required: No action is needed. The customer should contact their bank for assistance.",JSON parse error: Unexpected text after JSON object,5.699,few_shot
+train_01175,How do I auto top-up?,automatic_top_up,__INVALID__,False,False,,"{""intent"": ""automatic_top_up"", ""response"": ""I can help with this request. For account-specific assistance, use your bank's official support channel."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}
+
+Note: The customer is asking about the automatic top-up feature, which is not explicitly listed in the examples. However, the response is generic and can be applied to any automatic top-up request.",JSON parse error: Unexpected text after JSON object,7.301,few_shot
+train_05981,I've tried several times to make a payment and every time my card is declined? Could my card be locked? I don't know what to do.,declined_card_payment,compromised_card,False,False,"I can assist you with this request. For account-specific assistance, please contact your bank's customer service directly.","{""intent"": ""compromised_card"", ""response"": ""I can assist you with this request. For account-specific assistance, please contact your bank's customer service directly."", ""action_required"": true, ""tool_name"": ""verify_my_identity"", ""tool_arguments"": {""card_number"": ""1234567890123456""}}",Tool is not allowlisted; A requested action must name the allowlisted tool; tool_arguments.transaction_id must match TXN-DEMO-###,6.666,few_shot
+train_05010,My card didn't work at the ATM in Notting Hill. Is my card working?,declined_cash_withdrawal,card_not_working,True,False,"I can help with this request. For account-specific assistance, use your bank's official support channel.","{""intent"": ""card_not_working"", ""response"": ""I can help with this request. For account-specific assistance, use your bank's official support channel."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}",,4.544,few_shot
+train_07719,Why do we need to verify top-up?,verify_top_up,__INVALID__,False,False,,"{""intent"": ""verify_top_up"", ""response"": ""I can help with this request. For account-specific assistance, use your bank's official support channel."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}
+
+Action required: No action is needed. The customer should contact their bank for assistance.",JSON parse error: Unexpected text after JSON object,5.692,few_shot
+train_02468,I wanted to take out $100 but I only got $20.,wrong_amount_of_cash_received,__INVALID__,False,False,,"{""intent"": ""failed_transfer"", ""response"": ""I can help with this request. For account-specific assistance, use your bank's official support channel."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}
+
+Action required: No action is needed. The customer should contact their bank for assistance.",JSON parse error: Unexpected text after JSON object,6.232,few_shot
+train_03887,why and how soon do I have to have proof of identity to you?,why_verify_identity,__INVALID__,False,False,,"{""intent"": ""why_verify_identity"", ""response"": ""I can help with this request. For account-specific assistance, use your bank's official support channel."", ""action_required"": false, ""tool_name"": null, ""tool_arguments"": {}}
+
+Action required: No action is needed. The customer should contact their bank for assistance.",JSON parse error: Unexpected text after JSON object,6.273,few_shot

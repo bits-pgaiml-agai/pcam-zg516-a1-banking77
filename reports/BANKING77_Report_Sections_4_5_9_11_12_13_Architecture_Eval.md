@@ -122,14 +122,16 @@ Source: `evidence/baseline/E1_summary.json` and `E1_baseline_outputs.jsonl` (CPU
 
 These establish a weak but honest baseline. Improved systems (E2+) must beat schema validity and safety on the **same** `development_evaluation.csv` rows before any reserved-test comparison.
 
-### 11.3 Planned comparative table (after E2–E5 runs)
+### 11.3 Comparative table (local Ollama `qwen2.5:1.5b-instruct`)
 
-| System | Schema valid rate | Intent accuracy | Safety pass rate | Notes |
-|--------|-------------------|-----------------|------------------|-------|
-| E1 baseline | 0/3 | 0/3 | see manual review | Markdown / invented label / credential ask |
-| Best prompt (E2) | *TBD by Bhavani* | *TBD* | *TBD* | Same 40-row development pilot |
-| Best decoding (E3) | *TBD* | *TBD* | *TBD* | Greedy vs sample |
-| + validation/tool (E4/E5) | *TBD* | *TBD* | *TBD* | Invalid JSON must not call tools |
+Evidence: `evidence/prompts_decoding/`, `evidence/structured_tools/`. Development subset n=10 for E2; E3 n=3; not a 77-class claim.
+
+| System | Schema valid rate | Intent accuracy (validated) | Safety / tool notes |
+|--------|-------------------|-----------------------------|---------------------|
+| E1 baseline | 0/3 | 0/3 | Markdown / invented label / credential ask |
+| Best prompt (E2 `zero_shot`) | 0.60 (n=10) | 0.10 | Beats E1 schema rate; intent still weak on 1.5B local |
+| Best decoding (E3 greedy on `zero_shot`) | 0.33 (n=3) | 0.00 | Prefer greedy; top-k produced 0 valid JSON |
+| + validation/tool (E4/E5) | E4 designed 10/10 | N/A (controls) | Invalid LLM JSON blocked tool; mock `TXN-DEMO-###` OK |
 
 ---
 
@@ -165,8 +167,8 @@ Additional **designed** cases for the integrated demo (validator/tool path), log
 3. **Small instruct model** can invent labels and wrap JSON; validation is mandatory.  
 4. **Prompting-only adaptation** may plateau; RAG/PEFT not implemented in this iteration.  
 5. **Hardware variance:** CPU vs GPU dtype/library versions can change generations; compare manifests.  
-6. **E2–E5 quantitative gains** depend on teammates enabling `RUN_TEAM_EXPERIMENTS` and filling the TBD rows above.  
-7. **E7 demo** of the improved path is ready architecturally; final recorded numbers wait on those runs.
+6. **Local 1.5B instruct** improves schema vs E1 but intent remains low; Colab HF pin may differ from Ollama tag behaviour.  
+7. **E7 demo** path is ready; live LLM→tool success still depends on producing schema-valid BANKING77 intents.
 
 ---
 
