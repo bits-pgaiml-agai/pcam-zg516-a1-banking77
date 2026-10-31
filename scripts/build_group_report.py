@@ -518,7 +518,7 @@ def build():
     add_para(
         doc,
         "The integrated demo follows evidence/evaluation/E7_integration_checklist.md and "
-        "demo/E7_demo_script.md. In the notebook we load pinned BANKING77 subsets, build "
+        "evidence/evaluation/E7_integration_checklist.md and demo/VIDEO_LINK.txt. In the notebook we load pinned BANKING77 subsets, build "
         "messages with the locked prompt variant (zero_shot for the local 1.5b-instruct "
         "evidence pack), generate with greedy decoding, run validate_output, optionally "
         "dispatch_tool for TXN-DEMO-###, and log metrics against the rubric. The 8–10 minute "
@@ -723,7 +723,7 @@ def build():
             "E2/E3 runners: scripts/run_e2_e3.py, scripts/run_e2_e3_ollama.py",
             "E4/E5 runner: scripts/run_e4_e5.py",
             "Evidence: evidence/baseline/, evidence/prompts_decoding/, evidence/structured_tools/, evidence/evaluation/",
-            "Demo script: demo/E7_demo_script.md",
+            "Demo video: demo/VIDEO_LINK.txt",
         ],
     )
 
