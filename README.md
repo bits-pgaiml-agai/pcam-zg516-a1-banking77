@@ -5,6 +5,60 @@
 
 Banking customer-service assistant: intent understanding + safe response generation + structured JSON + simulated tool calling, using a pretrained Hugging Face causal LLM (prompting-focused; no training from scratch).
 
+---
+
+## Results for evaluators (read this first)
+
+> **Primary reported runtime:** Ollama `qwen2.5:1.5b-instruct` (aligned to HF pin `Qwen/Qwen2.5-1.5B-Instruct`) · seed **42** · simulation only  
+> **Adaptation choice:** prompting only (no fine-tuning / no RAG corpus)  
+> **Demo video:** [Google Drive](https://drive.google.com/file/d/1Dohvy0xKWXzJqEOCO_tHSFkhXZA9JHUY/view?usp=drive_link)
+
+### What we achieved (E1–E7)
+
+| Experiment | Headline result (primary 1.5b-instruct) | Where to verify |
+|------------|----------------------------------------|-----------------|
+| **E1 Baseline** | Weak baseline: **0/3** schema-valid, **0/3** intent-correct (n=3; observational only) | [E1_summary.json](evidence/baseline/E1_summary.json) |
+| **E2 Prompts** | Best variant = **`zero_shot`** → JSON valid **0.60**, validated intent **0.10** (n=10) | [E2_summary.json](evidence/prompts_decoding/E2_summary.json) |
+| **E3 Decoding** | Prefer **greedy** for structured JSON (vs temp+top-k / top-p; n=3) | [E3_summary.json](evidence/prompts_decoding/E3_summary.json) |
+| **E4 Schema** | Designed validation **10/10** | [E4_summary.json](evidence/structured_tools/E4_summary.json) |
+| **E5 Tools** | Allowlisted mock `transaction_status_lookup` (`TXN-DEMO-###`); invalid JSON **never** reaches the tool | [E5_tool_invocations.csv](evidence/structured_tools/E5_tool_invocations.csv) |
+| **E6 Failures** | ≥3 analyzed failures (fence/invented intent/unsafe ask) + designed controls | [E6_failure_analysis.csv](evidence/evaluation/E6_failure_analysis.csv) |
+| **E7 Integration** | End-to-end path: prompt → generate → validate → tool/fallback | [E7_integration_checklist.md](evidence/evaluation/E7_integration_checklist.md) |
+
+**Locked production-style choices after experiments:** prompt = **`zero_shot`**, decoding = **greedy**, then schema validation + allowlisted tool.
+
+### Comparison: `qwen2.5:1.5b-instruct` (primary) vs `qwen2.5:3b` (exploratory)
+
+Same protocol (E2 n=10, E3 n=3, seed 42). Full write-up: [docs/MODEL_COMPARISON_OLLAMA.md](docs/MODEL_COMPARISON_OLLAMA.md).
+
+**E2 — JSON valid / validated intent**
+
+| Variant | **1.5b-instruct (primary)** | 3b (exploratory) |
+|---------|-----------------------------|------------------|
+| zero_shot | **0.60 / 0.10** ← best on primary | 0.50 / 0.20 |
+| few_shot | 0.30 / 0.10 | 0.60 / 0.30 |
+| role_context | 0.30 / 0.10 | **0.70 / 0.20** ← best on 3b |
+| constraint_based | 0.10 / 0.00 | 0.60 / 0.30 |
+
+**E3 — JSON valid / intent correct**
+
+| Decoding | 1.5b-instruct (prompt=`zero_shot`) | 3b (prompt=`constraint_based`) |
+|----------|------------------------------------|--------------------------------|
+| greedy | **0.33 / 0.00** | **0.67 / 0.33** |
+| T=0.7 + top-k=50 | 0.00 / 0.00 | 0.67 / 0.33 |
+| T=0.7 + top-p=0.9 | 0.33 / 0.00 | 0.33 / 0.33 |
+
+### Conclusion (what to take away)
+
+1. **We completed the full E1–E7 assignment path** with committed evidence, a merged technical report, and a recorded demo.  
+2. **Primary figures use 1.5b-instruct** to match the official HF size/family pin — even though **3b scored higher** on schema/intent under the same design.  
+3. On the primary model, **shorter prompts win**: `zero_shot` beat few-shot / role / constraint; longer prompts helped 3b but hurt 1.5b.  
+4. **Greedy decoding** is preferred for JSON. **E4 is 10/10** and the **tool path is safe** (invalid JSON blocked).  
+5. Intent accuracy on 1.5b remains **low** (honest limit of a small prompted model on 77 labels; metrics reported separately — no inflated single “accuracy”).  
+6. System is a **simulation** only (mock `TXN-DEMO-###`); not a real banking system.
+
+---
+
 ## Quick index (clickable)
 
 | Need | Link |
