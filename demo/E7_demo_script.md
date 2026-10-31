@@ -1,7 +1,7 @@
 # 8–10 minute group demo script
 
 **Project:** BANKING77 banking assistant (Group 15)  
-**Runtime:** Colab T4 · notebook `BANKING77_GenAI_Assistant.ipynb`
+**Runtime:** Colab T4 · notebook [`BANKING77_GenAI_Assistant.ipynb`](../notebooks/BANKING77_GenAI_Assistant.ipynb)
 
 | Min | Segment | Speaker | Content |
 |-----|---------|---------|---------|
@@ -14,11 +14,11 @@
 
 ## Live clicks
 
-1. Open `evidence/baseline/E1_baseline_outputs.jsonl` — show unsafe card-number ask failure.  
+1. Open [`evidence/baseline/E1_baseline_outputs.jsonl`](../evidence/baseline/E1_baseline_outputs.jsonl) — show unsafe card-number ask failure.  
 2. Run `dispatch_tool("transaction_status_lookup", {"transaction_id": "TXN-DEMO-001"})`.  
 3. Run invalid ID `TXN-999` — show rejection.  
 4. State: “We report schema validity and safety separately from intent accuracy.”
 
 ## Backup if GPU unavailable
 
-Use committed evidence under `evidence/baseline/` and `evidence/evaluation/`; still narrate the pipeline from the architecture section.
+Use committed evidence under [`evidence/baseline/`](../evidence/baseline/) and [`evidence/evaluation/`](../evidence/evaluation/); still narrate the pipeline from the architecture section.

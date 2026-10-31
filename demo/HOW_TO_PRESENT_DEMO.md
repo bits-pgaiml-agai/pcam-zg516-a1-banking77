@@ -2,10 +2,10 @@
 
 **Project:** BANKING77 banking assistant  
 **Target length:** 8–10 minutes  
-**Speaking lines:** `Group15_Demo_Speaking_Script.docx`  
-**Repo:** https://github.com/bits-pgaiml-agai/pcam-zg516-a1-banking77  
-**Recorded video (Google Drive):** https://drive.google.com/file/d/1Dohvy0xKWXzJqEOCO_tHSFkhXZA9JHUY/view?usp=drive_link  
-(also in `demo/VIDEO_LINK.txt`)
+**Speaking lines:** [`Group15_Demo_Speaking_Script.docx`](Group15_Demo_Speaking_Script.docx)  
+**Repo:** [https://github.com/bits-pgaiml-agai/pcam-zg516-a1-banking77](https://github.com/bits-pgaiml-agai/pcam-zg516-a1-banking77)  
+**Recorded video (Google Drive):** [https://drive.google.com/file/d/1Dohvy0xKWXzJqEOCO_tHSFkhXZA9JHUY/view?usp=drive_link](https://drive.google.com/file/d/1Dohvy0xKWXzJqEOCO_tHSFkhXZA9JHUY/view?usp=drive_link)  
+(also in [`demo/VIDEO_LINK.txt`](VIDEO_LINK.txt))
 
 ---
 
@@ -19,25 +19,25 @@ Use **Google Colab** for a short live run (E1 + tool), and show **committed evid
 | **Committed evidence** (always ready) | E2/E3 tables, E4 10/10, E5 tool CSV, E6 failures | None — already in repo |
 | **Local only** | Backup if Colab fails | CPU slow; Ollama results already saved |
 
-Do **not** set `RUN_TEAM_EXPERIMENTS=True` during the live demo (full E2–E5 regen takes too long). Show those results from `evidence/`.
+Do **not** set `RUN_TEAM_EXPERIMENTS=True` during the live demo (full E2–E5 regen takes too long). Show those results from [`evidence/`](../evidence/).
 
 ---
 
 ## Before the recording (day before)
 
-1. Open repo: https://github.com/bits-pgaiml-agai/pcam-zg516-a1-banking77  
-2. Upload `notebooks/BANKING77_GenAI_Assistant.ipynb` to Google Colab  
+1. Open repo: [https://github.com/bits-pgaiml-agai/pcam-zg516-a1-banking77](https://github.com/bits-pgaiml-agai/pcam-zg516-a1-banking77)  
+2. Upload [`notebooks/BANKING77_GenAI_Assistant.ipynb`](../notebooks/BANKING77_GenAI_Assistant.ipynb) to Google Colab  
 3. **Runtime → Change runtime type → T4 GPU**  
 4. Keep flags:
    - `RUN_TEAM_EXPERIMENTS = False`
    - `RUN_FINAL_EVAL = False`
 5. Run top cells once so the model is cached (or accept using evidence if download is slow)  
 6. Keep these folders ready in a second tab / File Explorer:
-   - `evidence/baseline/`
-   - `evidence/prompts_decoding/`
-   - `evidence/structured_tools/`
-   - `evidence/evaluation/`  
-7. Rehearse from `Group15_Demo_Speaking_Script.docx`
+   - [`evidence/baseline/`](../evidence/baseline/)
+   - [`evidence/prompts_decoding/`](../evidence/prompts_decoding/)
+   - [`evidence/structured_tools/`](../evidence/structured_tools/)
+   - [`evidence/evaluation/`](../evidence/evaluation/)  
+7. Rehearse from [`Group15_Demo_Speaking_Script.docx`](Group15_Demo_Speaking_Script.docx)
 
 ---
 
@@ -56,24 +56,24 @@ Do **not** set `RUN_TEAM_EXPERIMENTS=True` during the live demo (full E2–E5 re
 2. Data/subset cells — `development_evaluation.csv` (40) vs reserved test  
 3. E1 results:
    - Live: run E1 cell if ready, **or**
-   - File: `evidence/baseline/E1_summary.json` → **0/3 schema, 0/3 intent**  
-   - File: one bad line in `E1_baseline_outputs.jsonl` (Markdown / invented label / card ask)
+   - File: [`evidence/baseline/E1_summary.json`](../evidence/baseline/E1_summary.json) → **0/3 schema, 0/3 intent**  
+   - File: one bad line in [`E1_baseline_outputs.jsonl`](../evidence/baseline/E1_baseline_outputs.jsonl) (Markdown / invented label / card ask)
 
 ### 2:15–4:15 — Venkat (E2 + E3) — evidence, not live regen
 
 Open:
 
-1. `evidence/prompts_decoding/E2_prompt_comparison.csv` or `E2_summary.json`  
+1. [`evidence/prompts_decoding/E2_prompt_comparison.csv`](../evidence/prompts_decoding/E2_prompt_comparison.csv) or [`E2_summary.json`](../evidence/prompts_decoding/E2_summary.json)  
    - Four variants, n=10; best **zero_shot** JSON **0.60**, intent **0.10**  
-2. Optional: `prompts/ACTUAL_PROMPTS_E2.md` or one `prompts/sample_rendered_*.json` — show the exact Task line / few-shot block  
-3. `E3_decoding_summary.csv` / `E3_summary.json`  
+2. Optional: [`prompts/ACTUAL_PROMPTS_E2.md`](../prompts/ACTUAL_PROMPTS_E2.md) or one `prompts/sample_rendered_*.json` — show the exact Task line / few-shot block  
+3. [`E3_decoding_summary.csv`](../evidence/prompts_decoding/E3_decoding_summary.csv) / [`E3_summary.json`](../evidence/prompts_decoding/E3_summary.json)  
    - Prefer **greedy** for structured JSON  
-4. Optional one line: `docs/MODEL_COMPARISON_OLLAMA.md` (3b stronger; we standardize on 1.5b-instruct)
+4. Optional one line: [`docs/MODEL_COMPARISON_OLLAMA.md`](../docs/MODEL_COMPARISON_OLLAMA.md) (3b stronger; we standardize on 1.5b-instruct)
 
 ### 4:15–5:45 — Nisha (E4 + E5)
 
-1. `schemas/response.schema.json` — five keys  
-2. `evidence/structured_tools/E4_summary.json` — **10/10**  
+1. [`schemas/response.schema.json`](../schemas/response.schema.json) — five keys  
+2. [`evidence/structured_tools/E4_summary.json`](../evidence/structured_tools/E4_summary.json) — **10/10**  
 3. **Live in Colab** (tool cell works without full LLM wait):
 
 ```python
@@ -81,14 +81,14 @@ dispatch_tool("transaction_status_lookup", {"transaction_id": "TXN-DEMO-001"})
 dispatch_tool("transaction_status_lookup", {"transaction_id": "TXN-999"})
 ```
 
-4. Optional: `E5_integrated_tool_demo.json` — invalid LLM JSON blocked the tool  
+4. Optional: [`E5_integrated_tool_demo.json`](../evidence/structured_tools/E5_integrated_tool_demo.json) — invalid LLM JSON blocked the tool  
 
 ### 5:45–8:30 — Venkat (architecture, E6, E7)
 
 1. Architecture: prompt → generate → validate → tool/fallback  
-2. `evidence/evaluation/E6_failure_analysis.csv` — F1, F2, F3  
+2. [`evidence/evaluation/E6_failure_analysis.csv`](../evidence/evaluation/E6_failure_analysis.csv) — F1, F2, F3  
 3. State four metrics separately: intent, schema, safety, tool  
-4. `evidence/evaluation/E7_integration_checklist.md`  
+4. [`evidence/evaluation/E7_integration_checklist.md`](../evidence/evaluation/E7_integration_checklist.md)  
 
 ### 8:30–10:00 — Close
 
@@ -123,7 +123,7 @@ python -c "from src.tools import dispatch_tool; print(dispatch_tool('transaction
 
 Share screen on the GitHub repo or submission folder and walk:
 
-`E1_summary.json` → `E2_summary.json` → `E3_summary.json` → `E4_summary.json` → `E5_tool_invocations.csv` → `E6_failure_analysis.csv`
+[`E1_summary.json`](../evidence/baseline/E1_summary.json) → [`E2_summary.json`](../evidence/prompts_decoding/E2_summary.json) → [`E3_summary.json`](../evidence/prompts_decoding/E3_summary.json) → [`E4_summary.json`](../evidence/structured_tools/E4_summary.json) → [`E5_tool_invocations.csv`](../evidence/structured_tools/E5_tool_invocations.csv) → [`E6_failure_analysis.csv`](../evidence/evaluation/E6_failure_analysis.csv)
 
 That still shows experiments and results using committed evidence.
 

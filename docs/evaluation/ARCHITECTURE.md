@@ -1,6 +1,6 @@
 # Application architecture (Evaluation)
 
-See also report §5 in `reports/BANKING77_Report_Sections_4_5_9_11_12_13_Architecture_Eval.md`.
+See also report §5 in [`reports/BANKING77_Report_Sections_4_5_9_11_12_13_Architecture_Eval.md`](../../reports/BANKING77_Report_Sections_4_5_9_11_12_13_Architecture_Eval.md).
 
 ## Design goals
 
@@ -16,7 +16,7 @@ See also report §5 in `reports/BANKING77_Report_Sections_4_5_9_11_12_13_Archite
 | Prompt | Label list + privacy rules + optional few-shot |
 | Decode | Greedy for production-like JSON; sampling for E3 study |
 | Validate | Bare JSON; exact keys; allowlisted tool |
-| Tool | `TXN-DEMO-###` pattern; mock table in `src/tools.py` |
+| Tool | `TXN-DEMO-###` pattern; mock table in [`src/tools.py`](../../src/tools.py) |
 | Eval | Separate C1–C5 metrics; development vs reserved split |
 
 ## Adaptation

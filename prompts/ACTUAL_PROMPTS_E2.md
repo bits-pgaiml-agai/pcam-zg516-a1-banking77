@@ -1,12 +1,12 @@
 # Actual prompts sent to the LLM (E2 variants)
 
-Source: `scripts/run_e2_e3.py` → `build_messages()` (same logic as Ollama runner).  
+Source: [`scripts/run_e2_e3.py`](../scripts/run_e2_e3.py) → `build_messages()` (same logic as Ollama runner).  
 Sample customer text below: `What I topped up was reverted by the app.`  
 Full rendered JSON samples: `prompts/sample_rendered_*.json`
 
 Every variant uses **two chat messages**: `system` + `user`.
 
-The user message always includes the **full comma-separated list of all 77 BANKING77 intent labels**. Below, that list is written as `[ALL_77_INTENT_LABELS]` for readability. In the real call it is expanded in full (see `data/eval/intent_names.json`).
+The user message always includes the **full comma-separated list of all 77 BANKING77 intent labels**. Below, that list is written as `[ALL_77_INTENT_LABELS]` for readability. In the real call it is expanded in full (see [`data/eval/intent_names.json`](../data/eval/intent_names.json)).
 
 ---
 
@@ -48,7 +48,7 @@ Customer request: What I topped up was reverted by the app.
 
 ## 2. few_shot
 
-**What changes:** Task line + 4 fixed training examples (`data/eval/in_prompt_examples.csv`).
+**What changes:** Task line + 4 fixed training examples ([`data/eval/in_prompt_examples.csv`](../data/eval/in_prompt_examples.csv)).
 
 ### User message
 

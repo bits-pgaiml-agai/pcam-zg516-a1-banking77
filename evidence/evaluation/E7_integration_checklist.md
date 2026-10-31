@@ -1,7 +1,7 @@
 # E7 — Integrated workflow checklist
 
 **Owner:** Venkata Srinivasa Rao Tunuguntla  
-**Notebook:** `notebooks/BANKING77_GenAI_Assistant.ipynb`
+**Notebook:** [`notebooks/BANKING77_GenAI_Assistant.ipynb`](../../notebooks/BANKING77_GenAI_Assistant.ipynb)
 
 ## End-to-end path (must demo)
 
@@ -11,7 +11,7 @@
 4. `validate_output` — reject Markdown, unknown intents, bad tools.  
 5. If valid and `action_required`: `dispatch_tool("transaction_status_lookup", …)`.  
 6. Produce final customer-facing string (grounded in mock tool result or escalation).  
-7. Log metrics against eval rubric (`eval_rubric.json`).
+7. Log metrics against eval rubric ([`eval_rubric.json`](eval_rubric.json)).
 
 ## Flags
 
@@ -31,9 +31,9 @@
 
 ## Local evidence status (`qwen2.5:1.5b-instruct`)
 
-- [x] E2 comparison table (`evidence/prompts_decoding/E2_summary.json`) — best: `zero_shot`  
-- [x] E3 decoding table (`E3_summary.json`) — greedy preferred  
-- [x] E4 designed validation 10/10 (`E4_summary.json`)  
+- [x] E2 comparison table ([`evidence/prompts_decoding/E2_summary.json`](../prompts_decoding/E2_summary.json)) — best: `zero_shot`  
+- [x] E3 decoding table ([`E3_summary.json`](../prompts_decoding/E3_summary.json)) — greedy preferred  
+- [x] E4 designed validation 10/10 ([`E4_summary.json`](../structured_tools/E4_summary.json))  
 - [x] E5 direct tool + integrated LLM path (validator blocked unsafe/invalid tool call)  
 - [ ] Optional: expand E2 to full 40-row development pilot on Colab HF pin  
 

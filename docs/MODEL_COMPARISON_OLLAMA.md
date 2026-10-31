@@ -33,4 +33,4 @@ Same protocol: BANKING77 development subset, seed 42, E2 n=10, E3 n=3, greedy fo
 4. Prefer **greedy** decoding for structured JSON on both runs.  
 5. E4 designed validation (10/10) and the mock tool backend are **model-independent**; E5 live LLM→tool success still needs schema-valid BANKING77 intents.
 
-Primary numbers: `evidence/prompts_decoding/`, `evidence/structured_tools/`, reports §§7–8 and §10.
+Primary numbers: [`evidence/prompts_decoding/`](../evidence/prompts_decoding/), [`evidence/structured_tools/`](../evidence/structured_tools/), reports §§7–8 and §10.

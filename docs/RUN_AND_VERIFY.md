@@ -1,6 +1,6 @@
 # How to run the application and verify results
 
-Group 15 · BANKING77 assistant · https://github.com/bits-pgaiml-agai/pcam-zg516-a1-banking77
+Group 15 · BANKING77 assistant · [https://github.com/bits-pgaiml-agai/pcam-zg516-a1-banking77](https://github.com/bits-pgaiml-agai/pcam-zg516-a1-banking77)
 
 This document explains **folder roles**, **how to run** the notebook/scripts, and **how to verify** each experiment (E1–E7).
 
@@ -56,13 +56,13 @@ pcam-zg516-a1-banking77/
 
 | Path | Role |
 |------|------|
-| `notebooks/` | Executable application / experiments |
-| `data/` | Inputs (raw + fixed eval slices) |
-| `schemas/` + `src/` | Contracts and tool/prompt code |
-| `scripts/` | Batch runners for E2–E5 |
-| `evidence/` | Saved outputs — **use these to verify** without re-running |
-| `reports/` | Written analysis for submission |
-| `demo/` | How to present / what to say |
+| [`notebooks/`](../notebooks/) | Executable application / experiments |
+| [`data/`](../data/) | Inputs (raw + fixed eval slices) |
+| [`schemas/`](../schemas/) + [`src/`](../src/) | Contracts and tool/prompt code |
+| [`scripts/`](../scripts/) | Batch runners for E2–E5 |
+| [`evidence/`](../evidence/) | Saved outputs — **use these to verify** without re-running |
+| [`reports/`](../reports/) | Written analysis for submission |
+| [`demo/`](../demo/) | How to present / what to say |
 
 ---
 
@@ -75,8 +75,8 @@ pcam-zg516-a1-banking77/
 | Seed | `42` |
 | JSON keys | `intent`, `response`, `action_required`, `tool_name`, `tool_arguments` |
 | Tool | `transaction_status_lookup` only; IDs `TXN-DEMO-###` |
-| Dev design set | `data/eval/development_evaluation.csv` (40 rows) |
-| Reserved test | `data/eval/official_test_pilot.csv` — **do not tune prompts on this** |
+| Dev design set | [`data/eval/development_evaluation.csv`](../data/eval/development_evaluation.csv) (40 rows) |
+| Reserved test | [`data/eval/official_test_pilot.csv`](../data/eval/official_test_pilot.csv) — **do not tune prompts on this** |
 
 ---
 
@@ -92,7 +92,7 @@ pip install -r requirements.txt
 
 ### 3.2 Option A — Google Colab (recommended for live HF model)
 
-1. Upload `notebooks/BANKING77_GenAI_Assistant.ipynb` to Colab.  
+1. Upload [`notebooks/BANKING77_GenAI_Assistant.ipynb`](../notebooks/BANKING77_GenAI_Assistant.ipynb) to Colab.  
 2. **Runtime → Change runtime type → T4 GPU**.  
 3. Run cells top to bottom.  
 4. Default flags (config cell):
@@ -138,15 +138,15 @@ Expected: `ok: True`, `status: pending`, `simulation: True`.
 
 | Experiment | How to run | Writes / shows |
 |------------|------------|----------------|
-| **E1** Baseline | Colab notebook, default flags | `evidence/baseline/` (or notebook `banking77_baseline_outputs/`) |
+| **E1** Baseline | Colab notebook, default flags | [`evidence/baseline/`](../evidence/baseline/) (or notebook `banking77_baseline_outputs/`) |
 | **E2** Prompt variants | `python scripts/run_e2_e3_ollama.py` **or** Colab with `RUN_TEAM_EXPERIMENTS=True` | `evidence/prompts_decoding/E2_*` |
 | **E3** Decoding | Same as E2 (script continues into E3) | `evidence/prompts_decoding/E3_*` |
 | **E4** Schema validation | `python scripts/run_e4_e5.py` **or** notebook E4 cells | `evidence/structured_tools/E4_*` |
-| **E5** Tool calling | Same `run_e4_e5.py` / notebook tool cells | `evidence/structured_tools/E5_*` |
-| **E6** Failures | Analysis table (manual + E1 observations) | `evidence/evaluation/E6_failure_analysis.csv` |
-| **E7** Integration | Notebook end-to-end + checklist | `evidence/evaluation/E7_integration_checklist.md`, `demo/` |
+| **E5** Tool calling | Same [`run_e4_e5.py`](../scripts/run_e4_e5.py) / notebook tool cells | `evidence/structured_tools/E5_*` |
+| **E6** Failures | Analysis table (manual + E1 observations) | [`evidence/evaluation/E6_failure_analysis.csv`](../evidence/evaluation/E6_failure_analysis.csv) |
+| **E7** Integration | Notebook end-to-end + checklist | [`evidence/evaluation/E7_integration_checklist.md`](../evidence/evaluation/E7_integration_checklist.md), [`demo/`](../demo/) |
 
-**Demo tip:** For an 8–10 minute presentation, run Colab for E1 + live `dispatch_tool`, and open committed files under `evidence/` for E2–E6. See [demo/HOW_TO_PRESENT_DEMO.md](../demo/HOW_TO_PRESENT_DEMO.md).
+**Demo tip:** For an 8–10 minute presentation, run Colab for E1 + live `dispatch_tool`, and open committed files under [`evidence/`](../evidence/) for E2–E6. See [demo/HOW_TO_PRESENT_DEMO.md](../demo/HOW_TO_PRESENT_DEMO.md).
 
 ---
 
@@ -158,18 +158,18 @@ Open the files below. You should see the stated checks without re-running.
 
 | File | What to check |
 |------|----------------|
-| `evidence/baseline/E1_summary.json` | `n=3`, `schema_valid=0`, `intent_correct=0`, `general_accuracy_claim=false` |
-| `evidence/baseline/E1_baseline_outputs.jsonl` | Three raw generations; validation errors present |
-| `evidence/baseline/environment.json` | Model / runtime recorded |
+| [`evidence/baseline/E1_summary.json`](../evidence/baseline/E1_summary.json) | `n=3`, `schema_valid=0`, `intent_correct=0`, `general_accuracy_claim=false` |
+| [`evidence/baseline/E1_baseline_outputs.jsonl`](../evidence/baseline/E1_baseline_outputs.jsonl) | Three raw generations; validation errors present |
+| [`evidence/baseline/environment.json`](../evidence/baseline/environment.json) | Model / runtime recorded |
 
 ### E2 — Prompt comparison
 
 | File | What to check |
 |------|----------------|
-| `evidence/prompts_decoding/E2_summary.json` | Four variants; best by JSON then intent = `zero_shot` |
-| `evidence/prompts_decoding/E2_prompt_comparison.csv` | Table of rates |
-| `evidence/prompts_decoding/environment.json` | `ollama_model`: `qwen2.5:1.5b-instruct` |
-| `prompts/ACTUAL_PROMPTS_E2.md` | Exact Task lines + shared OUTPUT_RULES for each variant |
+| [`evidence/prompts_decoding/E2_summary.json`](../evidence/prompts_decoding/E2_summary.json) | Four variants; best by JSON then intent = `zero_shot` |
+| [`evidence/prompts_decoding/E2_prompt_comparison.csv`](../evidence/prompts_decoding/E2_prompt_comparison.csv) | Table of rates |
+| [`evidence/prompts_decoding/environment.json`](../evidence/prompts_decoding/environment.json) | `ollama_model`: `qwen2.5:1.5b-instruct` |
+| [`prompts/ACTUAL_PROMPTS_E2.md`](../prompts/ACTUAL_PROMPTS_E2.md) | Exact Task lines + shared OUTPUT_RULES for each variant |
 | `prompts/sample_rendered_*.json` | Full messages that were sent (system + user, 77 labels) |
 
 **Primary local numbers (n=10):** zero_shot JSON valid **0.60**, validated intent **0.10**.
@@ -178,39 +178,39 @@ Open the files below. You should see the stated checks without re-running.
 
 | File | What to check |
 |------|----------------|
-| `evidence/prompts_decoding/E3_summary.json` | Prompt = `zero_shot`; greedy / top-k / top-p rows |
-| `evidence/prompts_decoding/E3_decoding_summary.csv` | Prefer greedy for structured JSON |
+| [`evidence/prompts_decoding/E3_summary.json`](../evidence/prompts_decoding/E3_summary.json) | Prompt = `zero_shot`; greedy / top-k / top-p rows |
+| [`evidence/prompts_decoding/E3_decoding_summary.csv`](../evidence/prompts_decoding/E3_decoding_summary.csv) | Prefer greedy for structured JSON |
 
 ### E4 — Structured output
 
 | File | What to check |
 |------|----------------|
-| `schemas/response.schema.json` | Five required keys |
-| `evidence/structured_tools/E4_summary.json` | `expectation_matches` = **10** of `n_designed` = **10** |
-| `evidence/structured_tools/E4_validation_cases.csv` | Accept/reject cases |
+| [`schemas/response.schema.json`](../schemas/response.schema.json) | Five required keys |
+| [`evidence/structured_tools/E4_summary.json`](../evidence/structured_tools/E4_summary.json) | `expectation_matches` = **10** of `n_designed` = **10** |
+| [`evidence/structured_tools/E4_validation_cases.csv`](../evidence/structured_tools/E4_validation_cases.csv) | Accept/reject cases |
 
 ### E5 — Tool / function
 
 | File | What to check |
 |------|----------------|
-| `src/tools.py` | Mock table + allowlist |
-| `evidence/structured_tools/E5_tool_invocations.csv` | TXN-DEMO-001 ok; bad ID / wrong tool rejected |
-| `evidence/structured_tools/E5_integrated_tool_demo.json` | Invalid LLM JSON → `tool_result` null (blocked) |
-| `evidence/structured_tools/E5_representative_valid_pipeline.json` | Valid path → mock status + simulation disclosed |
+| [`src/tools.py`](../src/tools.py) | Mock table + allowlist |
+| [`evidence/structured_tools/E5_tool_invocations.csv`](../evidence/structured_tools/E5_tool_invocations.csv) | TXN-DEMO-001 ok; bad ID / wrong tool rejected |
+| [`evidence/structured_tools/E5_integrated_tool_demo.json`](../evidence/structured_tools/E5_integrated_tool_demo.json) | Invalid LLM JSON → `tool_result` null (blocked) |
+| [`evidence/structured_tools/E5_representative_valid_pipeline.json`](../evidence/structured_tools/E5_representative_valid_pipeline.json) | Valid path → mock status + simulation disclosed |
 
 ### E6 — Failure analysis
 
 | File | What to check |
 |------|----------------|
-| `evidence/evaluation/E6_failure_analysis.csv` | At least F1–F3 (observed); F4–F6 designed controls |
+| [`evidence/evaluation/E6_failure_analysis.csv`](../evidence/evaluation/E6_failure_analysis.csv) | At least F1–F3 (observed); F4–F6 designed controls |
 
 ### E7 — Integrated workflow
 
 | File | What to check |
 |------|----------------|
-| `evidence/evaluation/E7_integration_checklist.md` | End-to-end steps + demo acceptance list |
-| `evidence/evaluation/eval_rubric.json` | Criteria C1–C5 reported separately |
-| `demo/E7_demo_script.md` | Timing / speakers |
+| [`evidence/evaluation/E7_integration_checklist.md`](../evidence/evaluation/E7_integration_checklist.md) | End-to-end steps + demo acceptance list |
+| [`evidence/evaluation/eval_rubric.json`](../evidence/evaluation/eval_rubric.json) | Criteria C1–C5 reported separately |
+| [`demo/E7_demo_script.md`](../demo/E7_demo_script.md) | Timing / speakers |
 
 ### Quick verification commands
 

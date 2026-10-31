@@ -2,12 +2,12 @@
 
 **Author:** Venkata Srinivasa Rao Tunuguntla (Group 15)  
 **Scope:** Assignment report §§7–8 (prompt engineering + decoding)  
-**Evidence:** `evidence/prompts_decoding/`
+**Evidence:** [`evidence/prompts_decoding/`](../evidence/prompts_decoding/)
 
 ## Runtime note
 
 Primary group contract remains Hugging Face `Qwen/Qwen2.5-1.5B-Instruct` (Baseline).  
-This Prompt/decoding evidence run used **local Ollama `qwen2.5:1.5b-instruct`** (same family/size as the HF pin; Ollama tag `qwen2.5:1.5b` shares the same local digest). The prompt/decoding protocol matches the shared notebook. Re-run `scripts/run_e2_e3.py` on **Colab T4** with the pinned HF model before final submission if the instructor requires identical checkpoint to E1.
+This Prompt/decoding evidence run used **local Ollama `qwen2.5:1.5b-instruct`** (same family/size as the HF pin; Ollama tag `qwen2.5:1.5b` shares the same local digest). The prompt/decoding protocol matches the shared notebook. Re-run [`scripts/run_e2_e3.py`](../scripts/run_e2_e3.py) on **Colab T4** with the pinned HF model before final submission if the instructor requires identical checkpoint to E1.
 
 An exploratory side-by-side with local `qwen2.5:3b` (higher schema/intent rates, different best prompt) is documented in [`docs/MODEL_COMPARISON_OLLAMA.md`](../docs/MODEL_COMPARISON_OLLAMA.md). **Primary figures in this report are 1.5b-instruct only.**
 
@@ -21,7 +21,7 @@ An exploratory side-by-side with local `qwen2.5:3b` (higher schema/intent rates,
 |------|--------|
 | Variants (4) | `zero_shot`, `few_shot`, `role_context`, `constraint_based` |
 | Shared rules | Exact 77-label list + JSON contract + privacy rules |
-| Few-shot | 4 fixed examples from `data/eval/in_prompt_examples.csv` |
+| Few-shot | 4 fixed examples from [`data/eval/in_prompt_examples.csv`](../data/eval/in_prompt_examples.csv) |
 | Evaluation subset | 10 rows from `development_evaluation.csv`, seed 42 (same rows for all variants) |
 | Decoding for E2 | Greedy / temperature 0 (stable comparison) |
 | Metrics | Schema validity, validated intent correctness, intent accuracy, macro-F1 on represented labels |
@@ -50,8 +50,8 @@ Baseline E1 (Baseline) used a simpler `baseline` prompt and scored **0/3** schem
 
 For this **`qwen2.5:1.5b-instruct`** evidence pack, lock **`zero_shot`** (best by JSON then intent). Keep constraint/few-shot wording available for Colab HF re-runs, where longer instructions may behave differently.
 
-Files: `E2_prompt_comparison.csv`, `E2_*.csv`, `E2_summary.json`.  
-Exact prompts sent to the model: `prompts/ACTUAL_PROMPTS_E2.md` and `prompts/sample_rendered_*.json`.
+Files: [`E2_prompt_comparison.csv`](../evidence/prompts_decoding/E2_prompt_comparison.csv), `E2_*.csv`, [`E2_summary.json`](../evidence/prompts_decoding/E2_summary.json).  
+Exact prompts sent to the model: [`prompts/ACTUAL_PROMPTS_E2.md`](../prompts/ACTUAL_PROMPTS_E2.md) and `prompts/sample_rendered_*.json`.
 
 ---
 
@@ -79,7 +79,7 @@ Exact prompts sent to the model: `prompts/ACTUAL_PROMPTS_E2.md` and `prompts/sam
 - Intent correctness was **0** across settings (n=3 is observational only).  
 - For production-like JSON, keep **greedy** after locking the prompt; retain the sampling rows as the required decoding study.
 
-Files: `E3_decoding.csv`, `E3_decoding_summary.csv`, `E3_summary.json`.
+Files: [`E3_decoding.csv`](../evidence/prompts_decoding/E3_decoding.csv), [`E3_decoding_summary.csv`](../evidence/prompts_decoding/E3_decoding_summary.csv), [`E3_summary.json`](../evidence/prompts_decoding/E3_summary.json).
 
 ---
 

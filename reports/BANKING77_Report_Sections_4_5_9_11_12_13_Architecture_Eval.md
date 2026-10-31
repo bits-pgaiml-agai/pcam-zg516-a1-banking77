@@ -4,7 +4,7 @@
 **Group:** 15 · PCAM\* ZG516 Applied Generative AI  
 **Scope:** Report sections 4, 5, 9, 11, 12, 13 (assignment numbering). Merge with Baseline §§2, 3, 6, E2–E3 (also owned here), and E4–E5 evidence from Nisha.
 
-Evidence referenced: `evidence/baseline/` (E1 baseline) and `evidence/evaluation/` (eval rubric, E6 table, E7 checklist).
+Evidence referenced: [`evidence/baseline/`](../evidence/baseline/) (E1 baseline) and [`evidence/evaluation/`](../evidence/evaluation/) (eval rubric, E6 table, E7 checklist).
 
 ---
 
@@ -74,7 +74,7 @@ Strict JSON extract + validate
 - Tool: `transaction_status_lookup` only; synthetic IDs `TXN-DEMO-###`
 - Subsets: development pilot (40) for prompt/decoding design; official test pilot (40) reserved after lock; seed 42
 
-**Modules in the repo:** notebook backbone (`notebooks/BANKING77_GenAI_Assistant.ipynb`), schemas under `schemas/`, mock tool in `src/tools.py`, fixed eval rows under `data/eval/`.
+**Modules in the repo:** notebook backbone ([`notebooks/BANKING77_GenAI_Assistant.ipynb`](../notebooks/BANKING77_GenAI_Assistant.ipynb)), schemas under [`schemas/`](../schemas/), mock tool in [`src/tools.py`](../src/tools.py), fixed eval rows under [`data/eval/`](../data/eval/).
 
 ---
 
@@ -110,7 +110,7 @@ Macro-F1 over **represented** labels only may be reported for larger pilots; a 3
 
 ### 11.2 Baseline (E1) observed results
 
-Source: `evidence/baseline/E1_summary.json` and `E1_baseline_outputs.jsonl` (CPU float32 verification run).
+Source: [`evidence/baseline/E1_summary.json`](../evidence/baseline/E1_summary.json) and [`E1_baseline_outputs.jsonl`](../evidence/baseline/E1_baseline_outputs.jsonl) (CPU float32 verification run).
 
 | Metric | Value |
 |--------|-------|
@@ -124,7 +124,7 @@ These establish a weak but honest baseline. Improved systems (E2+) must beat sch
 
 ### 11.3 Comparative table (local Ollama `qwen2.5:1.5b-instruct`)
 
-Evidence: `evidence/prompts_decoding/`, `evidence/structured_tools/`. Development subset n=10 for E2; E3 n=3; not a 77-class claim.
+Evidence: [`evidence/prompts_decoding/`](../evidence/prompts_decoding/), [`evidence/structured_tools/`](../evidence/structured_tools/). Development subset n=10 for E2; E3 n=3; not a 77-class claim.
 
 | System | Schema valid rate | Intent accuracy (validated) | Safety / tool notes |
 |--------|-------------------|-----------------------------|---------------------|
@@ -139,7 +139,7 @@ Evidence: `evidence/prompts_decoding/`, `evidence/structured_tools/`. Developmen
 
 ### 12.1 E6 — observed failure cases (≥3)
 
-Full table: `evidence/evaluation/E6_failure_analysis.csv`. Summary:
+Full table: [`evidence/evaluation/E6_failure_analysis.csv`](../evidence/evaluation/E6_failure_analysis.csv). Summary:
 
 | ID | Input (short) | Gold | Failure category | Observed issue | Mitigation |
 |----|---------------|------|------------------|----------------|------------|
@@ -156,7 +156,7 @@ Additional **designed** cases for the integrated demo (validator/tool path), log
 - Do not invent fees, eligibility, or transaction status; tool results are synthetic and must be labelled as demo.  
 - Ambiguous or high-impact requests → escalate to the bank’s official channel.  
 - Valid JSON ≠ truthful or safe reply; keep manual review in the scoring pack.  
-- Dataset is CC BY 4.0 BANKING77; retain attribution (`docs/baseline/ATTRIBUTION.txt`).
+- Dataset is CC BY 4.0 BANKING77; retain attribution ([`docs/baseline/ATTRIBUTION.txt`](../docs/baseline/ATTRIBUTION.txt)).
 
 ---
 

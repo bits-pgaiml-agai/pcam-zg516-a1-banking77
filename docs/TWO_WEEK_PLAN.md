@@ -8,7 +8,7 @@
 
 ## Week 1
 
-- Anil: dataset prep + E1 baseline — **delivered** (`notebooks/`, `evidence/baseline/`)
+- Anil: dataset prep + E1 baseline — **delivered** ([`notebooks/`](../notebooks/), [`evidence/baseline/`](../evidence/baseline/))
 - Nisha: E4 schema validation + E5 tool wiring on Anil's contracts
 - Venkat: E2 prompts + E3 decoding (`RUN_TEAM_EXPERIMENTS=True`); architecture/adaptation draft + eval rubric
 
