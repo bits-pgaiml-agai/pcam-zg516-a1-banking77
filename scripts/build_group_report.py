@@ -518,7 +518,7 @@ def build():
     add_para(
         doc,
         "The integrated demo follows evidence/evaluation/E7_integration_checklist.md and "
-        "evidence/evaluation/E7_integration_checklist.md and demo/VIDEO_LINK.txt. In the notebook we load pinned BANKING77 subsets, build "
+        "demo/VIDEO_LINK.txt. In the notebook we load pinned BANKING77 subsets, build "
         "messages with the locked prompt variant (zero_shot for the local 1.5b-instruct "
         "evidence pack), generate with greedy decoding, run validate_output, optionally "
         "dispatch_tool for TXN-DEMO-###, and log metrics against the rubric. The 8–10 minute "
