@@ -7,7 +7,7 @@ Banking customer-service assistant: intent understanding + safe response generat
 
 ---
 
-## Results for evaluators (read this first)
+## Results
 
 > **Primary reported runtime:** Ollama `qwen2.5:1.5b-instruct` (aligned to HF pin `Qwen/Qwen2.5-1.5B-Instruct`) · seed **42** · simulation only  
 > **Adaptation choice:** prompting only (no fine-tuning / no RAG corpus)  
@@ -59,7 +59,7 @@ Same protocol (E2 n=10, E3 n=3, seed 42). Full write-up: [docs/MODEL_COMPARISON_
 
 ---
 
-## Quick index (clickable)
+## Quick index
 
 | Need | Link |
 |------|------|
