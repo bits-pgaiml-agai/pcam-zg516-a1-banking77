@@ -22,7 +22,8 @@ See [TEAM.md](TEAM.md). Group 15 (3 active members).
 
 **Full guide:** [docs/RUN_AND_VERIFY.md](docs/RUN_AND_VERIFY.md) — folder meanings, how to run Colab / Ollama / tools, and how to check each experiment’s evidence files.
 
-**Demo presentation:** [demo/HOW_TO_PRESENT_DEMO.md](demo/HOW_TO_PRESENT_DEMO.md) · [demo/Group15_Demo_Speaking_Script.docx](demo/Group15_Demo_Speaking_Script.docx)
+**Demo presentation:** [demo/HOW_TO_PRESENT_DEMO.md](demo/HOW_TO_PRESENT_DEMO.md) · [demo/Group15_Demo_Speaking_Script.docx](demo/Group15_Demo_Speaking_Script.docx)  
+**Demo video (Google Drive):** https://drive.google.com/file/d/1Dohvy0xKWXzJqEOCO_tHSFkhXZA9JHUY/view?usp=drive_link · [demo/VIDEO_LINK.txt](demo/VIDEO_LINK.txt)
 
 ---
 

@@ -3,7 +3,9 @@
 **Project:** BANKING77 banking assistant  
 **Target length:** 8–10 minutes  
 **Speaking lines:** `Group15_Demo_Speaking_Script.docx`  
-**Repo:** https://github.com/bits-pgaiml-agai/pcam-zg516-a1-banking77
+**Repo:** https://github.com/bits-pgaiml-agai/pcam-zg516-a1-banking77  
+**Recorded video (Google Drive):** https://drive.google.com/file/d/1Dohvy0xKWXzJqEOCO_tHSFkhXZA9JHUY/view?usp=drive_link  
+(also in `demo/VIDEO_LINK.txt`)
 
 ---
 
