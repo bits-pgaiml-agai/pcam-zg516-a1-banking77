@@ -17,8 +17,6 @@ Banking customer-service assistant: intent understanding + safe response generat
 | Main notebook | [notebooks/BANKING77_GenAI_Assistant.ipynb](notebooks/BANKING77_GenAI_Assistant.ipynb) |
 | Exact E2 prompts | [prompts/ACTUAL_PROMPTS_E2.md](prompts/ACTUAL_PROMPTS_E2.md) |
 | Merged technical report | [reports/BANKING77_Group15_Technical_Report.docx](reports/BANKING77_Group15_Technical_Report.docx) |
-| How to present | [demo/HOW_TO_PRESENT_DEMO.md](demo/HOW_TO_PRESENT_DEMO.md) |
-| Speaking script | [demo/Group15_Demo_Speaking_Script.docx](demo/Group15_Demo_Speaking_Script.docx) |
 | Requirements | [requirements.txt](requirements.txt) |
 
 ### Evidence by experiment
@@ -31,18 +29,18 @@ Banking customer-service assistant: intent understanding + safe response generat
 | E4 | [evidence/structured_tools/E4_summary.json](evidence/structured_tools/E4_summary.json) |
 | E5 | [evidence/structured_tools/E5_tool_invocations.csv](evidence/structured_tools/E5_tool_invocations.csv) · [E5_integrated_tool_demo.json](evidence/structured_tools/E5_integrated_tool_demo.json) |
 | E6 | [evidence/evaluation/E6_failure_analysis.csv](evidence/evaluation/E6_failure_analysis.csv) |
-| E7 | [evidence/evaluation/E7_integration_checklist.md](evidence/evaluation/E7_integration_checklist.md) · [demo/E7_demo_script.md](demo/E7_demo_script.md) |
+| E7 | [evidence/evaluation/E7_integration_checklist.md](evidence/evaluation/E7_integration_checklist.md) |
 
 ### All important docs
 
 | Area | Links |
 |------|-------|
-| Docs | [RUN_AND_VERIFY.md](docs/RUN_AND_VERIFY.md) · [MODEL_COMPARISON_OLLAMA.md](docs/MODEL_COMPARISON_OLLAMA.md) · [ARCHITECTURE.md](docs/evaluation/ARCHITECTURE.md) · [TWO_WEEK_PLAN.md](docs/TWO_WEEK_PLAN.md) · [baseline/HANDOFF.txt](docs/baseline/HANDOFF.txt) · [evaluation/HANDOFF.txt](docs/evaluation/HANDOFF.txt) |
+| Docs | [RUN_AND_VERIFY.md](docs/RUN_AND_VERIFY.md) · [MODEL_COMPARISON_OLLAMA.md](docs/MODEL_COMPARISON_OLLAMA.md) · [ARCHITECTURE.md](docs/evaluation/ARCHITECTURE.md) · [baseline/HANDOFF.txt](docs/baseline/HANDOFF.txt) · [evaluation/HANDOFF.txt](docs/evaluation/HANDOFF.txt) |
 | Prompts | [ACTUAL_PROMPTS_E2.md](prompts/ACTUAL_PROMPTS_E2.md) · [E2_prompt_variants.md](prompts/E2_prompt_variants.md) · [assistant_template.jinja2](prompts/assistant_template.jinja2) · [sample_rendered_zero_shot.json](prompts/sample_rendered_zero_shot.json) · [few_shot](prompts/sample_rendered_few_shot.json) · [role_context](prompts/sample_rendered_role_context.json) · [constraint_based](prompts/sample_rendered_constraint_based.json) |
 | Schemas / code | [response.schema.json](schemas/response.schema.json) · [tool schema](schemas/tool_transaction_status_lookup.json) · [src/tools.py](src/tools.py) · [src/prompt_template.py](src/prompt_template.py) |
-| Scripts | [run_e2_e3_ollama.py](scripts/run_e2_e3_ollama.py) · [run_e2_e3.py](scripts/run_e2_e3.py) · [run_e4_e5.py](scripts/run_e4_e5.py) · [build_group_report.py](scripts/build_group_report.py) · [build_demo_speaking_script.py](scripts/build_demo_speaking_script.py) |
+| Scripts | [run_e2_e3_ollama.py](scripts/run_e2_e3_ollama.py) · [run_e2_e3.py](scripts/run_e2_e3.py) · [run_e4_e5.py](scripts/run_e4_e5.py) · [build_group_report.py](scripts/build_group_report.py) |
 | Reports | [Technical Report.docx](reports/BANKING77_Group15_Technical_Report.docx) · [§§4–5,9,11–13](reports/BANKING77_Report_Sections_4_5_9_11_12_13_Architecture_Eval.md) · [§§7–8](reports/BANKING77_Report_Sections_7_8_Prompts_Decoding.md) · [§10](reports/BANKING77_Report_Section_10_Structured_Tools.md) · [§§2,3,6.docx](reports/BANKING77_Report_Sections_2_3_6_Problem_Dataset_Baseline.docx) |
-| Demo | [HOW_TO_PRESENT_DEMO.md](demo/HOW_TO_PRESENT_DEMO.md) · [E7_demo_script.md](demo/E7_demo_script.md) · [VIDEO_LINK.txt](demo/VIDEO_LINK.txt) · [Speaking Script.docx](demo/Group15_Demo_Speaking_Script.docx) |
+| Demo | [VIDEO_LINK.txt](demo/VIDEO_LINK.txt) — [Google Drive video](https://drive.google.com/file/d/1Dohvy0xKWXzJqEOCO_tHSFkhXZA9JHUY/view?usp=drive_link) |
 | Data | [data/raw/README.md](data/raw/README.md) · [data/eval/README.md](data/eval/README.md) · [development_evaluation.csv](data/eval/development_evaluation.csv) |
 | Notebooks | [BANKING77_GenAI_Assistant.ipynb](notebooks/BANKING77_GenAI_Assistant.ipynb) · [BANKING77_E2_E3.ipynb](notebooks/BANKING77_E2_E3.ipynb) |
 
@@ -63,7 +61,6 @@ See [TEAM.md](TEAM.md). Group 15 (3 active members).
 
 **Full guide:** [docs/RUN_AND_VERIFY.md](docs/RUN_AND_VERIFY.md) — folder meanings, how to run Colab / Ollama / tools, and how to check each experiment’s evidence files.
 
-**Demo presentation:** [demo/HOW_TO_PRESENT_DEMO.md](demo/HOW_TO_PRESENT_DEMO.md) · [demo/Group15_Demo_Speaking_Script.docx](demo/Group15_Demo_Speaking_Script.docx)  
 **Demo video (Google Drive):** [watch / download](https://drive.google.com/file/d/1Dohvy0xKWXzJqEOCO_tHSFkhXZA9JHUY/view?usp=drive_link) · [demo/VIDEO_LINK.txt](demo/VIDEO_LINK.txt)
 
 ---
@@ -88,7 +85,7 @@ pcam-zg516-a1-banking77/
 │   └── evaluation/            # E6–E7 rubric, failures, checklist
 ├── reports/                   # Technical report (merged Word + sections)
 ├── docs/                      # Architecture, comparison, RUN_AND_VERIFY
-├── demo/                      # Demo timing + speaking + how-to-present
+├── demo/                      # Demo video link
 ├── requirements.txt
 ├── TEAM.md
 └── README.md
@@ -103,7 +100,7 @@ pcam-zg516-a1-banking77/
 | [evidence/](evidence/) | **Committed results — verify here first** |
 | [reports/](reports/) | Written report for submission |
 | [docs/](docs/) | Design notes + [RUN_AND_VERIFY.md](docs/RUN_AND_VERIFY.md) |
-| [demo/](demo/) | Presentation guides |
+| [demo/](demo/) | Demo video link |
 
 ---
 

@@ -6,7 +6,7 @@ WHAT IS INCLUDED
 - evidence/evaluation/eval_rubric.json
 - evidence/evaluation/E6_failure_analysis.csv (F1-F3 observed from E1; F4-F6 designed controls)
 - evidence/evaluation/E7_integration_checklist.md
-- demo/E7_demo_script.md
+- demo/VIDEO_LINK.txt
 - docs/evaluation/ARCHITECTURE.md
 
 DEPENDENCIES
@@ -18,7 +18,7 @@ HOW TO REVIEW
 1. Read the report markdown sections 4,5,9,11-13.
 2. Open E6_failure_analysis.csv and confirm F1-F3 match Baseline outputs.
 3. Walk E7_integration_checklist.md against the notebook flags.
-4. Skim the 8-10 minute demo script for speaking parts.
+4. Open demo/VIDEO_LINK.txt for the recorded demo URL.
 
 CONTRIBUTION STATEMENT
 Prepared in the report file for member signature during final submission.

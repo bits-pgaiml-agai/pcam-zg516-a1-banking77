@@ -40,8 +40,7 @@ pcam-zg516-a1-banking77/
 │   ├── run_e2_e3.py          # E2/E3 on Hugging Face (Colab / GPU)
 │   ├── run_e2_e3_ollama.py   # E2/E3 on local Ollama (default: qwen2.5:1.5b-instruct)
 │   ├── run_e4_e5.py          # E4 validation + E5 tool demos
-│   ├── build_group_report.py
-│   └── build_demo_speaking_script.py
+│   └── build_group_report.py
 │
 ├── evidence/                 # COMMITTED results — primary place to verify
 │   ├── baseline/             # E1
@@ -50,8 +49,8 @@ pcam-zg516-a1-banking77/
 │   └── evaluation/           # E6–E7 rubric + failures + checklist
 │
 ├── reports/                  # Technical report (merged + section sources)
-├── docs/                     # Plans, architecture, comparison notes, this file
-└── demo/                     # Demo speaking / presentation guides
+├── docs/                     # Architecture, comparison notes, this file
+└── demo/                     # Demo video Google Drive link
 ```
 
 | Path | Role |
@@ -62,7 +61,7 @@ pcam-zg516-a1-banking77/
 | [`scripts/`](../scripts/) | Batch runners for E2–E5 |
 | [`evidence/`](../evidence/) | Saved outputs — **use these to verify** without re-running |
 | [`reports/`](../reports/) | Written analysis for submission |
-| [`demo/`](../demo/) | How to present / what to say |
+| [`demo/`](../demo/) | Demo video link ([VIDEO_LINK.txt](../demo/VIDEO_LINK.txt)) |
 
 ---
 
@@ -144,9 +143,9 @@ Expected: `ok: True`, `status: pending`, `simulation: True`.
 | **E4** Schema validation | `python scripts/run_e4_e5.py` **or** notebook E4 cells | `evidence/structured_tools/E4_*` |
 | **E5** Tool calling | Same [`run_e4_e5.py`](../scripts/run_e4_e5.py) / notebook tool cells | `evidence/structured_tools/E5_*` |
 | **E6** Failures | Analysis table (manual + E1 observations) | [`evidence/evaluation/E6_failure_analysis.csv`](../evidence/evaluation/E6_failure_analysis.csv) |
-| **E7** Integration | Notebook end-to-end + checklist | [`evidence/evaluation/E7_integration_checklist.md`](../evidence/evaluation/E7_integration_checklist.md), [`demo/`](../demo/) |
+| **E7** Integration | Notebook end-to-end + checklist | [`evidence/evaluation/E7_integration_checklist.md`](../evidence/evaluation/E7_integration_checklist.md) |
 
-**Demo tip:** For an 8–10 minute presentation, run Colab for E1 + live `dispatch_tool`, and open committed files under [`evidence/`](../evidence/) for E2–E6. See [demo/HOW_TO_PRESENT_DEMO.md](../demo/HOW_TO_PRESENT_DEMO.md).
+**Demo tip:** For an 8–10 minute presentation, run Colab for E1 + live `dispatch_tool`, and open committed files under [`evidence/`](../evidence/) for E2–E6. Video: [`demo/VIDEO_LINK.txt`](../demo/VIDEO_LINK.txt).
 
 ---
 
@@ -210,7 +209,7 @@ Open the files below. You should see the stated checks without re-running.
 |------|----------------|
 | [`evidence/evaluation/E7_integration_checklist.md`](../evidence/evaluation/E7_integration_checklist.md) | End-to-end steps + demo acceptance list |
 | [`evidence/evaluation/eval_rubric.json`](../evidence/evaluation/eval_rubric.json) | Criteria C1–C5 reported separately |
-| [`demo/E7_demo_script.md`](../demo/E7_demo_script.md) | Timing / speakers |
+| [`demo/VIDEO_LINK.txt`](../demo/VIDEO_LINK.txt) | Recorded demo Google Drive URL |
 
 ### Quick verification commands
 
